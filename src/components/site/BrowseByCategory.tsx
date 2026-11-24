@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface CategoryCardItem {
@@ -111,24 +111,24 @@ export function BrowseByCategory() {
           </div>
         </div>
 
-        {/* 5 Cards Row Track matching reference mockup */}
+        {/* 5 Cards Row Track: items-start with zero padding / gap bottom */}
         <div
           ref={scrollRef}
           onScroll={onScroll}
-          className="flex items-stretch justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory scrollbar-none"
+          className="flex items-start justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {CATEGORIES.map((item) => (
             <Link
               key={item.id}
               to={item.to}
-              className="group relative flex flex-col shrink-0 w-[215px] sm:w-[235px] lg:w-[230px] xl:w-[240px] snap-start rounded-[26px] sm:rounded-[28px] overflow-hidden shadow-[0_12px_28px_rgba(0,0,0,0.08)] border border-slate-200/80 bg-slate-950 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(249,115,22,0.24)] select-none cursor-pointer"
+              className="group relative flex-shrink-0 w-[215px] sm:w-[230px] lg:w-[225px] xl:w-[235px] snap-start rounded-[24px] sm:rounded-[26px] overflow-hidden shadow-[0_12px_28px_rgba(15,23,42,0.1)] hover:shadow-[0_20px_45px_rgba(249,115,22,0.28)] border border-slate-200/70 transition-all duration-300 hover:-translate-y-2 select-none cursor-pointer block bg-transparent"
             >
               <img
                 src={item.image}
                 alt={item.name}
                 loading="lazy"
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-103"
+                className="w-full h-auto block object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               />
             </Link>
           ))}
