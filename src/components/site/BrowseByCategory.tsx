@@ -71,10 +71,10 @@ export function BrowseByCategory() {
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
-        <div className="relative flex flex-col items-center justify-center text-center mb-10 sm:mb-12">
+        <div className="relative flex flex-col items-start justify-start text-left mb-10 sm:mb-12">
 
           {/* Eyebrow: —— EXPLORE OUR EQUIPMENT —— with gold horizontal bars */}
-          <div className="flex items-center justify-center gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-2">
             <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
             <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.22em] text-slate-800">
               EXPLORE OUR EQUIPMENT
@@ -88,7 +88,7 @@ export function BrowseByCategory() {
           </h2>
 
           {/* Subtitle */}
-          <p className="mt-2 text-sm sm:text-base text-slate-500 font-normal max-w-xl mx-auto">
+          <p className="mt-2 text-sm sm:text-base text-slate-500 font-normal max-w-xl">
             From single-item rentals to complete setups — all delivered and installed.
           </p>
 
@@ -111,11 +111,11 @@ export function BrowseByCategory() {
           </div>
         </div>
 
-        {/* 5 Cards Row Track: with pt-3 to prevent hover clipping and px-4 for side padding */}
+        {/* 5 Cards Row Track: with pt-3 to prevent hover clipping and px-3 for side padding */}
         <div
           ref={scrollRef}
           onScroll={onScroll}
-          className="flex items-start justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pt-3 pb-6 px-4 sm:px-6 -mt-3 scroll-smooth snap-x snap-mandatory scrollbar-none"
+          className="flex items-start justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pt-3 pb-6 px-3 sm:px-4 -mt-3 scroll-smooth snap-x snap-mandatory scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {CATEGORIES.map((item) => (

@@ -27,7 +27,7 @@ export function HowItWorks() {
     >
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+        <div className="text-left max-w-2xl mb-12 sm:mb-16">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] font-black text-slate-950 tracking-tight">
             How it works
           </h2>
@@ -41,10 +41,10 @@ export function HowItWorks() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="flex flex-col items-center text-center px-4"
+              className="flex flex-col items-start text-left"
             >
               {/* Step Illustration */}
-              <div className="flex h-36 w-36 sm:h-40 sm:w-40 items-center justify-center mb-5 transition-transform duration-300 hover:scale-105">
+              <div className="flex h-36 w-36 sm:h-40 sm:w-40 items-center justify-start mb-5 transition-transform duration-300 hover:scale-105">
                 <img
                   src={step.image}
                   alt={`Step ${step.num}`}

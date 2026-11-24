@@ -38,8 +38,8 @@ export function WhatWeDo() {
     <section className="relative bg-white py-14 sm:py-20" aria-label="Our Services">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
         
-        {/* Section Header matching mockup */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        {/* Section Header */}
+        <div className="text-left max-w-2xl mb-10 sm:mb-14">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-600 mb-1.5">
             OUR SERVICES
           </p>
