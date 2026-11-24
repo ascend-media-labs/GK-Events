@@ -73,7 +73,6 @@ function EventsPage() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />
                 <div className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-amber-600 shadow-xs">
                   <evt.icon className="h-5 w-5" />
                 </div>

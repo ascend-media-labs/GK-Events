@@ -130,8 +130,6 @@ function Home() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                {/* Natural bottom gradient fade to white card */}
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/15 to-transparent" />
 
                 {/* Floating Icon Pill */}
                 <div className="absolute top-3 left-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-amber-600 shadow-xs transition-colors group-hover:border-amber-400 group-hover:bg-amber-50">
