@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { MessageCircle, ArrowRight, Speaker, Tv, Lightbulb, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/data/site";
 
 export function HeroShowcase() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-8 pb-12 sm:pt-14 sm:pb-16" aria-label="Hero Showcase">
+    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-8 pb-10 sm:pt-14 sm:pb-12" aria-label="Hero Showcase">
       {/* Pristine Full-Width Background Stage Image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         <img
@@ -17,8 +17,7 @@ export function HeroShowcase() {
         {/* Subtle dark vignette on left side so typography is crystal sharp */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#07090e]/95 via-[#07090e]/60 to-transparent max-w-3xl hidden md:block" />
         <div className="absolute inset-0 bg-[#07090e]/65 md:hidden" />
-        {/* Bottom smooth fade into content below */}
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07090e] via-[#07090e]/70 to-transparent" />
+        {/* Subtle top fade */}
         <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#07090e]/50 to-transparent" />
       </div>
 
@@ -82,6 +81,105 @@ export function HeroShowcase() {
             </div>
           </div>
         </div>
+
+        {/* Floating Dark Glassmorphic Capability Bar Nestled on the Curve */}
+        <div className="relative z-30 mt-6 sm:mt-10 -mb-6 sm:-mb-7 flex justify-center">
+          <div className="inline-flex items-center justify-center gap-6 sm:gap-12 md:gap-16 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 py-3 sm:py-3.5 px-6 sm:px-12 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
+            
+            {/* Sound Systems */}
+            <Link
+              to="/sound-system-rental"
+              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
+            >
+              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
+                <Speaker className="h-6 w-6 stroke-[1.8]" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
+                Sound<br />Systems
+              </span>
+            </Link>
+
+            <div className="h-8 w-px bg-white/15" />
+
+            {/* LED Walls */}
+            <Link
+              to="/led-wall-rental"
+              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
+            >
+              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
+                <Tv className="h-6 w-6 stroke-[1.8]" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
+                LED<br />Walls
+              </span>
+            </Link>
+
+            <div className="h-8 w-px bg-white/15" />
+
+            {/* Stage Lighting */}
+            <Link
+              to="/event-solutions"
+              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
+            >
+              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
+                <Lightbulb className="h-6 w-6 stroke-[1.8]" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
+                Stage<br />Lighting
+              </span>
+            </Link>
+
+            <div className="h-8 w-px bg-white/15" />
+
+            {/* Video Production */}
+            <Link
+              to="/videography"
+              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
+            >
+              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
+                <Camera className="h-6 w-6 stroke-[1.8]" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
+                Video<br />Production
+              </span>
+            </Link>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Elegant Curved Wave Divider at the bottom */}
+      <div className="absolute inset-x-0 -bottom-px pointer-events-none select-none overflow-hidden leading-none z-20">
+        <svg
+          viewBox="0 0 1440 96"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-10 sm:h-14 md:h-18 lg:h-20 block"
+          preserveAspectRatio="none"
+        >
+          {/* Subtle golden shimmer accent line along the curve */}
+          <path
+            d="M0,0 C380,85 1060,85 1440,0"
+            stroke="url(#goldCurveGlow)"
+            strokeWidth="2.5"
+            fill="none"
+            opacity="0.6"
+          />
+          {/* Solid crisp white fill transitioning seamlessly into the section below */}
+          <path
+            d="M0,0 C380,85 1060,85 1440,0 L1440,96 L0,96 Z"
+            fill="#ffffff"
+          />
+          <defs>
+            <linearGradient id="goldCurveGlow" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0" />
+              <stop offset="25%" stopColor="#f59e0b" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#fbbf24" stopOpacity="1" />
+              <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </section>
   );
