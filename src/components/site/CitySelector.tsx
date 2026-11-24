@@ -38,10 +38,12 @@ export function CitySelector() {
   return (
     <section id="cities" className="relative bg-white py-10 sm:py-14" aria-label="Cities we serve">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
-        {/* Section Header: Centered "Select your city" matching reference */}
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] font-black text-slate-950 text-center tracking-tight mb-8 sm:mb-10">
-          Select your city
-        </h2>
+        {/* Section Header: Left Aligned */}
+        <div className="text-left max-w-3xl mb-8 sm:mb-10">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] font-black text-slate-950 tracking-tight">
+            Select your city
+          </h2>
+        </div>
 
         {/* 5 City Cards in a Row */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">

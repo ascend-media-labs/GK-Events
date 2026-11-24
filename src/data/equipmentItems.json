@@ -1,0 +1,198 @@
+[
+  {
+    "category": "projector",
+    "image": "/equipment/tripod screen.png",
+    "name": "Tripod Screen",
+    "price": "Starting from ₹1,199/day",
+    "model": "Liberty projection screen"
+  },
+  {
+    "category": "projector",
+    "image": "/equipment/LED wall custom.png",
+    "name": "LED Wall (Custom Size)",
+    "price": "Starting from ₹89–119 / sq.ft",
+    "model": "P2.9 & P3.9 LED panels"
+  },
+  {
+    "category": "projector",
+    "image": "/equipment/Panasonic PT-V.png",
+    "name": "Panasonic PT-VMZ51S",
+    "price": "Starting from ₹2,999/day",
+    "model": "5200 lm laser projector"
+  },
+  {
+    "category": "projector",
+    "image": "/equipment/epson 107.png",
+    "name": "Epson PowerLite 107",
+    "price": "Starting from ₹1,800/day",
+    "model": "3LCD 3900 lm projector"
+  },
+  {
+    "category": "projector",
+    "image": "/equipment/LED wall(8 12 ft).png",
+    "name": "LED Wall (8×12 ft)",
+    "price": "Starting from ₹8,544/day",
+    "model": "P3.9 outdoor LED wall"
+  },
+  {
+    "category": "sound",
+    "image": "/equipment/power x.png",
+    "name": "Power X Monitors",
+    "price": "Starting from ₹1,999/day",
+    "model": "400W high-bass speaker"
+  },
+  {
+    "category": "sound",
+    "image": "/equipment/clarion JM DC.png",
+    "name": "Clarion JM DC 1520",
+    "price": "Starting from ₹1,499/day",
+    "model": "Party speaker"
+  },
+  {
+    "category": "sound",
+    "image": "/equipment/JBL PRX.png",
+    "name": "JBL PRX412M",
+    "price": "Starting from ₹1,699/day",
+    "model": "2-way passive speaker"
+  },
+  {
+    "category": "sound",
+    "image": "/equipment/samcon 1202.png",
+    "name": "Samcon 1202 Karaoke Trolley",
+    "price": "Starting from ₹1,299/day",
+    "model": "120W portable speaker"
+  },
+  {
+    "category": "sound",
+    "image": "/equipment/studiomaster air 12.png",
+    "name": "Studiomaster AiR 12 Mixer",
+    "price": "Starting from ₹2,499/day",
+    "model": "12-channel mixer, EQ & effects"
+  },
+  {
+    "category": "mic",
+    "image": "/equipment/PA system.png",
+    "name": "PA System",
+    "price": "Starting from ₹3,999/day",
+    "model": "2 speakers, stand, mixer & 2 cordless mics"
+  },
+  {
+    "category": "mic",
+    "image": "/equipment/studiomaster dual wireless.png",
+    "name": "Studiomaster Dual Wireless Mic",
+    "price": "Starting from ₹1,199/day",
+    "model": "2 handheld UHF wireless mics"
+  },
+  {
+    "category": "mic",
+    "image": "/equipment/Ahuja AWM.png",
+    "name": "Ahuja AWM-495V2 Dual Mic",
+    "price": "Starting from ₹499/day",
+    "model": "Dual handheld mics, 200ft range"
+  },
+  {
+    "category": "mic",
+    "image": "/equipment/Ahuja collar.png",
+    "name": "Ahuja Collar / Headband Mic",
+    "price": "Starting from ₹599/day",
+    "model": "Wireless collar & headband mic"
+  },
+  {
+    "category": "tv",
+    "image": "/equipment/onetouch 43.png",
+    "name": "Samsung 43\" LED Smart TV",
+    "price": "Starting from ₹1,999/day",
+    "model": "Full HD Smart TV"
+  },
+  {
+    "category": "tv",
+    "image": "/equipment/VU 55.png",
+    "name": "VU 55\" QLED Google TV",
+    "price": "Starting from ₹2,499/day",
+    "model": "4K Ultra HD Pro Series"
+  },
+  {
+    "category": "tv",
+    "image": "/equipment/VU 65.png",
+    "name": "VU 65\" QLED Google TV",
+    "price": "Starting from ₹2,999/day",
+    "model": "4K Ultra HD Pro Series"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/meeting essential.png",
+    "name": "Meeting Essentials Package",
+    "price": "Starting from ₹3,999/day",
+    "model": "Projector, Projection Screen, Powered Speaker, HDMI Cable & Setup"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/presentation pro.png",
+    "name": "Presentation Pro Package",
+    "price": "Starting from ₹7,999/day",
+    "model": "Projector, Screen, Audio Mixer, 2 Speakers, Presentation Laptop & Wireless Presenter"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/pa system package.png",
+    "name": "PA System Package",
+    "price": "Starting from ₹5,999/day",
+    "model": "Audio Mixer, 2 Powered Speakers with Stands, 2 Cordless Microphones"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/conference package.png",
+    "name": "Conference Package",
+    "price": "Starting from ₹11,999/day",
+    "model": "High Brightness Projector, Large Screen, Audio Mixer, Speakers, Wireless Mics & Podium Mic"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/led display package.png",
+    "name": "LED Display Package",
+    "price": "Starting from ₹14,999/day",
+    "model": "LED Wall, Video Processor, Cabling, Installation & Operator Support"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/event audio.png",
+    "name": "Event Audio Package",
+    "price": "Starting from ₹14,999/day",
+    "model": "Audio Mixer, 4 Powered Speakers, 4 Wireless Mics & Monitor Speaker"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/premium event av.png",
+    "name": "Premium Event AV Package",
+    "price": "Starting from ₹24,999/day",
+    "model": "LED Wall, Projector, Screen, Audio Mixer, 4 Speakers & 4 Wireless Mics"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/custom av.png",
+    "name": "Custom AV Package",
+    "price": "Custom pricing",
+    "model": "Tailor-Made AV Configuration Based on Event Requirements"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/projector screen combo.png",
+    "name": "Projector + Screen Combo",
+    "price": "Starting from ₹2,999/day",
+    "model": "Projector, Projection Screen, HDMI Cable & Setup"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/projector sound combo.png",
+    "name": "Projector + Sound Combo",
+    "price": "Starting from ₹4,999/day",
+    "model": "Projector, Projection Screen, Powered Speaker & Setup"
+  },
+  {
+    "category": "combo",
+    "image": "/equipment/complete event combo.png",
+    "name": "Complete Event Combo",
+    "price": "Starting from ₹9,999/day",
+    "model": "Projector, Screen, Sound System, Wireless Mics & Technician"
+  }
+]

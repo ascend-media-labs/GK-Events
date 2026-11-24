@@ -18,43 +18,43 @@ const CATEGORIES = [
   {
     name: "Projectors & Screens",
     shortName: "Projectors",
-    to: "/equipment",
+    to: "/equipment#projector",
     icon: Projector,
   },
   {
     name: "Sound Systems",
     shortName: "Sound Systems",
-    to: "/equipment",
+    to: "/equipment#sound",
     icon: Volume2,
   },
   {
     name: "Microphones",
     shortName: "Microphones",
-    to: "/equipment",
+    to: "/equipment#mic",
     icon: Mic,
   },
   {
     name: "Televisions",
     shortName: "Televisions",
-    to: "/equipment",
+    to: "/equipment#tv",
     icon: Tv,
   },
   {
     name: "Speakers",
     shortName: "Speakers",
-    to: "/equipment",
+    to: "/equipment#sound",
     icon: Speaker,
   },
   {
     name: "LED Screens",
     shortName: "LED Screens",
-    to: "/equipment",
+    to: "/equipment#projector",
     icon: Grid,
   },
   {
     name: "Combo Packages",
     shortName: "Combo Packages",
-    to: "/offers",
+    to: "/equipment#combo",
     icon: PackageCheck,
   },
 ];
@@ -300,9 +300,9 @@ export function HeroShowcase() {
           <div className="relative z-20 mt-8 pt-6 border-t border-blue-200/50">
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 sm:gap-3">
               {CATEGORIES.map((cat) => (
-                <Link
+                <a
                   key={cat.name}
-                  to={cat.to}
+                  href={cat.to}
                   className="group flex flex-col items-center justify-center rounded-2xl bg-white/85 hover:bg-white backdrop-blur-md border border-slate-200/80 hover:border-blue-400/80 p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:shadow-md shadow-xs"
                 >
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
@@ -311,7 +311,7 @@ export function HeroShowcase() {
                   <span className="mt-2 text-[11px] font-bold text-slate-700 group-hover:text-blue-700 tracking-tight leading-tight">
                     {cat.name}
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
