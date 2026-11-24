@@ -111,45 +111,10 @@ export function HeroShowcase() {
                 <span>GK Events · Audio Visuals &amp; Event Tech</span>
               </div>
 
-              {/* Signature Headline */}
-              <h1 className="font-display text-[2.2rem] sm:text-[2.7rem] md:text-[3.1rem] lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.08] tracking-tight">
-                “Professional{" "}
-                <span className="relative inline-block text-blue-600 px-1">
-                  GK Events
-                  <svg
-                    className="pointer-events-none absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)]"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                    fill="none"
-                  >
-                    <path
-                      d="M5,50 C5,15 95,15 95,50 C95,85 8,85 5,55 C4,35 12,25 22,22"
-                      stroke="#2563eb"
-                      strokeWidth="3.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>{" "}
-                Equipment for Rent —<br />
-                delivered &amp;{" "}
-                <span className="relative inline-block text-amber-600 pb-0.5">
-                  setup
-                  <svg
-                    className="pointer-events-none absolute -bottom-1 -left-1 w-[104%] h-2"
-                    viewBox="0 0 100 10"
-                    preserveAspectRatio="none"
-                    fill="none"
-                  >
-                    <path
-                      d="M 2,8 C 30,5 70,9 98,6"
-                      stroke="#d97706"
-                      strokeWidth="3.2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-                ”
+              {/* Clean Signature Headline */}
+              <h1 className="font-display text-[2.2rem] sm:text-[2.7rem] md:text-[3.1rem] lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.12] tracking-tight">
+                “Professional <span className="text-blue-600">Event Equipment</span> for Rent —<br />
+                delivered &amp; <span className="text-amber-600">setup</span>”
               </h1>
 
               <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
