@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, ArrowRight, Speaker, Tv, Lightbulb, Camera } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/data/site";
 
 export function HeroShowcase() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-8 pb-14 sm:pt-14 sm:pb-20" aria-label="Hero Showcase">
+    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-8 pb-12 sm:pt-14 sm:pb-16" aria-label="Hero Showcase">
       {/* Pristine Full-Width Background Stage Image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         <img
@@ -24,7 +24,7 @@ export function HeroShowcase() {
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-[1288px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[460px] sm:min-h-[500px] items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[440px] sm:min-h-[480px] items-center">
           
           {/* Left Column: Eyebrow, Signature Headline, Description & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left gap-4 max-w-2xl py-6 sm:py-10">
@@ -82,72 +82,6 @@ export function HeroShowcase() {
             </div>
           </div>
         </div>
-
-        {/* Floating Dark Glassmorphic Capability Bar (Bottom Center of Hero) */}
-        <div className="relative z-20 mt-8 sm:mt-12 flex justify-center">
-          <div className="inline-flex items-center justify-center gap-6 sm:gap-12 md:gap-16 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/15 py-3 sm:py-3.5 px-6 sm:px-12 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
-            
-            {/* Sound Systems */}
-            <Link
-              to="/sound-system-rental"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Speaker className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                Sound<br />Systems
-              </span>
-            </Link>
-
-            <div className="h-8 w-px bg-white/15" />
-
-            {/* LED Walls */}
-            <Link
-              to="/led-wall-rental"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Tv className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                LED<br />Walls
-              </span>
-            </Link>
-
-            <div className="h-8 w-px bg-white/15" />
-
-            {/* Stage Lighting */}
-            <Link
-              to="/event-solutions"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Lightbulb className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                Stage<br />Lighting
-              </span>
-            </Link>
-
-            <div className="h-8 w-px bg-white/15" />
-
-            {/* Video Production */}
-            <Link
-              to="/videography"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Camera className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                Video<br />Production
-              </span>
-            </Link>
-
-          </div>
-        </div>
-
       </div>
     </section>
   );
