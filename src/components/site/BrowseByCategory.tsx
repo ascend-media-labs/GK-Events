@@ -69,10 +69,10 @@ export function BrowseByCategory() {
       <div className="pointer-events-none absolute -bottom-10 -right-10 h-80 w-80 rounded-full bg-gradient-to-tl from-orange-500/10 via-amber-400/10 to-transparent blur-3xl" />
 
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
-        
+
         {/* Section Header */}
         <div className="relative flex flex-col items-center justify-center text-center mb-10 sm:mb-12">
-          
+
           {/* Eyebrow: —— EXPLORE OUR EQUIPMENT —— with gold horizontal bars */}
           <div className="flex items-center justify-center gap-3 mb-2">
             <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
@@ -111,11 +111,11 @@ export function BrowseByCategory() {
           </div>
         </div>
 
-        {/* 5 Cards Row Track: with pt-3 to prevent hover clipping */}
+        {/* 5 Cards Row Track: with pt-3 to prevent hover clipping and px-4 for side padding */}
         <div
           ref={scrollRef}
           onScroll={onScroll}
-          className="flex items-start justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pt-3 pb-5 px-1 -mt-3 scroll-smooth snap-x snap-mandatory scrollbar-none"
+          className="flex items-start justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pt-3 pb-6 px-4 sm:px-6 -mt-3 scroll-smooth snap-x snap-mandatory scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {CATEGORIES.map((item) => (
@@ -132,37 +132,35 @@ export function BrowseByCategory() {
               />
             </Link>
           ))}
+          {/* Spacer to guarantee right padding when scrolled to the end on mobile/tablet */}
+          <div className="w-2 sm:w-4 flex-shrink-0 lg:hidden" aria-hidden="true" />
         </div>
 
         {/* Pagination Indicator Dots */}
         <div className="flex items-center justify-center gap-2 mt-8">
           <div
-            className={`transition-all duration-300 ${
-              activeIndex === 0
+            className={`transition-all duration-300 ${activeIndex === 0
                 ? "h-2 w-7 rounded-full bg-orange-500"
                 : "h-2 w-2 rounded-full bg-slate-300"
-            }`}
+              }`}
           />
           <div
-            className={`transition-all duration-300 ${
-              activeIndex === 1
+            className={`transition-all duration-300 ${activeIndex === 1
                 ? "h-2 w-7 rounded-full bg-orange-500"
                 : "h-2 w-2 rounded-full bg-slate-300"
-            }`}
+              }`}
           />
           <div
-            className={`transition-all duration-300 ${
-              activeIndex === 2
+            className={`transition-all duration-300 ${activeIndex === 2
                 ? "h-2 w-7 rounded-full bg-orange-500"
                 : "h-2 w-2 rounded-full bg-slate-300"
-            }`}
+              }`}
           />
           <div
-            className={`transition-all duration-300 ${
-              activeIndex === 3
+            className={`transition-all duration-300 ${activeIndex === 3
                 ? "h-2 w-7 rounded-full bg-orange-500"
                 : "h-2 w-2 rounded-full bg-slate-300"
-            }`}
+              }`}
           />
         </div>
 
