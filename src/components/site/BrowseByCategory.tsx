@@ -111,11 +111,11 @@ export function BrowseByCategory() {
           </div>
         </div>
 
-        {/* 5 Cards Row Track: items-start with zero padding / gap bottom */}
+        {/* 5 Cards Row Track: with pt-3 to prevent hover clipping */}
         <div
           ref={scrollRef}
           onScroll={onScroll}
-          className="flex items-start justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory scrollbar-none"
+          className="flex items-start justify-start lg:justify-between gap-4 sm:gap-5 lg:gap-6 overflow-x-auto pt-3 pb-5 px-1 -mt-3 scroll-smooth snap-x snap-mandatory scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {CATEGORIES.map((item) => (
