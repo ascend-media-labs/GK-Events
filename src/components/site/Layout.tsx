@@ -117,47 +117,33 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-white/70 backdrop-blur-md transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-7 py-2.5 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
-        {/* Brand Logo with Ambient Hover Glow */}
+    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-transparent transition-all duration-300">
+      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-8 py-2.5 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
+        {/* Brand Logo */}
         <Link to="/" className="group relative flex items-center shrink-0" onClick={() => setOpen(false)}>
-          <div className="absolute -inset-2 rounded-2xl bg-amber-500/10 blur-xl opacity-40 group-hover:opacity-80 transition-opacity" />
           <Logo className="relative h-10 sm:h-12 w-auto" />
         </Link>
 
         {/* Central Floating Capsule Nav Links */}
-        <nav className="hidden lg:flex items-center gap-1 sm:gap-1.5">
+        <nav className="hidden lg:flex items-center gap-1 sm:gap-2">
           {mainNav.map((n) => (
             <NavLink key={n.to} {...n} />
           ))}
         </nav>
 
-        {/* Right Action: Get a Quote button + Mobile Menu Button */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <Button
-            asChild
-            className="hidden sm:inline-flex rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-extrabold shadow-[0_2px_12px_rgba(245,158,11,0.25)] hover:shadow-[0_4px_20px_rgba(245,158,11,0.4)] hover:scale-105 active:scale-95 transition-all duration-300 px-5 py-2 text-xs sm:text-sm tracking-wide border border-amber-300/40"
-          >
-            <Link to="/contact">
-              <span>Get a Quote</span>
-              <Sparkles className="h-3.5 w-3.5 ml-1 text-slate-950" />
-            </Link>
-          </Button>
-
-          {/* Mobile Menu Button */}
-          <button
-            aria-label="Open menu"
-            className="rounded-full p-2.5 border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-950 hover:bg-slate-100 lg:hidden transition-colors"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <X className="h-5 w-5 text-amber-600" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
+        {/* Mobile Menu Button */}
+        <button
+          aria-label="Open menu"
+          className="rounded-full p-2.5 border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-950 hover:bg-slate-100 lg:hidden transition-colors"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X className="h-5 w-5 text-amber-600" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
 
       {/* Mobile Navigation Drawer Card */}
       {open && (
-        <div className="lg:hidden max-w-7xl mx-auto mt-2 animate-in fade-in slide-in-from-top-3 duration-200">
+        <div className="lg:hidden max-w-[1288px] mx-auto mt-2 animate-in fade-in slide-in-from-top-3 duration-200">
           <div className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-[0_20px_50px_rgba(15,23,42,0.12)] space-y-4">
             <div className="grid gap-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
@@ -204,10 +190,10 @@ function NavLink({ to, label }: { to: string; label: string }) {
       activeOptions={{ exact: true }}
       activeProps={{
         className:
-          "bg-blue-50 text-blue-600 font-bold border border-blue-200/50 shadow-xs",
+          "bg-[#eef5ff] text-[#2563eb] font-bold border border-blue-200/50 shadow-xs",
       }}
       inactiveProps={{
-        className: "text-slate-600 hover:text-slate-950 hover:bg-slate-50",
+        className: "text-slate-700 hover:text-slate-950 hover:bg-slate-50",
       }}
       className="rounded-2xl px-4 sm:px-5 py-2 text-sm font-semibold tracking-normal transition-all duration-200"
     >
