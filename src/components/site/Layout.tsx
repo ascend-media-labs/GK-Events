@@ -22,6 +22,12 @@ import {
 import logo from "@/assets/gk-logo-light.png";
 import emblem from "@/assets/gk-emblem.png";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { contact, mainNav, serviceNav, waLink } from "@/data/site";
 import { AnnouncementBar } from "./AnnouncementBar";
 export { AnnouncementBar };
@@ -104,8 +110,8 @@ export function Logo({
           <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-slate-950 leading-none">
             GK <span className="text-gold">EVENTS</span>
           </span>
-          <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
-            Event Productions & Tech
+          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.22em] text-amber-700 mt-1 leading-none">
+            EVENT PRODUCTIONS &amp; TECHNOLOGY
           </span>
         </div>
       )}
@@ -118,27 +124,170 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-transparent transition-all duration-300">
-      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-5 sm:px-8 py-3 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
+      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-7 py-2.5 sm:py-3 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
         {/* Brand Logo */}
-        <Link to="/" className="group relative flex items-center shrink-0" onClick={() => setOpen(false)}>
-          <Logo className="relative h-11 sm:h-13 w-auto" />
+        <Link to="/" className="group relative flex items-center shrink-0 mr-2" onClick={() => setOpen(false)}>
+          <Logo className="relative h-10 sm:h-12 w-auto" />
         </Link>
 
         {/* Central Floating Capsule Nav Links */}
-        <nav className="hidden lg:flex items-center gap-1 sm:gap-2">
-          {mainNav.map((n) => (
-            <NavLink key={n.to} {...n} />
-          ))}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+          <NavLink to="/" label="Home" />
+
+          {/* Equipment Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 rounded-full px-3 py-1.5 text-xs xl:text-[13px] font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-100/70 transition-colors outline-none cursor-pointer data-[state=open]:bg-slate-100">
+              <span>Equipment</span>
+              <ChevronDown className="h-3 w-3 text-slate-400 transition-transform duration-200" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-56 p-1.5 rounded-2xl border border-slate-200/90 bg-white shadow-xl z-50">
+              <DropdownMenuItem asChild>
+                <Link to="/sound-system-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Speaker className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Sound Systems</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Line Arrays & Digital Consoles</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/led-wall-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <MonitorPlay className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">LED Walls & Screens</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Curved Ultra-HD P2.5</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/led-tv-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Tv className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">LED TV Rental</p>
+                    <p className="text-[10px] text-slate-400 font-normal">65"–85" 4K Smart Displays</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/projector-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Projector className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Projectors & Screens</p>
+                    <p className="text-[10px] text-slate-400 font-normal">High-Lumen Laser 4K</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <div className="h-px bg-slate-100 my-1" />
+              <DropdownMenuItem asChild>
+                <Link to="/equipment" className="flex items-center justify-between rounded-xl px-3 py-2 text-xs font-extrabold text-amber-700 hover:bg-amber-50 cursor-pointer">
+                  <span>View Full Catalog</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Services Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1 rounded-full px-3 py-1.5 text-xs xl:text-[13px] font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-100/70 transition-colors outline-none cursor-pointer data-[state=open]:bg-slate-100">
+              <span>Services</span>
+              <ChevronDown className="h-3 w-3 text-slate-400 transition-transform duration-200" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="w-56 p-1.5 rounded-2xl border border-slate-200/90 bg-white shadow-xl z-50">
+              <DropdownMenuItem asChild>
+                <Link to="/wedding-events" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Sparkles className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Weddings & Stages</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Sangeet, Mandap & Reception</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/corporate-events" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <MonitorPlay className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Corporate Events</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Conferences & Annual Meets</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/photography" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Camera className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Photography</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Candid & Cinematic Moments</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/videography" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Video className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Videography</p>
+                    <p className="text-[10px] text-slate-400 font-normal">4K Cinema & Drone Films</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/live-streaming" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Radio className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Live Streaming</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Multi-Cam YouTube & Zoom</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/event-solutions" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Lightbulb className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Stage Lighting</p>
+                    <p className="text-[10px] text-slate-400 font-normal">DMX Heads & Lasers</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <NavLink to="/wedding-events" label="Weddings" />
+          <NavLink to="/corporate-events" label="Corporate" />
+          <NavLink to="/gallery" label="Gallery" />
+          <NavLink to="/contact" label="Contact" />
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          aria-label="Open menu"
-          className="rounded-full p-2.5 border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-950 hover:bg-slate-100 lg:hidden transition-colors"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X className="h-5 w-5 text-amber-600" /> : <Menu className="h-5 w-5" />}
-        </button>
+        {/* Right Action Buttons */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Phone Capsule Button */}
+          <a
+            href={contact.phoneHref}
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs font-bold text-slate-800 shadow-xs hover:bg-slate-50 hover:border-slate-300 transition-all shrink-0"
+          >
+            <Phone className="h-3.5 w-3.5 text-amber-600" />
+            <span>+91 98765 43210</span>
+          </a>
+
+          {/* Get a Quote Button */}
+          <a
+            href={waLink("Hi GK Events, I would like to get a quote for my event.")}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-slate-950 font-black px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm shadow-xs transition-all hover:scale-105 active:scale-95 shrink-0"
+          >
+            <span>Get a Quote</span>
+            <ArrowRight className="h-3 w-3 stroke-[2.5]" />
+          </a>
+
+          {/* Mobile Menu Button */}
+          <button
+            aria-label="Open menu"
+            className="rounded-full p-2 border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-950 hover:bg-slate-100 lg:hidden transition-colors"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X className="h-5 w-5 text-amber-600" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation Drawer Card */}
@@ -149,30 +298,62 @@ export function Header() {
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
                 Navigation
               </p>
-              {mainNav.map((n) => (
-                <Link
-                  key={n.to}
-                  to={n.to}
-                  onClick={() => setOpen(false)}
-                  activeOptions={{ exact: true }}
-                  activeProps={{ className: "bg-[#eef5ff] text-[#2563eb] font-bold border border-blue-200/60" }}
-                  className="rounded-xl px-3.5 py-2.5 font-semibold text-slate-800 hover:bg-slate-50 hover:text-amber-700 transition-colors"
-                >
-                  {n.label}
-                </Link>
-              ))}
+              <Link
+                to="/"
+                onClick={() => setOpen(false)}
+                activeOptions={{ exact: true }}
+                activeProps={{ className: "bg-[#c5832b] text-white font-bold" }}
+                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                to="/equipment"
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+              >
+                Equipment Catalog
+              </Link>
+              <Link
+                to="/wedding-events"
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+              >
+                Weddings &amp; Celebrations
+              </Link>
+              <Link
+                to="/corporate-events"
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+              >
+                Corporate Productions
+              </Link>
+              <Link
+                to="/gallery"
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+              >
+                Event Gallery
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+              >
+                Contact
+              </Link>
             </div>
 
             {/* Direct Contact Action Buttons */}
             <div className="grid grid-cols-2 gap-2 pt-3 border-t border-slate-100">
-              <Button asChild variant="outline" size="lg" className="rounded-full font-bold border-slate-300 text-slate-800">
+              <Button asChild variant="outline" size="sm" className="rounded-full font-bold border-slate-300 text-slate-800">
                 <a href={contact.phoneHref}>
-                  <Phone className="mr-1.5 h-4 w-4 text-amber-600" /> Call Now
+                  <Phone className="mr-1.5 h-3.5 w-3.5 text-amber-600" /> Call Now
                 </a>
               </Button>
-              <Button asChild variant="whatsapp" size="lg" className="rounded-full font-bold text-white">
+              <Button asChild variant="whatsapp" size="sm" className="rounded-full font-bold text-white">
                 <a href={waLink()} target="_blank" rel="noreferrer">
-                  <MessageCircle className="mr-1.5 h-4 w-4" /> WhatsApp
+                  <MessageCircle className="mr-1.5 h-3.5 w-3.5" /> WhatsApp
                 </a>
               </Button>
             </div>
@@ -187,15 +368,15 @@ function NavLink({ to, label }: { to: string; label: string }) {
   return (
     <Link
       to={to}
-      activeOptions={{ exact: true }}
+      activeOptions={{ exact: to === "/" }}
       activeProps={{
         className:
-          "bg-[#eef5ff] text-[#2563eb] font-bold border border-blue-200/50 shadow-xs",
+          "bg-[#c5832b] text-white font-bold rounded-full shadow-xs px-3.5 py-1.5",
       }}
       inactiveProps={{
-        className: "text-slate-700 hover:text-slate-950 hover:bg-slate-50",
+        className: "text-slate-700 hover:text-slate-950 hover:bg-slate-100/70 rounded-full px-3 py-1.5",
       }}
-      className="rounded-2xl px-5 py-2.5 text-[15px] font-semibold tracking-normal transition-all duration-200"
+      className="text-xs xl:text-[13px] font-semibold tracking-normal transition-all duration-200 inline-flex items-center"
     >
       {label}
     </Link>
