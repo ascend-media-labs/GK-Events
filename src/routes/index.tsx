@@ -7,6 +7,7 @@ import { StatsHighlights } from "@/components/site/StatsHighlights";
 import { CitySelector } from "@/components/site/CitySelector";
 import { BrowseByCategory } from "@/components/site/BrowseByCategory";
 import { HowItWorks } from "@/components/site/HowItWorks";
+import { HomeMosaicGallery } from "@/components/site/HomeMosaicGallery";
 import { images } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -171,14 +172,7 @@ function Home() {
       <Split reverse img={images.corporate} eyebrow="Corporate Event Solutions" title="Conferences that run flawlessly." text="Podium mics, LED screens, projectors, hybrid streaming and show calling for launches, AGMs and award nights." to="/corporate-events" />
       <Split img={images.camera} eyebrow="Photography · Videography · Live Streaming" title="Every moment, captured and shared." text="Candid photos, 4K cinematic films and multi-camera live streams to YouTube, Zoom and private links." to="/live-streaming" />
 
-      <Section eyebrow="Featured Gallery" title="Recent productions">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {[images.hero, images.wedding, images.corporate, images.equipment].map((src, i) => (
-            <img key={i} src={src} alt="GK Events production" loading="lazy" className={`h-56 w-full rounded-3xl object-cover shadow-sm border border-slate-200/80 sm:h-72 ${i === 0 ? "md:col-span-2" : ""}`} />
-          ))}
-        </div>
-        <Button asChild variant="outline" size="xl" className="mt-8 rounded-full border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-bold shadow-xs"><Link to="/gallery">View full gallery <ArrowRight /></Link></Button>
-      </Section>
+      <HomeMosaicGallery />
 
       <Section eyebrow="Why GK Events" title="Trusted by families and brands">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
