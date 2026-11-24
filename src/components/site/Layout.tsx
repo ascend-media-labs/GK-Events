@@ -110,8 +110,8 @@ export function Logo({
           <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-slate-950 leading-none">
             GK <span className="text-gold">EVENTS</span>
           </span>
-          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.22em] text-amber-700 mt-1 leading-none">
-            EVENT PRODUCTIONS &amp; TECHNOLOGY
+          <span className="text-[9.5px] sm:text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
+            EVENT PRODUCTIONS &amp; TECH
           </span>
         </div>
       )}
@@ -124,68 +124,16 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-transparent transition-all duration-300">
-      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-7 py-2.5 sm:py-3 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
+      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-8 py-2.5 sm:py-3 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
         {/* Brand Logo */}
         <Link to="/" className="group relative flex items-center shrink-0 mr-2" onClick={() => setOpen(false)}>
           <Logo className="relative h-10 sm:h-12 w-auto" />
         </Link>
 
-        {/* Central Floating Capsule Nav Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+        {/* Central Nav Links matching reference: Home, About, Services ▾, Equipment, Cities, Gallery, Contact */}
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
           <NavLink to="/" label="Home" />
-
-          {/* Equipment Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-1 rounded-full px-3 py-1.5 text-xs xl:text-[13px] font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-100/70 transition-colors outline-none cursor-pointer data-[state=open]:bg-slate-100">
-              <span>Equipment</span>
-              <ChevronDown className="h-3 w-3 text-slate-400 transition-transform duration-200" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center" className="w-56 p-1.5 rounded-2xl border border-slate-200/90 bg-white shadow-xl z-50">
-              <DropdownMenuItem asChild>
-                <Link to="/sound-system-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
-                  <Speaker className="h-4 w-4 text-amber-600 shrink-0" />
-                  <div>
-                    <p className="font-bold">Sound Systems</p>
-                    <p className="text-[10px] text-slate-400 font-normal">Line Arrays & Digital Consoles</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link to="/led-wall-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
-                  <MonitorPlay className="h-4 w-4 text-amber-600 shrink-0" />
-                  <div>
-                    <p className="font-bold">LED Walls & Screens</p>
-                    <p className="text-[10px] text-slate-400 font-normal">Curved Ultra-HD P2.5</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link to="/led-tv-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
-                  <Tv className="h-4 w-4 text-amber-600 shrink-0" />
-                  <div>
-                    <p className="font-bold">LED TV Rental</p>
-                    <p className="text-[10px] text-slate-400 font-normal">65"–85" 4K Smart Displays</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link to="/projector-rental" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
-                  <Projector className="h-4 w-4 text-amber-600 shrink-0" />
-                  <div>
-                    <p className="font-bold">Projectors & Screens</p>
-                    <p className="text-[10px] text-slate-400 font-normal">High-Lumen Laser 4K</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <div className="h-px bg-slate-100 my-1" />
-              <DropdownMenuItem asChild>
-                <Link to="/equipment" className="flex items-center justify-between rounded-xl px-3 py-2 text-xs font-extrabold text-amber-700 hover:bg-amber-50 cursor-pointer">
-                  <span>View Full Catalog</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <NavLink to="/about" label="About" />
 
           {/* Services Dropdown */}
           <DropdownMenu>
@@ -198,8 +146,8 @@ export function Header() {
                 <Link to="/wedding-events" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
                   <Sparkles className="h-4 w-4 text-amber-600 shrink-0" />
                   <div>
-                    <p className="font-bold">Weddings & Stages</p>
-                    <p className="text-[10px] text-slate-400 font-normal">Sangeet, Mandap & Reception</p>
+                    <p className="font-bold">Weddings &amp; Stages</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Sangeet, Mandap &amp; Reception</p>
                   </div>
                 </Link>
               </DropdownMenuItem>
@@ -208,7 +156,16 @@ export function Header() {
                   <MonitorPlay className="h-4 w-4 text-amber-600 shrink-0" />
                   <div>
                     <p className="font-bold">Corporate Events</p>
-                    <p className="text-[10px] text-slate-400 font-normal">Conferences & Annual Meets</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Conferences &amp; Annual Meets</p>
+                  </div>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/events" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
+                  <Speaker className="h-4 w-4 text-amber-600 shrink-0" />
+                  <div>
+                    <p className="font-bold">Concerts &amp; Live Shows</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Line Arrays &amp; Stage Rigging</p>
                   </div>
                 </Link>
               </DropdownMenuItem>
@@ -217,7 +174,7 @@ export function Header() {
                   <Camera className="h-4 w-4 text-amber-600 shrink-0" />
                   <div>
                     <p className="font-bold">Photography</p>
-                    <p className="text-[10px] text-slate-400 font-normal">Candid & Cinematic Moments</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Candid &amp; Cinematic Moments</p>
                   </div>
                 </Link>
               </DropdownMenuItem>
@@ -226,7 +183,7 @@ export function Header() {
                   <Video className="h-4 w-4 text-amber-600 shrink-0" />
                   <div>
                     <p className="font-bold">Videography</p>
-                    <p className="text-[10px] text-slate-400 font-normal">4K Cinema & Drone Films</p>
+                    <p className="text-[10px] text-slate-400 font-normal">4K Cinema &amp; Drone Films</p>
                   </div>
                 </Link>
               </DropdownMenuItem>
@@ -235,48 +192,34 @@ export function Header() {
                   <Radio className="h-4 w-4 text-amber-600 shrink-0" />
                   <div>
                     <p className="font-bold">Live Streaming</p>
-                    <p className="text-[10px] text-slate-400 font-normal">Multi-Cam YouTube & Zoom</p>
-                  </div>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link to="/event-solutions" className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-800 hover:bg-amber-50 hover:text-amber-700 cursor-pointer">
-                  <Lightbulb className="h-4 w-4 text-amber-600 shrink-0" />
-                  <div>
-                    <p className="font-bold">Stage Lighting</p>
-                    <p className="text-[10px] text-slate-400 font-normal">DMX Heads & Lasers</p>
+                    <p className="text-[10px] text-slate-400 font-normal">Multi-Cam YouTube &amp; Zoom</p>
                   </div>
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <NavLink to="/wedding-events" label="Weddings" />
-          <NavLink to="/corporate-events" label="Corporate" />
+          <NavLink to="/equipment" label="Equipment" />
+          <a
+            href="/#cities"
+            className="text-xs xl:text-[13px] font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-100/70 rounded-full px-3 py-1.5 transition-all duration-200 inline-flex items-center cursor-pointer"
+          >
+            Cities
+          </a>
           <NavLink to="/gallery" label="Gallery" />
           <NavLink to="/contact" label="Contact" />
         </nav>
 
-        {/* Right Action Buttons */}
+        {/* Right Action: Book on WhatsApp Pill Button */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Phone Capsule Button */}
           <a
-            href={contact.phoneHref}
-            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-white px-3.5 py-1.5 text-xs font-bold text-slate-800 shadow-xs hover:bg-slate-50 hover:border-slate-300 transition-all shrink-0"
-          >
-            <Phone className="h-3.5 w-3.5 text-amber-600" />
-            <span>+91 98765 43210</span>
-          </a>
-
-          {/* Get a Quote Button */}
-          <a
-            href={waLink("Hi GK Events, I would like to get a quote for my event.")}
+            href={waLink("Hi GK Events, I would like to book event equipment.")}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-slate-950 font-black px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm shadow-xs transition-all hover:scale-105 active:scale-95 shrink-0"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold px-5 py-2 text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 shrink-0"
           >
-            <span>Get a Quote</span>
-            <ArrowRight className="h-3 w-3 stroke-[2.5]" />
+            <MessageCircle className="h-4 w-4" />
+            <span>Book on WhatsApp</span>
           </a>
 
           {/* Mobile Menu Button */}
@@ -302,38 +245,38 @@ export function Header() {
                 to="/"
                 onClick={() => setOpen(false)}
                 activeOptions={{ exact: true }}
-                activeProps={{ className: "bg-[#c5832b] text-white font-bold" }}
+                activeProps={{ className: "text-amber-600 font-bold bg-amber-50" }}
                 className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
               >
                 Home
+              </Link>
+              <Link
+                to="/about"
+                onClick={() => setOpen(false)}
+                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
+              >
+                About
               </Link>
               <Link
                 to="/equipment"
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
               >
-                Equipment Catalog
+                Equipment
               </Link>
-              <Link
-                to="/wedding-events"
+              <a
+                href="/#cities"
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
               >
-                Weddings &amp; Celebrations
-              </Link>
-              <Link
-                to="/corporate-events"
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
-              >
-                Corporate Productions
-              </Link>
+                Cities
+              </a>
               <Link
                 to="/gallery"
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3.5 py-2 font-semibold text-slate-800 hover:bg-slate-50 transition-colors"
               >
-                Event Gallery
+                Gallery
               </Link>
               <Link
                 to="/contact"
@@ -351,7 +294,7 @@ export function Header() {
                   <Phone className="mr-1.5 h-3.5 w-3.5 text-amber-600" /> Call Now
                 </a>
               </Button>
-              <Button asChild variant="whatsapp" size="sm" className="rounded-full font-bold text-white">
+              <Button asChild size="sm" className="rounded-full font-bold text-white bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700">
                 <a href={waLink()} target="_blank" rel="noreferrer">
                   <MessageCircle className="mr-1.5 h-3.5 w-3.5" /> WhatsApp
                 </a>
@@ -371,7 +314,7 @@ function NavLink({ to, label }: { to: string; label: string }) {
       activeOptions={{ exact: to === "/" }}
       activeProps={{
         className:
-          "bg-[#c5832b] text-white font-bold rounded-full shadow-xs px-3.5 py-1.5",
+          "text-amber-600 font-bold border-b-2 border-amber-500 rounded-none px-3 py-1",
       }}
       inactiveProps={{
         className: "text-slate-700 hover:text-slate-950 hover:bg-slate-100/70 rounded-full px-3 py-1.5",

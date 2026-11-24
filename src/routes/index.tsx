@@ -3,6 +3,7 @@ import { ArrowRight, Award, Camera, ChevronDown, Clock, Headphones, Lightbulb, M
 import { Button } from "@/components/ui/button";
 import { Faq, FinalCta, Process, Section } from "@/components/site/Blocks";
 import { HeroShowcase } from "@/components/site/HeroShowcase";
+import { WhatWeDo } from "@/components/site/WhatWeDo";
 import { StatsHighlights } from "@/components/site/StatsHighlights";
 import { CitySelector } from "@/components/site/CitySelector";
 import { BrowseByCategory } from "@/components/site/BrowseByCategory";
@@ -106,6 +107,8 @@ function Home() {
   return (
     <div className="bg-white text-slate-900">
       <HeroShowcase />
+
+      <WhatWeDo />
 
       <CitySelector />
 
