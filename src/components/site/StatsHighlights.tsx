@@ -11,7 +11,7 @@ interface StatItem {
 const stats: StatItem[] = [
   { value: 1200, suffix: "+", label: "Events delivered", formatCommas: true, duration: 1800 },
   { value: 10, suffix: "+", label: "Years experience", duration: 1400 },
-  { value: 500, suffix: "+", label: "AV equipment units", duration: 1600 },
+  { value: 500, suffix: "+", label: "Event equipment units", duration: 1600 },
   { value: 24, suffix: "/7", label: "Event support", duration: 1200 },
 ];
 

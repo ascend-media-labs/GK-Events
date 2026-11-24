@@ -77,14 +77,14 @@ export function HeroShowcase() {
               {/* Eyebrow Badge */}
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/90 text-blue-700 text-xs sm:text-[13px] font-bold tracking-wide border border-blue-200/70 shadow-xs mb-1 backdrop-blur-sm">
                 <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-                <span>Premium AV Rentals</span>
+                <span>GK Events · Premium Rentals</span>
               </div>
 
               {/* Signature Headline with hand-drawn SVG highlights */}
-              <h1 className="font-display text-[2.2rem] sm:text-[2.7rem] md:text-[3.2rem] lg:text-[3.4rem] font-extrabold text-slate-900 leading-[1.05] tracking-tight max-w-[12ch]">
+              <h1 className="font-display text-[2.2rem] sm:text-[2.7rem] md:text-[3.2rem] lg:text-[3.4rem] font-extrabold text-slate-900 leading-[1.05] tracking-tight max-w-[13ch]">
                 “Professional{" "}
                 <span className="relative inline-block text-emerald-600 px-2.5">
-                  AV equipment
+                  GK Events
                   <svg
                     className="pointer-events-none absolute -inset-x-2.5 -inset-y-1.5 w-[calc(100%+20px)] h-[calc(100%+12px)]"
                     viewBox="0 0 100 100"
@@ -100,7 +100,7 @@ export function HeroShowcase() {
                     />
                   </svg>
                 </span>{" "}
-                for Rent —<br />
+                Equipment for Rent —<br />
                 delivered &amp;<br />
                 <span className="relative inline-block text-blue-600 pb-1">
                   setup

@@ -29,7 +29,7 @@ function Step1Illustration() {
             <span className="h-1.5 w-1.5 rounded-full bg-rose-400" />
             <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            <span className="ml-2 text-[9px] font-mono font-semibold text-slate-500">GK AV Catalogue</span>
+            <span className="ml-2 text-[9px] font-mono font-semibold text-slate-500">GK Events Catalogue</span>
           </div>
 
           {/* Catalog Grid inside Laptop Screen */}

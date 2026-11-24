@@ -11,10 +11,10 @@ import { images } from "@/data/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GK Events — Premium AV Rental, Photography & Live Streaming" },
+      { title: "GK Events — Premium Event Equipment Rental, Photography & Live Streaming" },
       { name: "description", content: "Sound systems, LED walls, LED TVs, projectors, photography, videography and live streaming for weddings and corporate events." },
       { property: "og:title", content: "GK Events — Creating Experiences Beyond the Ordinary" },
-      { property: "og:description", content: "Premium AV equipment, event technology, photography and live streaming." },
+      { property: "og:description", content: "Premium event equipment, stage technology, photography and live streaming." },
     ],
   }),
   component: Home,

@@ -8,9 +8,9 @@ import { equipmentCatalog, images, waLink } from "@/data/site";
 export const Route = createFileRoute("/equipment")({
   head: () => ({
     meta: [
-      { title: "AV Equipment Rental Catalog | GK Events" },
+      { title: "Event Equipment Rental Catalog | GK Events" },
       { name: "description", content: "Rent sound systems, LED walls, LED TVs, projectors, screens, microphones, mixers and stage lighting." },
-      { property: "og:title", content: "AV Equipment Rental | GK Events" },
+      { property: "og:title", content: "Event Equipment Rental | GK Events" },
       { property: "og:description", content: "Browse sound, display, projection and lighting equipment for rent." },
     ],
   }),
@@ -25,7 +25,7 @@ function Equipment() {
   const list = equipmentCatalog.filter((e) => cat === "All" || e.cat === cat);
   return (
     <>
-      <PageHero eyebrow="AV Equipment Rental" title="Pro-grade gear," highlight="ready to roll." intro="Sound, LED, projection and lighting equipment delivered, installed and operated by our technicians." image={images.equipment} />
+      <PageHero eyebrow="Equipment Rental" title="Pro-grade gear," highlight="ready to roll." intro="Sound, LED, projection and lighting equipment delivered, installed and operated by our technicians." image={images.equipment} />
       <Section eyebrow="Catalog" title="Choose a category">
         <div className="mb-10 flex flex-wrap gap-2">
           {cats.map((c) => (

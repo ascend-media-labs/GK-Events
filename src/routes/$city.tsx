@@ -205,7 +205,7 @@ function CityPage() {
 
               {/* Exact Main Heading */}
               <h1 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl leading-[1.15]">
-                AV equipment for rent in <span className="text-gold">{city.name}</span>
+                Event equipment for rent in <span className="text-gold">{city.name}</span>
               </h1>
 
               {/* Exact Subtitle Style */}
@@ -233,7 +233,7 @@ function CityPage() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Button asChild variant="whatsapp" size="xl" className="rounded-full shadow-md font-bold px-6 text-white">
                   <a
-                    href={waLink(`Hi GK Events, I would like to rent AV equipment in ${city.name}.`)}
+                    href={waLink(`Hi GK Events, I would like to rent event equipment in ${city.name}.`)}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -420,7 +420,7 @@ function CityPage() {
         <div className="container-x">
           <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-8 sm:p-14 shadow-md">
             <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-slate-950">
-              Ready to book AV equipment in <span className="text-gold">{city.name}</span>?
+              Ready to book event equipment in <span className="text-gold">{city.name}</span>?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 leading-relaxed font-normal">
               Contact our {city.name} team for immediate availability, transparent quote breakdown, and prompt on-time setup.

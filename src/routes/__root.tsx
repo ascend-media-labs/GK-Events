@@ -82,10 +82,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GK Events — Premium AV Equipment Rental & Event Production" },
+      { title: "GK Events — Premium Event Equipment Rental & Event Production" },
       { name: "description", content: "Sound, LED walls, projectors, photography, films and live streaming for weddings and corporate events." },
       { name: "author", content: "GK Events" },
-      { property: "og:title", content: "GK Events — Premium AV Rental" },
+      { property: "og:title", content: "GK Events — Premium Event Productions" },
       { property: "og:description", content: "Sound, LED walls, photography, films and live streaming for every event." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

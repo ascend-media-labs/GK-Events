@@ -105,7 +105,7 @@ export function Logo({
             GK <span className="text-gold">EVENTS</span>
           </span>
           <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
-            Audio Visuals & Tech
+            Event Productions & Tech
           </span>
         </div>
       )}
@@ -209,7 +209,7 @@ export function Footer() {
         <div>
           <Logo className="h-20" />
           <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-            Premium AV equipment rental, photography, films and live event production — with blessings, for every celebration.
+            Premium event equipment rental, photography, films and live event production — with blessings, for every celebration.
           </p>
         </div>
         <FooterCol title="Company" items={mainNav} />
