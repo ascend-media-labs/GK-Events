@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Award, Camera, ChevronDown, Clock, Headphones, Lightbulb, MonitorPlay, Projector, Radio, ShieldCheck, Speaker, Star, Tv, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Faq, FinalCta, Process, Section } from "@/components/site/Blocks";
+import { HeroCarousel } from "@/components/site/HeroCarousel";
+import { StatsHighlights } from "@/components/site/StatsHighlights";
+import { CitySelector } from "@/components/site/CitySelector";
+import { HowItWorks } from "@/components/site/HowItWorks";
 import { images } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -17,14 +21,70 @@ export const Route = createFileRoute("/")({
 });
 
 const cats = [
-  { icon: Speaker, name: "Sound Systems", to: "/sound-system-rental" },
-  { icon: MonitorPlay, name: "LED Walls", to: "/led-wall-rental" },
-  { icon: Tv, name: "LED TVs", to: "/led-tv-rental" },
-  { icon: Projector, name: "Projectors", to: "/projector-rental" },
-  { icon: Lightbulb, name: "Stage Lighting", to: "/event-solutions" },
-  { icon: Camera, name: "Photography", to: "/photography" },
-  { icon: Video, name: "Videography", to: "/videography" },
-  { icon: Radio, name: "Live Streaming", to: "/live-streaming" },
+  {
+    icon: Speaker,
+    name: "Sound Systems",
+    to: "/sound-system-rental",
+    image: images.services.sound,
+    tag: "Concert Line Arrays",
+    desc: "Line arrays, subwoofers, digital mixing consoles, and wireless mics for crystal-clear acoustics.",
+  },
+  {
+    icon: MonitorPlay,
+    name: "LED Walls",
+    to: "/led-wall-rental",
+    image: images.services.ledWall,
+    tag: "P2.5 Curved Ultra-HD",
+    desc: "Curved and flat seamless LED video screen backdrops with vibrant color and high refresh rates.",
+  },
+  {
+    icon: Tv,
+    name: "LED TVs",
+    to: "/led-tv-rental",
+    image: images.services.ledTv,
+    tag: "65\"–85\" 4K Smart TVs",
+    desc: "Commercial 4K UHD screens mounted on designer matte black floor stands for expos & conferences.",
+  },
+  {
+    icon: Projector,
+    name: "Projectors",
+    to: "/projector-rental",
+    image: images.services.projector,
+    tag: "High-Lumen Laser 4K",
+    desc: "High-brightness laser projection systems with motorized tensioned screens for large halls.",
+  },
+  {
+    icon: Lightbulb,
+    name: "Stage Lighting",
+    to: "/event-solutions",
+    image: images.services.lighting,
+    tag: "DMX Moving Heads & Lasers",
+    desc: "Intelligent beam lights, warm ambient par cans, stage blinders, and atmospheric haze effects.",
+  },
+  {
+    icon: Camera,
+    name: "Photography",
+    to: "/photography",
+    image: images.services.photography,
+    tag: "Candid & Cinematic",
+    desc: "Experienced wedding and corporate photographers capturing timeless, high-resolution memories.",
+  },
+  {
+    icon: Video,
+    name: "Videography",
+    to: "/videography",
+    image: images.services.videography,
+    tag: "4K Cinema & Gimbal Films",
+    desc: "Full-frame cinema cameras, motorized gimbals, and drone videography for cinematic event films.",
+  },
+  {
+    icon: Radio,
+    name: "Live Streaming",
+    to: "/live-streaming",
+    image: images.services.liveStreaming,
+    tag: "Multi-Cam Broadcast",
+    desc: "Multi-camera broadcast switching with YouTube, Zoom, and private relay for families worldwide.",
+  },
 ];
 
 const why = [
@@ -42,37 +102,63 @@ const testimonials = [
 
 function Home() {
   return (
-    <>
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
-        <img src={images.hero} alt="Concert stage with LED wall and stage lights" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-hero-overlay" />
-        <div className="container-x relative animate-rise">
-          <p className="eyebrow">Audio · Visual · Light · Film</p>
-          <h1 className="mt-5 max-w-4xl text-5xl font-extrabold leading-[1.05] sm:text-7xl">Creating Experiences <span className="text-gold">Beyond the Ordinary.</span></h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">Premium Audio Visual Equipment, Event Technology, Photography, Videography and Live Streaming Solutions for Every Occasion.</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Button asChild variant="hero" size="xl"><Link to="/equipment">Explore Our Services <ArrowRight /></Link></Button>
-            <Button asChild variant="glass" size="xl"><Link to="/contact">Get a Quote</Link></Button>
-          </div>
-        </div>
-        <a href="#highlights" aria-label="Scroll down" className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bob text-primary"><ChevronDown className="h-8 w-8" /></a>
-      </section>
+    <div className="bg-white text-slate-900">
+      <HeroCarousel />
 
-      <section id="highlights" className="border-y border-border bg-card">
-        <div className="container-x grid grid-cols-2 gap-6 py-10 text-center lg:grid-cols-4">
-          {[["1,200+", "Events delivered"], ["10+", "Years experience"], ["500+", "AV equipment units"], ["24/7", "Event support"]].map(([n, l]) => (
-            <div key={l}><p className="text-gold font-display text-4xl font-extrabold">{n}</p><p className="mt-1 text-sm text-muted-foreground">{l}</p></div>
-          ))}
-        </div>
-      </section>
+      <StatsHighlights />
+
+      <CitySelector />
 
       <Section eyebrow="Equipment & Services" title={<>Everything your event <span className="text-gold">needs.</span></>}>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cats.map((c) => (
-            <Link key={c.name} to={c.to} className="group rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-gold">
-              <c.icon className="h-9 w-9 text-primary" />
-              <p className="mt-5 font-display font-bold">{c.name}</p>
-              <span className="mt-2 inline-flex items-center gap-1 text-xs text-muted-foreground group-hover:text-primary">Explore <ArrowRight className="h-3 w-3" /></span>
+            <Link
+              key={c.name}
+              to={c.to}
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-1.5 hover:border-amber-500/50 hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)]"
+            >
+              {/* Service Photography Header */}
+              <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-100">
+                <img
+                  src={c.image}
+                  alt={c.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                {/* Natural bottom gradient fade to white card */}
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/15 to-transparent" />
+
+                {/* Floating Icon Pill */}
+                <div className="absolute top-3 left-3 flex h-9 w-9 items-center justify-center rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 text-amber-600 shadow-xs transition-colors group-hover:border-amber-400 group-hover:bg-amber-50">
+                  <c.icon className="h-4.5 w-4.5" />
+                </div>
+
+                {/* Feature Spec Tag */}
+                <span className="absolute top-3 right-3 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 px-2.5 py-0.5 text-[10px] font-bold text-slate-700 tracking-wide uppercase shadow-xs">
+                  {c.tag}
+                </span>
+              </div>
+
+              {/* Service Content */}
+              <div className="flex flex-1 flex-col justify-between p-5 pt-3">
+                <div>
+                  <h3 className="font-display text-lg font-bold text-slate-900 transition-colors group-hover:text-amber-700">
+                    {c.name}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                    {c.desc}
+                  </p>
+                </div>
+
+                <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-3">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 transition-all group-hover:text-amber-900 group-hover:translate-x-0.5">
+                    Explore Service <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-400 uppercase font-semibold">
+                    Rental & Crew
+                  </span>
+                </div>
+              </div>
             </Link>
           ))}
         </div>
@@ -85,31 +171,29 @@ function Home() {
       <Section eyebrow="Featured Gallery" title="Recent productions">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {[images.hero, images.wedding, images.corporate, images.equipment].map((src, i) => (
-            <img key={i} src={src} alt="GK Events production" loading="lazy" className={`h-56 w-full rounded-3xl object-cover sm:h-72 ${i === 0 ? "md:col-span-2" : ""}`} />
+            <img key={i} src={src} alt="GK Events production" loading="lazy" className={`h-56 w-full rounded-3xl object-cover shadow-sm border border-slate-200/80 sm:h-72 ${i === 0 ? "md:col-span-2" : ""}`} />
           ))}
         </div>
-        <Button asChild variant="glass" size="xl" className="mt-8"><Link to="/gallery">View full gallery <ArrowRight /></Link></Button>
+        <Button asChild variant="outline" size="xl" className="mt-8 rounded-full border-slate-300 bg-white hover:bg-slate-50 text-slate-800 font-bold shadow-xs"><Link to="/gallery">View full gallery <ArrowRight /></Link></Button>
       </Section>
 
       <Section eyebrow="Why GK Events" title="Trusted by families and brands">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {why.map((w) => (
-            <div key={w.name} className="glass rounded-3xl p-7"><w.icon className="h-8 w-8 text-accent" /><h3 className="mt-4 text-lg font-bold">{w.name}</h3><p className="mt-2 text-sm text-muted-foreground">{w.desc}</p></div>
+            <div key={w.name} className="rounded-3xl border border-slate-200/80 bg-slate-50/70 p-7 shadow-xs hover:bg-white hover:border-amber-400 hover:shadow-md transition-all"><w.icon className="h-8 w-8 text-amber-600" /><h3 className="mt-4 text-lg font-bold text-slate-900">{w.name}</h3><p className="mt-2 text-sm text-slate-600 leading-relaxed">{w.desc}</p></div>
           ))}
         </div>
       </Section>
 
-      <Section eyebrow="Our Process" title="Simple from enquiry to encore" className="pt-0">
-        <Process steps={["Share your requirement", "Free consultation", "Custom quote", "Setup & testing", "Live event support"]} />
-      </Section>
+      <HowItWorks />
 
       <Section eyebrow="Testimonials" title="What clients say" className="pt-0">
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} className="rounded-3xl border border-border bg-card p-7">
-              <div className="flex gap-1 text-primary">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
-              <blockquote className="mt-4 text-muted-foreground">“{t.text}”</blockquote>
-              <figcaption className="mt-5 flex items-center gap-3"><Users className="h-5 w-5 text-accent" /><span><b>{t.name}</b><br /><span className="text-xs text-muted-foreground">{t.role}</span></span></figcaption>
+            <figure key={t.name} className="rounded-3xl border border-slate-200/80 bg-white p-7 shadow-xs">
+              <div className="flex gap-1 text-amber-500">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
+              <blockquote className="mt-4 text-slate-700 leading-relaxed font-medium">“{t.text}”</blockquote>
+              <figcaption className="mt-5 flex items-center gap-3"><Users className="h-5 w-5 text-amber-600" /><span><b className="text-slate-900">{t.name}</b><br /><span className="text-xs text-slate-500">{t.role}</span></span></figcaption>
             </figure>
           ))}
         </div>
@@ -125,20 +209,20 @@ function Home() {
       </Section>
 
       <FinalCta />
-    </>
+    </div>
   );
 }
 
 function Split({ img, eyebrow, title, text, to, reverse }: { img: string; eyebrow: string; title: string; text: string; to: string; reverse?: boolean }) {
   return (
-    <section className="py-12 sm:py-16">
+    <section className="py-12 sm:py-16 bg-white text-slate-900">
       <div className="container-x grid items-center gap-10 lg:grid-cols-2">
-        <img src={img} alt={eyebrow} loading="lazy" className={`aspect-[4/3] w-full rounded-[2rem] object-cover ${reverse ? "lg:order-2" : ""}`} />
+        <img src={img} alt={eyebrow} loading="lazy" className={`aspect-[4/3] w-full rounded-[2rem] object-cover border border-slate-200/80 shadow-md ${reverse ? "lg:order-2" : ""}`} />
         <div>
           <p className="eyebrow">{eyebrow}</p>
-          <h2 className="mt-3 text-3xl font-extrabold sm:text-5xl">{title}</h2>
-          <p className="mt-5 text-lg text-muted-foreground">{text}</p>
-          <Button asChild variant="hero" size="xl" className="mt-8"><Link to={to}>Learn more <ArrowRight /></Link></Button>
+          <h2 className="mt-3 text-3xl font-extrabold text-slate-950 sm:text-5xl">{title}</h2>
+          <p className="mt-5 text-lg text-slate-600 leading-relaxed font-medium">{text}</p>
+          <Button asChild variant="hero" size="xl" className="mt-8 rounded-full shadow-gold font-bold"><Link to={to}>Learn more <ArrowRight /></Link></Button>
         </div>
       </div>
     </section>

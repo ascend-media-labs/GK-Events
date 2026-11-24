@@ -10,15 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CityRouteImport } from './routes/$city'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CorporateEventsRouteImport } from './routes/corporate-events'
 import { Route as EquipmentRouteImport } from './routes/equipment'
 import { Route as EventSolutionsRouteImport } from './routes/event-solutions'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as LedTvRentalRouteImport } from './routes/led-tv-rental'
 import { Route as LedWallRentalRouteImport } from './routes/led-wall-rental'
 import { Route as LiveStreamingRouteImport } from './routes/live-streaming'
+import { Route as OffersRouteImport } from './routes/offers'
 import { Route as PhotographyRouteImport } from './routes/photography'
 import { Route as ProjectorRentalRouteImport } from './routes/projector-rental'
 import { Route as SoundSystemRentalRouteImport } from './routes/sound-system-rental'
@@ -28,6 +31,11 @@ import { Route as WeddingEventsRouteImport } from './routes/wedding-events'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CityRoute = CityRouteImport.update({
+  id: '/$city',
+  path: '/$city',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -55,6 +63,11 @@ const EventSolutionsRoute = EventSolutionsRouteImport.update({
   path: '/event-solutions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -73,6 +86,11 @@ const LedWallRentalRoute = LedWallRentalRouteImport.update({
 const LiveStreamingRoute = LiveStreamingRouteImport.update({
   id: '/live-streaming',
   path: '/live-streaming',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OffersRoute = OffersRouteImport.update({
+  id: '/offers',
+  path: '/offers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PhotographyRoute = PhotographyRouteImport.update({
@@ -103,15 +121,18 @@ const WeddingEventsRoute = WeddingEventsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$city': typeof CityRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/corporate-events': typeof CorporateEventsRoute
   '/equipment': typeof EquipmentRoute
   '/event-solutions': typeof EventSolutionsRoute
+  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/led-tv-rental': typeof LedTvRentalRoute
   '/led-wall-rental': typeof LedWallRentalRoute
   '/live-streaming': typeof LiveStreamingRoute
+  '/offers': typeof OffersRoute
   '/photography': typeof PhotographyRoute
   '/projector-rental': typeof ProjectorRentalRoute
   '/sound-system-rental': typeof SoundSystemRentalRoute
@@ -120,15 +141,18 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$city': typeof CityRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/corporate-events': typeof CorporateEventsRoute
   '/equipment': typeof EquipmentRoute
   '/event-solutions': typeof EventSolutionsRoute
+  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/led-tv-rental': typeof LedTvRentalRoute
   '/led-wall-rental': typeof LedWallRentalRoute
   '/live-streaming': typeof LiveStreamingRoute
+  '/offers': typeof OffersRoute
   '/photography': typeof PhotographyRoute
   '/projector-rental': typeof ProjectorRentalRoute
   '/sound-system-rental': typeof SoundSystemRentalRoute
@@ -138,15 +162,18 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$city': typeof CityRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/corporate-events': typeof CorporateEventsRoute
   '/equipment': typeof EquipmentRoute
   '/event-solutions': typeof EventSolutionsRoute
+  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/led-tv-rental': typeof LedTvRentalRoute
   '/led-wall-rental': typeof LedWallRentalRoute
   '/live-streaming': typeof LiveStreamingRoute
+  '/offers': typeof OffersRoute
   '/photography': typeof PhotographyRoute
   '/projector-rental': typeof ProjectorRentalRoute
   '/sound-system-rental': typeof SoundSystemRentalRoute
@@ -157,15 +184,18 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$city'
     | '/about'
     | '/contact'
     | '/corporate-events'
     | '/equipment'
     | '/event-solutions'
+    | '/events'
     | '/gallery'
     | '/led-tv-rental'
     | '/led-wall-rental'
     | '/live-streaming'
+    | '/offers'
     | '/photography'
     | '/projector-rental'
     | '/sound-system-rental'
@@ -174,15 +204,18 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$city'
     | '/about'
     | '/contact'
     | '/corporate-events'
     | '/equipment'
     | '/event-solutions'
+    | '/events'
     | '/gallery'
     | '/led-tv-rental'
     | '/led-wall-rental'
     | '/live-streaming'
+    | '/offers'
     | '/photography'
     | '/projector-rental'
     | '/sound-system-rental'
@@ -191,15 +224,18 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/$city'
     | '/about'
     | '/contact'
     | '/corporate-events'
     | '/equipment'
     | '/event-solutions'
+    | '/events'
     | '/gallery'
     | '/led-tv-rental'
     | '/led-wall-rental'
     | '/live-streaming'
+    | '/offers'
     | '/photography'
     | '/projector-rental'
     | '/sound-system-rental'
@@ -209,15 +245,18 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CityRoute: typeof CityRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   CorporateEventsRoute: typeof CorporateEventsRoute
   EquipmentRoute: typeof EquipmentRoute
   EventSolutionsRoute: typeof EventSolutionsRoute
+  EventsRoute: typeof EventsRoute
   GalleryRoute: typeof GalleryRoute
   LedTvRentalRoute: typeof LedTvRentalRoute
   LedWallRentalRoute: typeof LedWallRentalRoute
   LiveStreamingRoute: typeof LiveStreamingRoute
+  OffersRoute: typeof OffersRoute
   PhotographyRoute: typeof PhotographyRoute
   ProjectorRentalRoute: typeof ProjectorRentalRoute
   SoundSystemRentalRoute: typeof SoundSystemRentalRoute
@@ -232,6 +271,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$city': {
+      id: '/$city'
+      path: '/$city'
+      fullPath: '/$city'
+      preLoaderRoute: typeof CityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -269,6 +315,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventSolutionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
@@ -295,6 +348,13 @@ declare module '@tanstack/react-router' {
       path: '/live-streaming'
       fullPath: '/live-streaming'
       preLoaderRoute: typeof LiveStreamingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offers': {
+      id: '/offers'
+      path: '/offers'
+      fullPath: '/offers'
+      preLoaderRoute: typeof OffersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/photography': {
@@ -337,15 +397,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CityRoute: CityRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   CorporateEventsRoute: CorporateEventsRoute,
   EquipmentRoute: EquipmentRoute,
   EventSolutionsRoute: EventSolutionsRoute,
+  EventsRoute: EventsRoute,
   GalleryRoute: GalleryRoute,
   LedTvRentalRoute: LedTvRentalRoute,
   LedWallRentalRoute: LedWallRentalRoute,
   LiveStreamingRoute: LiveStreamingRoute,
+  OffersRoute: OffersRoute,
   PhotographyRoute: PhotographyRoute,
   ProjectorRentalRoute: ProjectorRentalRoute,
   SoundSystemRentalRoute: SoundSystemRentalRoute,

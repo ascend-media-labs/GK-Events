@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { Header, Footer, FloatingButtons } from "@/components/site/Layout";
+import { Header, Footer, FloatingButtons, AnnouncementBar } from "@/components/site/Layout";
 
 function NotFoundComponent() {
   return (
@@ -127,6 +127,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <AnnouncementBar />
       <Header />
       <main><Outlet /></main>
       <Footer />

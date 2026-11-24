@@ -3,8 +3,52 @@ import wedding from "@/assets/wedding.jpg";
 import corporate from "@/assets/corporate.jpg";
 import equipment from "@/assets/equipment.jpg";
 import camera from "@/assets/camera.jpg";
+import weddingLiveStage from "@/assets/wedding-live-stage.jpg";
+import stageCurvedLed from "@/assets/stage-curved-led.jpg";
+import liveBroadcastConsole from "@/assets/live-broadcast-console.jpg";
+import weddingGlobalStream from "@/assets/wedding-global-stream.jpg";
+import serviceSound from "@/assets/service-sound.jpg";
+import serviceLedWall from "@/assets/service-led-wall.jpg";
+import serviceLedTv from "@/assets/service-led-tv.jpg";
+import serviceProjector from "@/assets/service-projector.jpg";
+import serviceLighting from "@/assets/service-lighting.jpg";
+import servicePhotography from "@/assets/service-photography.jpg";
+import serviceVideography from "@/assets/service-videography.jpg";
+import serviceLiveStreaming from "@/assets/service-live-streaming.jpg";
+import cityHyderabad from "@/assets/city-hyderabad.jpg";
+import cityBangalore from "@/assets/city-bangalore.jpg";
+import cityMumbai from "@/assets/city-mumbai.jpg";
+import cityChennai from "@/assets/city-chennai.jpg";
+import cityPune from "@/assets/city-pune.jpg";
 
-export const images = { hero, wedding, corporate, equipment, camera };
+export const images = {
+  hero,
+  wedding,
+  corporate,
+  equipment,
+  camera,
+  weddingLiveStage,
+  stageCurvedLed,
+  liveBroadcastConsole,
+  weddingGlobalStream,
+  services: {
+    sound: serviceSound,
+    ledWall: serviceLedWall,
+    ledTv: serviceLedTv,
+    projector: serviceProjector,
+    lighting: serviceLighting,
+    photography: servicePhotography,
+    videography: serviceVideography,
+    liveStreaming: serviceLiveStreaming,
+  },
+  cities: {
+    hyderabad: cityHyderabad,
+    bangalore: cityBangalore,
+    mumbai: cityMumbai,
+    chennai: cityChennai,
+    pune: cityPune,
+  },
+};
 
 // Placeholder contact details — replace with the real ones.
 export const contact = {
@@ -22,11 +66,10 @@ export const waLink = (msg = "Hi GK Events, I'd like a quote for my event.") =>
 export type NavItem = { to: string; label: string };
 export const mainNav: NavItem[] = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
   { to: "/equipment", label: "Equipment" },
-  { to: "/wedding-events", label: "Weddings" },
+  { to: "/offers", label: "Offers" },
+  { to: "/events", label: "Events" },
   { to: "/corporate-events", label: "Corporate" },
-  { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },
 ];
 export const serviceNav: NavItem[] = [

@@ -44,9 +44,9 @@ function Gallery() {
           {list.map((i, idx) => (
             <button key={idx} onClick={() => setView(i.src)} className="group relative mb-4 block w-full overflow-hidden rounded-3xl text-left">
               <img src={i.src} alt={i.title} loading="lazy" className={`w-full object-cover transition duration-500 group-hover:scale-105 ${idx % 3 === 0 ? "aspect-[3/4]" : "aspect-[4/3]"}`} />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background to-transparent p-5">
-                <span className="text-xs font-bold uppercase tracking-widest text-primary">{i.tag}</span>
-                <p className="font-bold">{i.title}</p>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/80 to-transparent p-5">
+                <span className="text-xs font-bold uppercase tracking-widest text-amber-700">{i.tag}</span>
+                <p className="font-bold text-slate-950">{i.title}</p>
               </div>
             </button>
           ))}

@@ -6,13 +6,13 @@ import { contact, waLink, type ServiceData } from "@/data/site";
 
 export function PageHero({ eyebrow, title, highlight, intro, image }: { eyebrow: string; title: string; highlight: string; intro: string; image: string }) {
   return (
-    <section className="relative flex min-h-[70vh] items-end overflow-hidden pt-28">
+    <section className="relative flex min-h-[60vh] items-end overflow-hidden pt-28 bg-white">
       <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-hero-overlay" />
       <div className="container-x relative pb-16 animate-rise">
         <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight sm:text-6xl">{title} <span className="text-gold">{highlight}</span></h1>
-        <p className="mt-5 max-w-2xl text-lg text-muted-foreground">{intro}</p>
+        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight text-slate-950 sm:text-6xl">{title} <span className="text-gold">{highlight}</span></h1>
+        <p className="mt-5 max-w-2xl text-lg text-slate-600 font-medium">{intro}</p>
         <CtaButtons className="mt-8" />
       </div>
     </section>
@@ -23,20 +23,20 @@ export function CtaButtons({ className = "" }: { className?: string }) {
   return (
     <div className={`flex flex-wrap gap-3 ${className}`}>
       <Button asChild variant="hero" size="xl"><Link to="/contact">Get a Quote <ArrowRight /></Link></Button>
-      <Button asChild variant="whatsapp" size="xl"><a href={waLink()} target="_blank" rel="noreferrer"><MessageCircle />WhatsApp</a></Button>
-      <Button asChild variant="glass" size="xl"><a href={contact.phoneHref}><Phone />Call Now</a></Button>
+      <Button asChild variant="whatsapp" size="xl" className="text-white font-bold"><a href={waLink()} target="_blank" rel="noreferrer"><MessageCircle />WhatsApp</a></Button>
+      <Button asChild variant="outline" size="xl" className="border-slate-300 bg-white text-slate-800 hover:bg-slate-50 font-bold"><a href={contact.phoneHref}><Phone />Call Now</a></Button>
     </div>
   );
 }
 
 export function Section({ eyebrow, title, children, className = "" }: { eyebrow?: string; title?: ReactNode; children: ReactNode; className?: string }) {
   return (
-    <section className={`py-20 sm:py-28 ${className}`}>
+    <section className={`py-20 sm:py-28 bg-white text-slate-900 ${className}`}>
       <div className="container-x">
         {(eyebrow || title) && (
-          <div className="mb-12 max-w-2xl">
+          <div className="mb-12 max-w-2xl text-left">
             {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-            {title && <h2 className="mt-3 text-3xl font-extrabold sm:text-5xl">{title}</h2>}
+            {title && <h2 className="mt-3 text-3xl font-extrabold text-slate-950 sm:text-5xl">{title}</h2>}
           </div>
         )}
         {children}
@@ -49,10 +49,10 @@ export function CardGrid({ items, icon }: { items: { name: string; desc: string 
   return (
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((i, idx) => (
-        <div key={i.name} className="group rounded-3xl border border-border bg-card p-7 transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-gold">
-          {icon !== false && <span className="font-display text-sm font-bold text-accent">{String(idx + 1).padStart(2, "0")}</span>}
-          <h3 className="mt-3 text-xl font-bold group-hover:text-primary">{i.name}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
+        <div key={i.name} className="group rounded-3xl border border-slate-200/80 bg-white p-7 transition hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-lg shadow-xs">
+          {icon !== false && <span className="font-display text-sm font-bold text-amber-700">{String(idx + 1).padStart(2, "0")}</span>}
+          <h3 className="mt-3 text-xl font-bold text-slate-900 group-hover:text-amber-700">{i.name}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">{i.desc}</p>
         </div>
       ))}
     </div>
@@ -63,9 +63,9 @@ export function Process({ steps }: { steps: string[] }) {
   return (
     <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {steps.map((s, i) => (
-        <li key={s} className="glass rounded-3xl p-6">
+        <li key={s} className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-xs">
           <span className="text-gold font-display text-4xl font-extrabold">{i + 1}</span>
-          <p className="mt-3 font-semibold">{s}</p>
+          <p className="mt-3 font-semibold text-slate-900">{s}</p>
         </li>
       ))}
     </ol>
@@ -75,13 +75,13 @@ export function Process({ steps }: { steps: string[] }) {
 export function Faq({ faqs }: { faqs: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-border rounded-3xl border border-border bg-card">
+    <div className="mx-auto max-w-3xl divide-y divide-slate-200 rounded-3xl border border-slate-200/80 bg-white shadow-xs">
       {faqs.map((f, i) => (
         <div key={f.q}>
-          <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between gap-4 p-6 text-left font-semibold">
-            {f.q}<Plus className={`h-5 w-5 shrink-0 text-primary transition ${open === i ? "rotate-45" : ""}`} />
+          <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between gap-4 p-6 text-left font-bold text-slate-900 hover:text-amber-700 transition-colors">
+            {f.q}<Plus className={`h-5 w-5 shrink-0 text-amber-600 transition ${open === i ? "rotate-45" : ""}`} />
           </button>
-          {open === i && <p className="px-6 pb-6 text-muted-foreground">{f.a}</p>}
+          {open === i && <p className="px-6 pb-6 text-slate-600 leading-relaxed">{f.a}</p>}
         </div>
       ))}
     </div>
@@ -90,12 +90,12 @@ export function Faq({ faqs }: { faqs: { q: string; a: string }[] }) {
 
 export function FinalCta({ title = "Ready to make your event unforgettable?" }: { title?: string }) {
   return (
-    <section className="py-20">
+    <section className="py-20 bg-white">
       <div className="container-x">
-        <div className="relative overflow-hidden rounded-[2rem] border border-primary/30 bg-card p-10 text-center sm:p-16">
-          <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
-          <h2 className="relative text-3xl font-extrabold sm:text-5xl">{title}</h2>
-          <p className="relative mx-auto mt-4 max-w-xl text-muted-foreground">Tell us your date, venue and guest count — get a tailored quote within hours.</p>
+        <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-10 text-center sm:p-16 shadow-md">
+          <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-amber-500/15 blur-3xl" />
+          <h2 className="relative text-3xl font-extrabold text-slate-950 sm:text-5xl">{title}</h2>
+          <p className="relative mx-auto mt-4 max-w-xl text-slate-600 font-medium">Tell us your date, venue and guest count — get a tailored quote within hours.</p>
           <CtaButtons className="relative mt-8 justify-center" />
         </div>
       </div>
@@ -105,18 +105,18 @@ export function FinalCta({ title = "Ready to make your event unforgettable?" }: 
 
 export function ServicePage({ d }: { d: ServiceData }) {
   return (
-    <>
+    <div className="bg-white text-slate-900">
       <PageHero {...d} />
       <Section eyebrow={d.eyebrow} title={d.itemsTitle}><CardGrid items={d.items} /></Section>
-      <section className="py-10">
+      <section className="py-10 bg-white">
         <div className="container-x grid items-center gap-10 lg:grid-cols-2">
-          <img src={d.image} alt={d.eyebrow} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover" />
+          <img src={d.image} alt={d.eyebrow} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover border border-slate-200/80 shadow-md" />
           <div>
             <p className="eyebrow">Solutions</p>
-            <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">Built for your occasion</h2>
+            <h2 className="mt-3 text-3xl font-extrabold text-slate-950 sm:text-4xl">Built for your occasion</h2>
             <ul className="mt-8 space-y-5">
               {d.solutions.map((s) => (
-                <li key={s.name} className="flex gap-4"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-primary" /><div><p className="font-bold">{s.name}</p><p className="text-sm text-muted-foreground">{s.desc}</p></div></li>
+                <li key={s.name} className="flex gap-4"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-amber-600" /><div><p className="font-bold text-slate-900">{s.name}</p><p className="text-sm text-slate-600">{s.desc}</p></div></li>
               ))}
             </ul>
           </div>
@@ -125,14 +125,14 @@ export function ServicePage({ d }: { d: ServiceData }) {
       <Section eyebrow="How it works" title="Our setup process"><Process steps={d.process} /></Section>
       <Section eyebrow="FAQs" title="Questions, answered" className="pt-0"><Faq faqs={d.faqs} /></Section>
       <FinalCta />
-    </>
+    </div>
   );
 }
 
 export function EnquiryForm({ compact }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
   const [err, setErr] = useState("");
-  const field = "w-full rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary";
+  const field = "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none focus:border-amber-500 shadow-xs";
   function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
@@ -143,9 +143,9 @@ export function EnquiryForm({ compact }: { compact?: boolean }) {
     window.open(waLink(msg), "_blank");
     setSent(true);
   }
-  if (sent) return <div className="rounded-3xl border border-primary/40 bg-card p-8 text-center"><CheckCircle2 className="mx-auto h-10 w-10 text-primary" /><p className="mt-4 text-xl font-bold">Thank you!</p><p className="mt-2 text-muted-foreground">Your enquiry opened in WhatsApp. We'll reply shortly.</p></div>;
+  if (sent) return <div className="rounded-3xl border border-amber-500/40 bg-amber-50/70 p-8 text-center"><CheckCircle2 className="mx-auto h-10 w-10 text-amber-600" /><p className="mt-4 text-xl font-bold text-slate-950">Thank you!</p><p className="mt-2 text-slate-600">Your enquiry opened in WhatsApp. We'll reply shortly.</p></div>;
   return (
-    <form onSubmit={submit} className="grid gap-4 rounded-3xl border border-border bg-card p-6 sm:grid-cols-2 sm:p-8">
+    <form onSubmit={submit} className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-6 sm:grid-cols-2 sm:p-8 shadow-sm">
       <input name="name" required placeholder="Your name" className={field} />
       <input name="phone" required inputMode="tel" placeholder="Mobile number" className={field} />
       <select name="event" required className={field} defaultValue="">
@@ -155,7 +155,7 @@ export function EnquiryForm({ compact }: { compact?: boolean }) {
       <input name="date" type="date" className={field} />
       {!compact && <textarea name="message" rows={4} placeholder="What do you need? (sound, LED wall, photography…)" className={`${field} sm:col-span-2`} />}
       {err && <p className="text-sm text-destructive sm:col-span-2">{err}</p>}
-      <Button type="submit" variant="hero" size="xl" className="sm:col-span-2">Send Enquiry <ArrowRight /></Button>
+      <Button type="submit" variant="hero" size="xl" className="sm:col-span-2 font-bold shadow-gold">Send Enquiry <ArrowRight /></Button>
     </form>
   );
 }
