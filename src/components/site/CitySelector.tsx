@@ -56,7 +56,7 @@ const CITIES: CityItem[] = [
 
 export function CitySelector() {
   return (
-    <section className="relative border-b border-slate-200/80 bg-white py-12 sm:py-16 text-slate-900">
+    <section id="cities" className="relative border-b border-slate-200/80 bg-white py-12 sm:py-16 text-slate-900">
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-32 bg-amber-500/5 blur-3xl rounded-full" />
 

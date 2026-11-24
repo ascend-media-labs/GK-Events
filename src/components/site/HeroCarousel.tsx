@@ -372,8 +372,8 @@ export function HeroCarousel() {
 
           {/* Minimal Scroll Down Indicator */}
           <a
-            href="#highlights"
-            aria-label="Scroll down to highlights"
+            href="#cities"
+            aria-label="Scroll down to cities"
             className="hidden lg:inline-flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase text-slate-500 hover:text-amber-700 transition-colors"
           >
             <span>Explore</span>
