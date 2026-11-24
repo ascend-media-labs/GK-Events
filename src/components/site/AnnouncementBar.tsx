@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { Sparkles, ArrowRight, X, PhoneCall } from "lucide-react";
+import { Sparkles, ArrowRight, PhoneCall } from "lucide-react";
 import { contact } from "@/data/site";
 
 // Refined logo-inspired palette: Imperial Gold, Sapphire Blue, Ruby Red, Emerald Green
@@ -90,10 +89,6 @@ function MicroFairyLights() {
 }
 
 export function AnnouncementBar() {
-  const [visible, setVisible] = useState(true);
-
-  if (!visible) return null;
-
   return (
     <aside
       aria-label="Announcement"
@@ -102,7 +97,7 @@ export function AnnouncementBar() {
       {/* Hanging Micro Fairy Lights Garland */}
       <MicroFairyLights />
 
-      <div className="container-x relative flex min-h-[28px] items-center justify-between gap-2.5 py-1 pt-1.5 sm:min-h-[30px] sm:py-1 sm:pt-2">
+      <div className="container-x relative flex min-h-[28px] items-center justify-center py-1 pt-1.5 sm:min-h-[30px] sm:py-1 sm:pt-2">
         {/* Main Content */}
         <div className="mx-auto flex flex-wrap items-center justify-center gap-x-2.5 gap-y-0.5 text-center text-[11px] sm:text-xs">
           {/* Refined Glass Badge in Logo Primary Gold */}
@@ -139,15 +134,6 @@ export function AnnouncementBar() {
             </a>
           </div>
         </div>
-
-        {/* Minimalist Dismiss Button */}
-        <button
-          onClick={() => setVisible(false)}
-          aria-label="Close announcement bar"
-          className="shrink-0 rounded-md p-0.5 text-slate-400 transition-colors hover:bg-slate-200/60 hover:text-slate-800"
-        >
-          <X className="h-3.5 w-3.5" />
-        </button>
       </div>
 
       {/* Fine Golden Divider */}
