@@ -140,26 +140,26 @@ export function BrowseByCategory() {
         <div className="flex items-center justify-center gap-2 mt-8">
           <div
             className={`transition-all duration-300 ${activeIndex === 0
-                ? "h-2 w-7 rounded-full bg-orange-500"
-                : "h-2 w-2 rounded-full bg-slate-300"
+              ? "h-2 w-7 rounded-full bg-orange-500"
+              : "h-2 w-2 rounded-full bg-slate-300"
               }`}
           />
           <div
             className={`transition-all duration-300 ${activeIndex === 1
-                ? "h-2 w-7 rounded-full bg-orange-500"
-                : "h-2 w-2 rounded-full bg-slate-300"
+              ? "h-2 w-7 rounded-full bg-orange-500"
+              : "h-2 w-2 rounded-full bg-slate-300"
               }`}
           />
           <div
             className={`transition-all duration-300 ${activeIndex === 2
-                ? "h-2 w-7 rounded-full bg-orange-500"
-                : "h-2 w-2 rounded-full bg-slate-300"
+              ? "h-2 w-7 rounded-full bg-orange-500"
+              : "h-2 w-2 rounded-full bg-slate-300"
               }`}
           />
           <div
             className={`transition-all duration-300 ${activeIndex === 3
-                ? "h-2 w-7 rounded-full bg-orange-500"
-                : "h-2 w-2 rounded-full bg-slate-300"
+              ? "h-2 w-7 rounded-full bg-orange-500"
+              : "h-2 w-2 rounded-full bg-slate-300"
               }`}
           />
         </div>
