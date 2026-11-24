@@ -10,33 +10,219 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CorporateEventsRouteImport } from './routes/corporate-events'
+import { Route as EquipmentRouteImport } from './routes/equipment'
+import { Route as EventSolutionsRouteImport } from './routes/event-solutions'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as LedTvRentalRouteImport } from './routes/led-tv-rental'
+import { Route as LedWallRentalRouteImport } from './routes/led-wall-rental'
+import { Route as LiveStreamingRouteImport } from './routes/live-streaming'
+import { Route as PhotographyRouteImport } from './routes/photography'
+import { Route as ProjectorRentalRouteImport } from './routes/projector-rental'
+import { Route as SoundSystemRentalRouteImport } from './routes/sound-system-rental'
+import { Route as VideographyRouteImport } from './routes/videography'
+import { Route as WeddingEventsRouteImport } from './routes/wedding-events'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorporateEventsRoute = CorporateEventsRouteImport.update({
+  id: '/corporate-events',
+  path: '/corporate-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipmentRoute = EquipmentRouteImport.update({
+  id: '/equipment',
+  path: '/equipment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventSolutionsRoute = EventSolutionsRouteImport.update({
+  id: '/event-solutions',
+  path: '/event-solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LedTvRentalRoute = LedTvRentalRouteImport.update({
+  id: '/led-tv-rental',
+  path: '/led-tv-rental',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LedWallRentalRoute = LedWallRentalRouteImport.update({
+  id: '/led-wall-rental',
+  path: '/led-wall-rental',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveStreamingRoute = LiveStreamingRouteImport.update({
+  id: '/live-streaming',
+  path: '/live-streaming',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhotographyRoute = PhotographyRouteImport.update({
+  id: '/photography',
+  path: '/photography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectorRentalRoute = ProjectorRentalRouteImport.update({
+  id: '/projector-rental',
+  path: '/projector-rental',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoundSystemRentalRoute = SoundSystemRentalRouteImport.update({
+  id: '/sound-system-rental',
+  path: '/sound-system-rental',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideographyRoute = VideographyRouteImport.update({
+  id: '/videography',
+  path: '/videography',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WeddingEventsRoute = WeddingEventsRouteImport.update({
+  id: '/wedding-events',
+  path: '/wedding-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/corporate-events': typeof CorporateEventsRoute
+  '/equipment': typeof EquipmentRoute
+  '/event-solutions': typeof EventSolutionsRoute
+  '/gallery': typeof GalleryRoute
+  '/led-tv-rental': typeof LedTvRentalRoute
+  '/led-wall-rental': typeof LedWallRentalRoute
+  '/live-streaming': typeof LiveStreamingRoute
+  '/photography': typeof PhotographyRoute
+  '/projector-rental': typeof ProjectorRentalRoute
+  '/sound-system-rental': typeof SoundSystemRentalRoute
+  '/videography': typeof VideographyRoute
+  '/wedding-events': typeof WeddingEventsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/corporate-events': typeof CorporateEventsRoute
+  '/equipment': typeof EquipmentRoute
+  '/event-solutions': typeof EventSolutionsRoute
+  '/gallery': typeof GalleryRoute
+  '/led-tv-rental': typeof LedTvRentalRoute
+  '/led-wall-rental': typeof LedWallRentalRoute
+  '/live-streaming': typeof LiveStreamingRoute
+  '/photography': typeof PhotographyRoute
+  '/projector-rental': typeof ProjectorRentalRoute
+  '/sound-system-rental': typeof SoundSystemRentalRoute
+  '/videography': typeof VideographyRoute
+  '/wedding-events': typeof WeddingEventsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/corporate-events': typeof CorporateEventsRoute
+  '/equipment': typeof EquipmentRoute
+  '/event-solutions': typeof EventSolutionsRoute
+  '/gallery': typeof GalleryRoute
+  '/led-tv-rental': typeof LedTvRentalRoute
+  '/led-wall-rental': typeof LedWallRentalRoute
+  '/live-streaming': typeof LiveStreamingRoute
+  '/photography': typeof PhotographyRoute
+  '/projector-rental': typeof ProjectorRentalRoute
+  '/sound-system-rental': typeof SoundSystemRentalRoute
+  '/videography': typeof VideographyRoute
+  '/wedding-events': typeof WeddingEventsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/corporate-events'
+    | '/equipment'
+    | '/event-solutions'
+    | '/gallery'
+    | '/led-tv-rental'
+    | '/led-wall-rental'
+    | '/live-streaming'
+    | '/photography'
+    | '/projector-rental'
+    | '/sound-system-rental'
+    | '/videography'
+    | '/wedding-events'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/corporate-events'
+    | '/equipment'
+    | '/event-solutions'
+    | '/gallery'
+    | '/led-tv-rental'
+    | '/led-wall-rental'
+    | '/live-streaming'
+    | '/photography'
+    | '/projector-rental'
+    | '/sound-system-rental'
+    | '/videography'
+    | '/wedding-events'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/corporate-events'
+    | '/equipment'
+    | '/event-solutions'
+    | '/gallery'
+    | '/led-tv-rental'
+    | '/led-wall-rental'
+    | '/live-streaming'
+    | '/photography'
+    | '/projector-rental'
+    | '/sound-system-rental'
+    | '/videography'
+    | '/wedding-events'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  CorporateEventsRoute: typeof CorporateEventsRoute
+  EquipmentRoute: typeof EquipmentRoute
+  EventSolutionsRoute: typeof EventSolutionsRoute
+  GalleryRoute: typeof GalleryRoute
+  LedTvRentalRoute: typeof LedTvRentalRoute
+  LedWallRentalRoute: typeof LedWallRentalRoute
+  LiveStreamingRoute: typeof LiveStreamingRoute
+  PhotographyRoute: typeof PhotographyRoute
+  ProjectorRentalRoute: typeof ProjectorRentalRoute
+  SoundSystemRentalRoute: typeof SoundSystemRentalRoute
+  VideographyRoute: typeof VideographyRoute
+  WeddingEventsRoute: typeof WeddingEventsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +234,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/corporate-events': {
+      id: '/corporate-events'
+      path: '/corporate-events'
+      fullPath: '/corporate-events'
+      preLoaderRoute: typeof CorporateEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipment': {
+      id: '/equipment'
+      path: '/equipment'
+      fullPath: '/equipment'
+      preLoaderRoute: typeof EquipmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/event-solutions': {
+      id: '/event-solutions'
+      path: '/event-solutions'
+      fullPath: '/event-solutions'
+      preLoaderRoute: typeof EventSolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/led-tv-rental': {
+      id: '/led-tv-rental'
+      path: '/led-tv-rental'
+      fullPath: '/led-tv-rental'
+      preLoaderRoute: typeof LedTvRentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/led-wall-rental': {
+      id: '/led-wall-rental'
+      path: '/led-wall-rental'
+      fullPath: '/led-wall-rental'
+      preLoaderRoute: typeof LedWallRentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-streaming': {
+      id: '/live-streaming'
+      path: '/live-streaming'
+      fullPath: '/live-streaming'
+      preLoaderRoute: typeof LiveStreamingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photography': {
+      id: '/photography'
+      path: '/photography'
+      fullPath: '/photography'
+      preLoaderRoute: typeof PhotographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projector-rental': {
+      id: '/projector-rental'
+      path: '/projector-rental'
+      fullPath: '/projector-rental'
+      preLoaderRoute: typeof ProjectorRentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sound-system-rental': {
+      id: '/sound-system-rental'
+      path: '/sound-system-rental'
+      fullPath: '/sound-system-rental'
+      preLoaderRoute: typeof SoundSystemRentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/videography': {
+      id: '/videography'
+      path: '/videography'
+      fullPath: '/videography'
+      preLoaderRoute: typeof VideographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wedding-events': {
+      id: '/wedding-events'
+      path: '/wedding-events'
+      fullPath: '/wedding-events'
+      preLoaderRoute: typeof WeddingEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  CorporateEventsRoute: CorporateEventsRoute,
+  EquipmentRoute: EquipmentRoute,
+  EventSolutionsRoute: EventSolutionsRoute,
+  GalleryRoute: GalleryRoute,
+  LedTvRentalRoute: LedTvRentalRoute,
+  LedWallRentalRoute: LedWallRentalRoute,
+  LiveStreamingRoute: LiveStreamingRoute,
+  PhotographyRoute: PhotographyRoute,
+  ProjectorRentalRoute: ProjectorRentalRoute,
+  SoundSystemRentalRoute: SoundSystemRentalRoute,
+  VideographyRoute: VideographyRoute,
+  WeddingEventsRoute: WeddingEventsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
