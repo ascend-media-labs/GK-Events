@@ -5,6 +5,7 @@ import { Faq, FinalCta, Process, Section } from "@/components/site/Blocks";
 import { HeroShowcase } from "@/components/site/HeroShowcase";
 import { StatsHighlights } from "@/components/site/StatsHighlights";
 import { CitySelector } from "@/components/site/CitySelector";
+import { BrowseByCategory } from "@/components/site/BrowseByCategory";
 import { HowItWorks } from "@/components/site/HowItWorks";
 import { images } from "@/data/site";
 
@@ -106,6 +107,8 @@ function Home() {
       <HeroShowcase />
 
       <CitySelector />
+
+      <BrowseByCategory />
 
       <HowItWorks />
 
