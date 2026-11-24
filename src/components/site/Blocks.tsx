@@ -6,14 +6,27 @@ import { contact, waLink, type ServiceData } from "@/data/site";
 
 export function PageHero({ eyebrow, title, highlight, intro, image }: { eyebrow: string; title: string; highlight: string; intro: string; image: string }) {
   return (
-    <section className="relative flex min-h-[60vh] items-end overflow-hidden pt-28 bg-white">
-      <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-hero-overlay" />
-      <div className="container-x relative pb-16 animate-rise">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-tight text-slate-950 sm:text-6xl">{title} <span className="text-gold">{highlight}</span></h1>
-        <p className="mt-5 max-w-2xl text-lg text-slate-600 font-medium">{intro}</p>
-        <CtaButtons className="mt-8" />
+    <section className="relative w-full pt-4 pb-8 bg-white" aria-label={title}>
+      <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
+        <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-amber-50/40 p-8 sm:p-12 lg:p-14 shadow-[0_20px_50px_rgba(15,23,42,0.04)] grid lg:grid-cols-2 gap-8 items-center">
+          <div className="relative z-10 space-y-4">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs sm:text-[13px] font-bold tracking-wide border border-amber-200/70 shadow-xs">
+              {eyebrow}
+            </span>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 leading-[1.1] tracking-tight">
+              {title} <span className="text-gold">{highlight}</span>
+            </h1>
+            <p className="max-w-xl text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+              {intro}
+            </p>
+            <div className="pt-2">
+              <CtaButtons />
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-md aspect-[16/10] bg-slate-100">
+            <img src={image} alt={title} className="h-full w-full object-cover" />
+          </div>
+        </div>
       </div>
     </section>
   );

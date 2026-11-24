@@ -86,14 +86,14 @@ const METRO_CITIES = [
 ];
 
 export function Logo({
-  className = "h-10 sm:h-12",
+  className = "h-11 sm:h-13",
   showText = true,
 }: {
   className?: string;
   showText?: boolean;
 }) {
   return (
-    <div className="flex items-center gap-2.5 sm:gap-3 select-none">
+    <div className="flex items-center gap-2.5 sm:gap-3.5 select-none">
       <img
         src={emblem}
         alt="GK Events Emblem"
@@ -101,10 +101,10 @@ export function Logo({
       />
       {showText && (
         <div className="flex flex-col justify-center">
-          <span className="font-display text-lg sm:text-xl font-black tracking-tight text-slate-950 leading-none">
+          <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-slate-950 leading-none">
             GK <span className="text-gold">EVENTS</span>
           </span>
-          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
+          <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
             Audio Visuals & Tech
           </span>
         </div>
@@ -118,10 +118,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-transparent transition-all duration-300">
-      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-8 py-2.5 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
+      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-5 sm:px-8 py-3 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
         {/* Brand Logo */}
         <Link to="/" className="group relative flex items-center shrink-0" onClick={() => setOpen(false)}>
-          <Logo className="relative h-10 sm:h-12 w-auto" />
+          <Logo className="relative h-11 sm:h-13 w-auto" />
         </Link>
 
         {/* Central Floating Capsule Nav Links */}
@@ -155,7 +155,7 @@ export function Header() {
                   to={n.to}
                   onClick={() => setOpen(false)}
                   activeOptions={{ exact: true }}
-                  activeProps={{ className: "bg-blue-50 text-blue-700 font-bold border border-blue-200/60" }}
+                  activeProps={{ className: "bg-[#eef5ff] text-[#2563eb] font-bold border border-blue-200/60" }}
                   className="rounded-xl px-3.5 py-2.5 font-semibold text-slate-800 hover:bg-slate-50 hover:text-amber-700 transition-colors"
                 >
                   {n.label}
@@ -195,7 +195,7 @@ function NavLink({ to, label }: { to: string; label: string }) {
       inactiveProps={{
         className: "text-slate-700 hover:text-slate-950 hover:bg-slate-50",
       }}
-      className="rounded-2xl px-4 sm:px-5 py-2 text-sm font-semibold tracking-normal transition-all duration-200"
+      className="rounded-2xl px-5 py-2.5 text-[15px] font-semibold tracking-normal transition-all duration-200"
     >
       {label}
     </Link>
