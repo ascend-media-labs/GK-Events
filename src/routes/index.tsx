@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Award, Camera, ChevronDown, Clock, Headphones, Lightbulb, MonitorPlay, Projector, Radio, ShieldCheck, Speaker, Star, Tv, Users, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Faq, FinalCta, Process, Section } from "@/components/site/Blocks";
-import { HeroCarousel } from "@/components/site/HeroCarousel";
+import { HeroShowcase } from "@/components/site/HeroShowcase";
 import { StatsHighlights } from "@/components/site/StatsHighlights";
 import { CitySelector } from "@/components/site/CitySelector";
 import { HowItWorks } from "@/components/site/HowItWorks";
@@ -103,9 +103,11 @@ const testimonials = [
 function Home() {
   return (
     <div className="bg-white text-slate-900">
-      <HeroCarousel />
+      <HeroShowcase />
 
       <CitySelector />
+
+      <HowItWorks />
 
       <StatsHighlights />
 

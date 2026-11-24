@@ -86,14 +86,14 @@ const METRO_CITIES = [
 ];
 
 export function Logo({
-  className = "h-14 sm:h-16",
+  className = "h-10 sm:h-12",
   showText = true,
 }: {
   className?: string;
   showText?: boolean;
 }) {
   return (
-    <div className="flex items-center gap-2.5 sm:gap-3.5 select-none">
+    <div className="flex items-center gap-2.5 sm:gap-3 select-none">
       <img
         src={emblem}
         alt="GK Events Emblem"
@@ -101,10 +101,10 @@ export function Logo({
       />
       {showText && (
         <div className="flex flex-col justify-center">
-          <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-slate-950 leading-none">
+          <span className="font-display text-lg sm:text-xl font-black tracking-tight text-slate-950 leading-none">
             GK <span className="text-gold">EVENTS</span>
           </span>
-          <span className="text-[9.5px] sm:text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
+          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
             Audio Visuals & Tech
           </span>
         </div>
@@ -115,33 +115,28 @@ export function Logo({
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-2xl transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
-      {/* Fine Golden Ambient Edge Glow */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-amber-500/35 to-transparent" />
-
-      <div className="container-x flex h-20 items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-white/70 backdrop-blur-md transition-all duration-300">
+      <div className="max-w-7xl mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-7 py-2.5 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
         {/* Brand Logo with Ambient Hover Glow */}
         <Link to="/" className="group relative flex items-center shrink-0" onClick={() => setOpen(false)}>
           <div className="absolute -inset-2 rounded-2xl bg-amber-500/10 blur-xl opacity-40 group-hover:opacity-80 transition-opacity" />
-          <Logo className="relative h-13 sm:h-15 w-auto" />
+          <Logo className="relative h-10 sm:h-12 w-auto" />
         </Link>
 
-        {/* Central Floating Capsule Nav Island */}
-        <nav className="hidden lg:flex items-center rounded-full border border-slate-200/90 bg-slate-100/80 p-1.5 shadow-[inset_0_1px_1px_rgba(0,0,0,0.04)] backdrop-blur-xl">
+        {/* Central Floating Capsule Nav Links */}
+        <nav className="hidden lg:flex items-center gap-1 sm:gap-1.5">
           {mainNav.map((n) => (
             <NavLink key={n.to} {...n} />
           ))}
         </nav>
 
-        {/* Right Action Island: CTA Button */}
-        <div className="flex items-center gap-3">
-          {/* Premium Metallic Gold CTA Button */}
+        {/* Right Action: Get a Quote button + Mobile Menu Button */}
+        <div className="flex items-center gap-2 sm:gap-3">
           <Button
             asChild
-            className="hidden sm:inline-flex rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-extrabold shadow-[0_2px_12px_rgba(245,158,11,0.3)] hover:shadow-[0_4px_20px_rgba(245,158,11,0.5)] hover:scale-105 active:scale-95 transition-all duration-300 px-5 py-2 text-xs sm:text-sm tracking-wide border border-amber-300/40"
+            className="hidden sm:inline-flex rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-slate-950 font-extrabold shadow-[0_2px_12px_rgba(245,158,11,0.25)] hover:shadow-[0_4px_20px_rgba(245,158,11,0.4)] hover:scale-105 active:scale-95 transition-all duration-300 px-5 py-2 text-xs sm:text-sm tracking-wide border border-amber-300/40"
           >
             <Link to="/contact">
               <span>Get a Quote</span>
@@ -155,39 +150,18 @@ export function Header() {
             className="rounded-full p-2.5 border border-slate-200 bg-slate-50 text-slate-700 hover:text-slate-950 hover:bg-slate-100 lg:hidden transition-colors"
             onClick={() => setOpen(!open)}
           >
-            {open ? <X className="h-6 w-6 text-amber-600" /> : <Menu className="h-6 w-6" />}
+            {open ? <X className="h-5 w-5 text-amber-600" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation Drawer Card */}
       {open && (
-        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-slate-200 bg-white/98 backdrop-blur-2xl lg:hidden">
-          <div className="container-x py-5 space-y-5">
-            {/* Quick Cities Pill Bar in Mobile */}
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-wider text-amber-700 mb-2 flex items-center gap-1">
-                <MapPin className="h-3 w-3" /> Select Your City
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {METRO_CITIES.map((c) => (
-                  <Link
-                    key={c.id}
-                    to="/$city"
-                    params={{ city: c.id }}
-                    onClick={() => setOpen(false)}
-                    className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700 hover:border-amber-400 hover:text-amber-800 transition-colors"
-                  >
-                    {c.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Main Navigation Links */}
-            <div className="grid gap-1 border-t border-slate-100 pt-4">
+        <div className="lg:hidden max-w-7xl mx-auto mt-2 animate-in fade-in slide-in-from-top-3 duration-200">
+          <div className="rounded-3xl border border-slate-200/90 bg-white p-5 shadow-[0_20px_50px_rgba(15,23,42,0.12)] space-y-4">
+            <div className="grid gap-1">
               <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
-                Pages
+                Navigation
               </p>
               {mainNav.map((n) => (
                 <Link
@@ -195,7 +169,7 @@ export function Header() {
                   to={n.to}
                   onClick={() => setOpen(false)}
                   activeOptions={{ exact: true }}
-                  activeProps={{ className: "bg-amber-50 text-amber-800 font-bold border border-amber-300" }}
+                  activeProps={{ className: "bg-blue-50 text-blue-700 font-bold border border-blue-200/60" }}
                   className="rounded-xl px-3.5 py-2.5 font-semibold text-slate-800 hover:bg-slate-50 hover:text-amber-700 transition-colors"
                 >
                   {n.label}
@@ -203,28 +177,8 @@ export function Header() {
               ))}
             </div>
 
-            {/* Services Links */}
-            <div className="grid gap-1 border-t border-slate-100 pt-4">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
-                AV Equipment & Services
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {RICH_SERVICES.map((s) => (
-                  <Link
-                    key={s.to}
-                    to={s.to}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center gap-2 rounded-xl border border-slate-200/70 bg-slate-50 p-2 text-xs font-semibold text-slate-700 hover:text-amber-700 hover:border-amber-300"
-                  >
-                    <s.icon className="h-3.5 w-3.5 text-amber-600" />
-                    <span className="truncate">{s.label}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
             {/* Direct Contact Action Buttons */}
-            <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100">
+            <div className="grid grid-cols-2 gap-2 pt-3 border-t border-slate-100">
               <Button asChild variant="outline" size="lg" className="rounded-full font-bold border-slate-300 text-slate-800">
                 <a href={contact.phoneHref}>
                   <Phone className="mr-1.5 h-4 w-4 text-amber-600" /> Call Now
@@ -250,12 +204,12 @@ function NavLink({ to, label }: { to: string; label: string }) {
       activeOptions={{ exact: true }}
       activeProps={{
         className:
-          "bg-white text-amber-800 font-extrabold border border-slate-200/90 shadow-xs",
+          "bg-blue-50 text-blue-600 font-bold border border-blue-200/50 shadow-xs",
       }}
       inactiveProps={{
-        className: "text-slate-600 hover:text-slate-950 hover:bg-white/70",
+        className: "text-slate-600 hover:text-slate-950 hover:bg-slate-50",
       }}
-      className="rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200"
+      className="rounded-2xl px-4 sm:px-5 py-2 text-sm font-semibold tracking-normal transition-all duration-200"
     >
       {label}
     </Link>
