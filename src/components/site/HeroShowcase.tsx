@@ -5,24 +5,21 @@ import { waLink } from "@/data/site";
 
 export function HeroShowcase() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-6 pb-12 sm:pt-10 sm:pb-16" aria-label="Hero Showcase">
-      {/* Background Stage Image with Cinematic Gradient Blend */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-[64%] overflow-hidden pointer-events-none select-none">
+    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-8 pb-14 sm:pt-14 sm:pb-20" aria-label="Hero Showcase">
+      {/* Pristine Full-Width Background Stage Image */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         <img
           src="/images/hero-stage-grand.jpg"
           alt="GK Events Royal Wedding Stage & Live Concert Lighting"
-          className="h-full w-full object-cover object-center scale-100 sm:scale-105 transition-transform duration-1000"
+          className="h-full w-full object-cover object-[80%_center] md:object-center transition-transform duration-1000"
           loading="eager"
         />
-        {/* Soft Radial Ambient Glow */}
-        <div className="absolute top-1/4 right-1/4 h-80 w-80 rounded-full bg-amber-500/15 blur-3xl" />
-        <div className="absolute bottom-10 right-1/3 h-64 w-64 rounded-full bg-purple-600/15 blur-3xl" />
-        
-        {/* Gradients to seamlessly blend stage into dark backdrop */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07090e] via-[#07090e]/75 to-transparent hidden lg:block" />
-        <div className="absolute inset-0 bg-[#07090e]/75 lg:hidden" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#07090e] to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#07090e]/80 to-transparent" />
+        {/* Subtle dark vignette on left side so typography is crystal sharp */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07090e]/95 via-[#07090e]/60 to-transparent max-w-3xl hidden md:block" />
+        <div className="absolute inset-0 bg-[#07090e]/65 md:hidden" />
+        {/* Bottom smooth fade into content below */}
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#07090e] via-[#07090e]/70 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#07090e]/50 to-transparent" />
       </div>
 
       {/* Hero Content Container */}
