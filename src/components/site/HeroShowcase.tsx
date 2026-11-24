@@ -65,7 +65,7 @@ const CARDS: ArchCard[] = [
   {
     id: "cinema",
     tag: "CINEMA & BROADCAST",
-    navLabel: "4K Photography & Stream",
+    navLabel: "4K Photography",
     title: "Cinematic Films & Live Stream",
     subtitle: "Full-frame cinema cameras & multi-cam relay",
     image: photoImg,
@@ -90,233 +90,247 @@ export function HeroShowcase() {
   }, [isPaused]);
 
   return (
-    <section className="relative w-full pt-3 pb-6 sm:pt-4 sm:pb-8 bg-white" aria-label="Hero Showcase">
+    <section className="relative w-full pt-3 pb-4 sm:pt-4 sm:pb-6 bg-white" aria-label="Hero Showcase">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
-        {/* Main Hero Card with subtle luxury gold/blue framing */}
-        <div className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-200/90 shadow-[0_20px_60px_rgba(15,23,42,0.06)] bg-gradient-to-b from-[#faf9f6] via-white to-[#f8faff] p-6 sm:p-10 lg:p-12">
+        {/* Main Hero Card with Side-by-Side 2-Column Grid */}
+        <div className="relative w-full rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-slate-200/90 shadow-[0_20px_60px_rgba(15,23,42,0.06)] bg-gradient-to-br from-[#faf9f6] via-white to-[#f4f8ff] p-6 sm:p-9 lg:p-11">
           
           {/* Subtle Ambient Radial Lighting Flares */}
-          <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-amber-400/10 blur-3xl" />
-          <div className="pointer-events-none absolute top-1/3 left-10 h-64 w-64 rounded-full bg-blue-400/8 blur-3xl" />
-          <div className="pointer-events-none absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-white via-white/50 to-transparent" />
+          <div className="pointer-events-none absolute -top-24 right-1/4 h-80 w-80 rounded-full bg-blue-400/12 blur-3xl" />
+          <div className="pointer-events-none absolute top-10 right-10 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white/70 via-white/30 to-transparent" />
 
-          {/* Top Section: Eyebrow, Headline & Action Buttons */}
-          <div className="relative z-10 max-w-3xl mx-auto text-center space-y-4 mb-8 sm:mb-10">
-            {/* Eyebrow Badge */}
-            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/95 text-blue-700 text-xs sm:text-[13px] font-bold tracking-wide border border-blue-200/80 shadow-xs backdrop-blur-sm">
-              <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-              <span>GK Events · Audio Visuals &amp; Event Tech</span>
+          {/* Side-by-Side Grid Layout: Left Content (5 cols) & Right 5-Card Arches Showcase (7 cols) */}
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center min-h-[480px]">
+            
+            {/* Left Column: Eyebrow, Headline & Action Buttons */}
+            <div className="lg:col-span-5 flex flex-col items-start text-left gap-4 max-w-xl">
+              {/* Eyebrow Badge */}
+              <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50/90 text-blue-700 text-xs sm:text-[13px] font-bold tracking-wide border border-blue-200/80 shadow-xs backdrop-blur-sm">
+                <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+                <span>GK Events · Audio Visuals &amp; Event Tech</span>
+              </div>
+
+              {/* Signature Headline */}
+              <h1 className="font-display text-[2.2rem] sm:text-[2.7rem] md:text-[3.1rem] lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.08] tracking-tight">
+                “Professional{" "}
+                <span className="relative inline-block text-blue-600 px-1">
+                  GK Events
+                  <svg
+                    className="pointer-events-none absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)]"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                    fill="none"
+                  >
+                    <path
+                      d="M5,50 C5,15 95,15 95,50 C95,85 8,85 5,55 C4,35 12,25 22,22"
+                      stroke="#2563eb"
+                      strokeWidth="3.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>{" "}
+                Equipment for Rent —<br />
+                delivered &amp;{" "}
+                <span className="relative inline-block text-amber-600 pb-0.5">
+                  setup
+                  <svg
+                    className="pointer-events-none absolute -bottom-1 -left-1 w-[104%] h-2"
+                    viewBox="0 0 100 10"
+                    preserveAspectRatio="none"
+                    fill="none"
+                  >
+                    <path
+                      d="M 2,8 C 30,5 70,9 98,6"
+                      stroke="#d97706"
+                      strokeWidth="3.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+                ”
+              </h1>
+
+              <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                Concert sound line arrays, curved 4K LED walls, grand wedding productions, moving lasers and 4K cinema live broadcasts.
+              </p>
+
+              {/* Action CTAs */}
+              <div className="pt-1 flex flex-wrap items-center gap-3">
+                <Button
+                  asChild
+                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-5 text-sm sm:text-base shadow-[0_4px_16px_rgba(37,99,235,0.28)] transition-all hover:scale-105 active:scale-95"
+                >
+                  <a
+                    href={waLink("Hi GK Events, I'd like to book AV equipment for my event.")}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <MessageCircle className="mr-2 h-4.5 w-4.5" />
+                    Book on WhatsApp
+                  </a>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-full bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-bold px-6 py-5 text-sm sm:text-base shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow transition-all hover:scale-105 active:scale-95"
+                >
+                  <Link to="/equipment">
+                    View Equipment
+                    <ArrowRight className="ml-1.5 h-4 w-4" />
+                  </Link>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  className="hidden sm:inline-flex rounded-full border-slate-200 bg-white/80 hover:bg-white text-slate-700 hover:text-slate-950 font-bold px-4 py-5 text-xs transition-all"
+                >
+                  <a href={contact.phoneHref}>
+                    <Phone className="mr-1.5 h-3.5 w-3.5" />
+                    Call
+                  </a>
+                </Button>
+              </div>
+
+              {/* Live Active Pill Indicator */}
+              <div className="pt-1 flex items-center gap-2 text-xs text-slate-500 font-medium">
+                <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+                <span>Featuring: <strong className="text-slate-900 font-bold">{CARDS[activeIndex]?.title}</strong></span>
+              </div>
             </div>
 
-            {/* Signature Headline */}
-            <h1 className="font-display text-[2.2rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[3.8rem] font-extrabold text-slate-900 leading-[1.08] tracking-tight">
-              “Professional{" "}
-              <span className="relative inline-block text-blue-600 px-1">
-                GK Events
-                <svg
-                  className="pointer-events-none absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)]"
-                  viewBox="0 0 100 100"
-                  preserveAspectRatio="none"
-                  fill="none"
-                >
-                  <path
-                    d="M5,50 C5,15 95,15 95,50 C95,85 8,85 5,55 C4,35 12,25 22,22"
-                    stroke="#2563eb"
-                    strokeWidth="3.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>{" "}
-              Equipment for Rent —<br />
-              delivered &amp;{" "}
-              <span className="relative inline-block text-amber-600 pb-0.5">
-                setup
-                <svg
-                  className="pointer-events-none absolute -bottom-1 -left-1 w-[104%] h-2"
-                  viewBox="0 0 100 10"
-                  preserveAspectRatio="none"
-                  fill="none"
-                >
-                  <path
-                    d="M 2,8 C 30,5 70,9 98,6"
-                    stroke="#d97706"
-                    strokeWidth="3.2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-              ”
-            </h1>
+            {/* Right Column: 5 Stepped Arch Cards Showcase (7 cols) */}
+            <div
+              className="lg:col-span-7 relative w-full flex flex-col justify-end items-center"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              {/* Category Pills Header (matching reference: · ОФОРМЛЕНИЕ · ОРГАНИЗАЦИЯ · ГАЛЕРЕЯ) */}
+              <div className="w-full flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-4 text-[11px] sm:text-xs font-semibold">
+                {CARDS.map((card, idx) => {
+                  const isActive = activeIndex === idx;
+                  return (
+                    <button
+                      key={card.id}
+                      onClick={() => setActiveIndex(idx)}
+                      className={`inline-flex items-center gap-1 transition-all duration-300 px-2.5 py-1 rounded-full ${
+                        isActive
+                          ? "text-blue-600 font-extrabold bg-blue-50 border border-blue-200/80 shadow-xs scale-105"
+                          : "text-slate-500 hover:text-slate-900 hover:bg-slate-100/60"
+                      }`}
+                    >
+                      <span className={`h-1.5 w-1.5 rounded-full ${isActive ? "bg-blue-600" : "bg-slate-300"}`} />
+                      <span>{card.navLabel}</span>
+                    </button>
+                  );
+                })}
+              </div>
 
-            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
-              Concert sound line arrays, curved 4K LED walls, grand wedding productions, moving lasers and 4K cinema live broadcasts.
-            </p>
+              {/* 5 Stepped Arch Cards Row */}
+              <div className="w-full flex items-end justify-center gap-1.5 sm:gap-2 md:gap-3 pb-2">
+                {CARDS.map((card, idx) => {
+                  const isActive = activeIndex === idx;
 
-            {/* Action CTAs */}
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
-              <Button
-                asChild
-                className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold px-7 py-5 text-sm sm:text-base shadow-[0_4px_16px_rgba(37,99,235,0.28)] transition-all hover:scale-105 active:scale-95"
-              >
-                <a
-                  href={waLink("Hi GK Events, I'd like to book AV equipment for my event.")}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-4.5 w-4.5" />
-                  Book on WhatsApp
-                </a>
-              </Button>
+                  // Stepped Arch Heights:
+                  // 0: Low rectangle
+                  // 1: Medium Arch
+                  // 2: Tallest Center Arch
+                  // 3: Medium Arch
+                  // 4: Low rectangle
+                  let heightClass = "h-[170px] sm:h-[200px] md:h-[220px] lg:h-[240px]";
+                  let shapeClass = "rounded-2xl";
 
-              <Button
-                asChild
-                variant="outline"
-                className="rounded-full bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-bold px-7 py-5 text-sm sm:text-base shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow transition-all hover:scale-105 active:scale-95"
-              >
-                <Link to="/equipment">
-                  View Equipment Catalog
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                  if (idx === 1 || idx === 3) {
+                    heightClass = "h-[220px] sm:h-[260px] md:h-[290px] lg:h-[310px]";
+                    shapeClass = "rounded-t-[50px] sm:rounded-t-[70px] md:rounded-t-[80px] rounded-b-2xl";
+                  } else if (idx === 2) {
+                    heightClass = "h-[270px] sm:h-[320px] md:h-[360px] lg:h-[390px]";
+                    shapeClass = "rounded-t-[60px] sm:rounded-t-[90px] md:rounded-t-[110px] rounded-b-2xl";
+                  }
 
-              <Button
-                asChild
-                variant="outline"
-                className="hidden sm:inline-flex rounded-full border-slate-200 bg-white/80 hover:bg-white text-slate-700 hover:text-slate-950 font-bold px-5 py-5 text-sm transition-all"
-              >
-                <a href={contact.phoneHref}>
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Now
-                </a>
-              </Button>
-            </div>
-          </div>
+                  return (
+                    <div
+                      key={card.id}
+                      onClick={() => setActiveIndex(idx)}
+                      className={`group relative cursor-pointer overflow-hidden transition-all duration-500 ease-out select-none ${heightClass} ${shapeClass} ${
+                        isActive
+                          ? "w-[26%] sm:w-[24%] ring-3 ring-blue-600 ring-offset-2 ring-offset-white shadow-[0_20px_40px_rgba(37,99,235,0.24)] -translate-y-2 z-20"
+                          : "w-[17%] sm:w-[18%] opacity-80 hover:opacity-100 hover:-translate-y-1 z-10"
+                      }`}
+                    >
+                      {/* Photo with subtle zoom on hover */}
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        loading={idx === 2 ? "eager" : "lazy"}
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
 
-          {/* Stepped Arches Navigation Links Row (matching the reference · ОФОРМЛЕНИЕ · ОРГАНИЗАЦИЯ · ГАЛЕРЕЯ) */}
-          <div className="relative z-10 flex flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-6 mb-6 sm:mb-8 text-xs sm:text-sm font-semibold tracking-wide">
-            {CARDS.map((card, idx) => {
-              const isActive = activeIndex === idx;
-              return (
-                <button
-                  key={card.id}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`inline-flex items-center gap-1.5 transition-all duration-300 px-3 py-1 rounded-full ${
-                    isActive
-                      ? "text-blue-600 font-extrabold bg-blue-50 border border-blue-200/80 shadow-xs scale-105"
-                      : "text-slate-500 hover:text-slate-900 hover:bg-slate-50"
-                  }`}
-                >
-                  <span className={`h-1.5 w-1.5 rounded-full ${isActive ? "bg-blue-600" : "bg-slate-300"}`} />
-                  <span>{card.navLabel}</span>
-                </button>
-              );
-            })}
-          </div>
+                      {/* Gradient Overlay for Text Legibility */}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-t transition-opacity duration-300 ${
+                          isActive
+                            ? "from-slate-950/90 via-slate-950/30 to-transparent opacity-100"
+                            : "from-slate-950/60 via-transparent to-transparent opacity-60 group-hover:opacity-90"
+                        }`}
+                      />
 
-          {/* 5 Stepped Arch Cards Showcase Container */}
-          <div
-            className="relative z-10 w-full flex items-end justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 pb-2"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {CARDS.map((card, idx) => {
-              const isActive = activeIndex === idx;
+                      {/* Active Indicator Top Pill */}
+                      {isActive && (
+                        <div className="absolute top-2.5 inset-x-0 flex justify-center animate-in fade-in zoom-in-90 duration-300">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-white/95 backdrop-blur-md px-2 py-0.5 text-[8.5px] sm:text-[9.5px] font-extrabold uppercase tracking-wider text-blue-600 shadow-sm border border-blue-200">
+                            <Sparkles className="h-2.5 w-2.5" />
+                            <span>Active</span>
+                          </span>
+                        </div>
+                      )}
 
-              // Heights matching the stepped arch progression from the user's reference:
-              // Index 0: Low rectangle
-              // Index 1: Medium Arch
-              // Index 2: Centerpiece Tallest Arch
-              // Index 3: Medium Arch
-              // Index 4: Low rectangle
-              let heightClass = "h-[190px] sm:h-[220px] md:h-[250px] lg:h-[270px]";
-              let shapeClass = "rounded-2xl";
+                      {/* Bottom Text Label */}
+                      <div className="absolute inset-x-1.5 bottom-2.5 sm:bottom-3 text-center">
+                        <p className="text-[8px] sm:text-[9px] font-extrabold uppercase tracking-wider text-amber-300 drop-shadow-xs line-clamp-1">
+                          {card.tag}
+                        </p>
+                        <h3 className="text-[11px] sm:text-xs md:text-sm font-bold text-white drop-shadow-sm line-clamp-1 leading-tight mt-0.5">
+                          {card.title}
+                        </h3>
 
-              if (idx === 1 || idx === 3) {
-                heightClass = "h-[250px] sm:h-[290px] md:h-[340px] lg:h-[370px]";
-                shapeClass = "rounded-t-[60px] sm:rounded-t-[80px] md:rounded-t-[100px] rounded-b-2xl";
-              } else if (idx === 2) {
-                heightClass = "h-[310px] sm:h-[370px] md:h-[430px] lg:h-[470px]";
-                shapeClass = "rounded-t-[70px] sm:rounded-t-[110px] md:rounded-t-[140px] rounded-b-2xl";
-              }
+                        {/* Explore Link shown on active card */}
+                        {isActive && (
+                          <Link
+                            to={card.link}
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1 text-[10px] font-bold text-blue-300 hover:text-white transition-colors mt-1"
+                          >
+                            <span>Explore</span>
+                            <ArrowRight className="h-2.5 w-2.5" />
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
 
-              return (
-                <div
-                  key={card.id}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`group relative cursor-pointer overflow-hidden transition-all duration-500 ease-out select-none ${heightClass} ${shapeClass} ${
-                    isActive
-                      ? "w-[26%] sm:w-[24%] md:w-[22%] ring-3 ring-blue-600 ring-offset-2 ring-offset-white shadow-[0_24px_50px_rgba(37,99,235,0.22)] -translate-y-2 z-20"
-                      : "w-[17%] sm:w-[18%] md:w-[19%] opacity-80 hover:opacity-100 hover:-translate-y-1 z-10"
-                  }`}
-                >
-                  {/* Photo with subtle zoom on hover */}
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    loading={idx === 2 ? "eager" : "lazy"}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-
-                  {/* Gradient Overlay for Text Legibility */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-t transition-opacity duration-300 ${
-                      isActive
-                        ? "from-slate-950/90 via-slate-950/30 to-transparent opacity-100"
-                        : "from-slate-950/60 via-transparent to-transparent opacity-60 group-hover:opacity-90"
+              {/* Stepper Dots Indicator */}
+              <div className="flex items-center justify-center gap-1.5 mt-3">
+                {CARDS.map((_, idx) => (
+                  <button
+                    key={idx}
+                    aria-label={`Select card ${idx + 1}`}
+                    onClick={() => setActiveIndex(idx)}
+                    className={`transition-all duration-300 rounded-full ${
+                      activeIndex === idx
+                        ? "w-6 h-1.5 bg-blue-600 shadow-sm"
+                        : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
                     }`}
                   />
+                ))}
+              </div>
+            </div>
 
-                  {/* Active Indicator Top Pill */}
-                  {isActive && (
-                    <div className="absolute top-3 inset-x-0 flex justify-center animate-in fade-in zoom-in-90 duration-300">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-white/95 backdrop-blur-md px-2.5 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-blue-600 shadow-sm border border-blue-200">
-                        <Sparkles className="h-3 w-3" />
-                        <span>Active</span>
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Bottom Text Label */}
-                  <div className="absolute inset-x-2 bottom-3 sm:bottom-4 text-center">
-                    <p className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-amber-300 drop-shadow-xs line-clamp-1">
-                      {card.tag}
-                    </p>
-                    <h3 className="text-xs sm:text-sm md:text-base font-bold text-white drop-shadow-sm line-clamp-1 leading-tight mt-0.5">
-                      {card.title}
-                    </h3>
-
-                    {/* Explore Link shown on active card */}
-                    {isActive && (
-                      <Link
-                        to={card.link}
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-300 hover:text-white transition-colors mt-1.5"
-                      >
-                        <span>Explore details</span>
-                        <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Stepper Dots & Progress Bar Indicator */}
-          <div className="relative z-10 flex items-center justify-center gap-2 mt-6">
-            {CARDS.map((_, idx) => (
-              <button
-                key={idx}
-                aria-label={`Select card ${idx + 1}`}
-                onClick={() => setActiveIndex(idx)}
-                className={`transition-all duration-300 rounded-full ${
-                  activeIndex === idx
-                    ? "w-8 h-2 bg-blue-600 shadow-sm"
-                    : "w-2 h-2 bg-slate-300 hover:bg-slate-400"
-                }`}
-              />
-            ))}
           </div>
         </div>
       </div>
