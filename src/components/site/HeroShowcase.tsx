@@ -103,32 +103,58 @@ export function HeroShowcase() {
           {/* Side-by-Side Grid Layout: Left Content (5 cols) & Right 5-Card Arches Showcase (7 cols) */}
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center min-h-[480px]">
             
-            {/* Left Column: Eyebrow, Headline & Action Buttons */}
+            {/* Left Column: Eyebrow, Headline & Action Buttons matching reference */}
             <div className="lg:col-span-5 flex flex-col items-start text-left gap-4 max-w-xl">
-              {/* Eyebrow Badge */}
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50/90 text-blue-700 text-xs sm:text-[13px] font-bold tracking-wide border border-blue-200/80 shadow-xs backdrop-blur-sm">
-                <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-                <span>GK Events · Audio Visuals &amp; Event Tech</span>
+              {/* Eyebrow: GK EVENTS with horizontal divider */}
+              <div className="space-y-1">
+                <div className="flex items-center gap-3">
+                  <span className="font-display text-xs sm:text-sm font-black uppercase tracking-wider text-amber-600">
+                    GK EVENTS
+                  </span>
+                  <div className="h-0.5 w-16 bg-amber-600/70 rounded-full" />
+                </div>
+                <p className="text-[10.5px] sm:text-[11.5px] font-extrabold uppercase tracking-[0.18em] text-slate-800">
+                  PREMIUM EVENT PRODUCTIONS
+                </p>
               </div>
 
-              {/* Clean Signature Headline */}
-              <h1 className="font-display text-[2.2rem] sm:text-[2.7rem] md:text-[3.1rem] lg:text-[3.25rem] font-extrabold text-slate-900 leading-[1.12] tracking-tight">
-                “Professional <span className="text-blue-600">Event Equipment</span> for Rent —<br />
-                delivered &amp; <span className="text-amber-600">setup</span>”
+              {/* Signature Headline */}
+              <h1 className="font-serif text-[2.4rem] sm:text-[2.9rem] md:text-[3.3rem] lg:text-[3.6rem] font-black text-slate-950 leading-[1.08] tracking-tight">
+                Professional<br />
+                Event Equipment<br />
+                for{" "}
+                <span className="relative inline-block text-amber-600 pb-1">
+                  Rent &amp; Setup
+                  {/* Elegant curved gold swoosh */}
+                  <svg
+                    className="pointer-events-none absolute -bottom-1 -left-1 w-[104%] h-3"
+                    viewBox="0 0 100 12"
+                    preserveAspectRatio="none"
+                    fill="none"
+                  >
+                    <path
+                      d="M 2,10 C 30,3 75,5 98,4"
+                      stroke="#d97706"
+                      strokeWidth="3.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-                Concert sound line arrays, curved 4K LED walls, grand wedding productions, moving lasers and 4K cinema live broadcasts.
+              {/* Subtitle Description */}
+              <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-lg">
+                Concert sound line arrays, curved 4K LED walls, stage lighting, grand weddings, corporate productions, video shooting and live broadcasting.
               </p>
 
               {/* Action CTAs */}
-              <div className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <Button
                   asChild
-                  className="rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-5 text-sm sm:text-base shadow-[0_4px_16px_rgba(37,99,235,0.28)] transition-all hover:scale-105 active:scale-95"
+                  className="rounded-full bg-slate-950 hover:bg-slate-900 text-white font-bold px-6 py-5 text-sm sm:text-base shadow-md transition-all hover:scale-105 active:scale-95 border border-slate-800"
                 >
                   <a
-                    href={waLink("Hi GK Events, I'd like to book AV equipment for my event.")}
+                    href={waLink("Hi GK Events, I'd like to book event equipment.")}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -140,29 +166,18 @@ export function HeroShowcase() {
                 <Button
                   asChild
                   variant="outline"
-                  className="rounded-full bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-bold px-6 py-5 text-sm sm:text-base shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow transition-all hover:scale-105 active:scale-95"
+                  className="rounded-full bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-bold px-6 py-5 text-sm sm:text-base shadow-xs hover:shadow transition-all hover:scale-105 active:scale-95"
                 >
                   <Link to="/equipment">
                     View Equipment
                     <ArrowRight className="ml-1.5 h-4 w-4" />
                   </Link>
                 </Button>
-
-                <Button
-                  asChild
-                  variant="outline"
-                  className="hidden sm:inline-flex rounded-full border-slate-200 bg-white/80 hover:bg-white text-slate-700 hover:text-slate-950 font-bold px-4 py-5 text-xs transition-all"
-                >
-                  <a href={contact.phoneHref}>
-                    <Phone className="mr-1.5 h-3.5 w-3.5" />
-                    Call
-                  </a>
-                </Button>
               </div>
 
               {/* Live Active Pill Indicator */}
               <div className="pt-1 flex items-center gap-2 text-xs text-slate-500 font-medium">
-                <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+                <span className="h-2 w-2 rounded-full bg-amber-600 animate-pulse" />
                 <span>Featuring: <strong className="text-slate-900 font-bold">{CARDS[activeIndex]?.title}</strong></span>
               </div>
             </div>
