@@ -110,9 +110,9 @@ function Home() {
 
       <BrowseByCategory />
 
-      <HowItWorks />
-
       <StatsHighlights />
+
+      <HowItWorks />
 
       <Section eyebrow="Equipment & Services" title={<>Everything your event <span className="text-gold">needs.</span></>}>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -189,8 +189,6 @@ function Home() {
           ))}
         </div>
       </Section>
-
-      <HowItWorks />
 
       <Section eyebrow="Testimonials" title="What clients say" className="pt-0">
         <div className="grid gap-5 md:grid-cols-3">
