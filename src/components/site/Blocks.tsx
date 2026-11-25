@@ -98,17 +98,49 @@ export function Process({ steps }: { steps: string[] }) {
 }
 
 export function Faq({ faqs }: { faqs: { q: string; a: string }[] }) {
-  const [open, setOpen] = useState<number | null>(0);
+  const [openMap, setOpenMap] = useState<Record<number, boolean>>({ 0: true });
+
+  const toggle = (i: number) => {
+    setOpenMap((prev) => ({ ...prev, [i]: !prev[i] }));
+  };
+
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-slate-200 rounded-3xl border border-slate-200/80 bg-white shadow-xs">
-      {faqs.map((f, i) => (
-        <div key={f.q}>
-          <button onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between gap-4 p-6 text-left font-bold text-slate-900 hover:text-amber-700 transition-colors">
-            {f.q}<Plus className={`h-5 w-5 shrink-0 text-amber-600 transition ${open === i ? "rotate-45" : ""}`} />
-          </button>
-          {open === i && <p className="px-6 pb-6 text-slate-600 leading-relaxed">{f.a}</p>}
-        </div>
-      ))}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 w-full">
+      {faqs.map((f, i) => {
+        const isOpen = !!openMap[i];
+        return (
+          <div
+            key={f.q}
+            className={`rounded-2xl sm:rounded-3xl border transition-all duration-200 bg-white ${
+              isOpen
+                ? "border-amber-400/80 shadow-[0_8px_24px_rgba(245,158,11,0.08)] ring-1 ring-amber-400/20"
+                : "border-slate-200/80 shadow-xs hover:border-amber-300 hover:shadow-sm"
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => toggle(i)}
+              className="flex w-full items-center justify-between gap-3 p-5 sm:p-6 text-left font-bold text-slate-900 hover:text-amber-700 transition-colors cursor-pointer"
+            >
+              <span className="text-base sm:text-lg tracking-tight font-display font-bold">
+                {f.q}
+              </span>
+              <div
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-200 ${
+                  isOpen ? "bg-amber-100/80 text-amber-700 rotate-45" : "bg-slate-100 text-slate-500 hover:bg-amber-50 hover:text-amber-600"
+                }`}
+              >
+                <Plus className="h-4.5 w-4.5" />
+              </div>
+            </button>
+            {isOpen && (
+              <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed font-normal border-t border-slate-100/80 pt-3">
+                {f.a}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
