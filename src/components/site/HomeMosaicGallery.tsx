@@ -53,16 +53,21 @@ export function HomeMosaicGallery() {
   return (
     <section className="py-8 sm:py-12 bg-white border-t border-slate-100" aria-label="Featured Gallery">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="text-left max-w-2xl mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs sm:text-[13px] font-bold tracking-wide border border-amber-200/80 shadow-xs mb-3">
-            <Sparkles className="h-3.5 w-3.5 text-amber-600" />
-            <span>GK Events Portfolio</span>
+        {/* Section Header: Left Aligned with Gold Accent Bars */}
+        <div className="flex flex-col items-start text-left max-w-2xl mb-6 sm:mb-8">
+          <div className="flex items-center gap-3 mb-2.5">
+            <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-slate-800">
+              RECENT PRODUCTIONS &amp; PORTFOLIO
+            </span>
+            <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] font-black text-slate-950 tracking-tight">
-            Recent Productions &amp; Gallery
+
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.85rem] font-black text-slate-950 tracking-tight leading-tight">
+            Recent Productions &amp; <span className="text-amber-500">Gallery</span>
           </h2>
-          <p className="mt-2.5 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
+
+          <p className="mt-2 text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
             A quick look at the stages, LED video walls, sound systems and celebrations we produce.
           </p>
         </div>

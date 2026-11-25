@@ -415,16 +415,16 @@ function CityPage() {
       </section>
 
       {/* Final Booking Call to Action */}
-      <section className="py-8 sm:py-12 text-center bg-white">
+      <section className="py-8 sm:py-12 bg-white">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-8 sm:p-14 shadow-md">
+          <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/50 via-white to-amber-50/30 p-8 sm:p-14 shadow-md text-left">
             <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-slate-950">
               Ready to book event equipment in <span className="text-gold">{city.name}</span>?
             </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 leading-relaxed font-normal">
+            <p className="mt-3 max-w-xl text-sm text-slate-600 leading-relaxed font-normal">
               Contact our {city.name} team for immediate availability, transparent quote breakdown, and prompt on-time setup.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <div className="mt-6 flex flex-wrap justify-start gap-3">
               <Button asChild variant="whatsapp" size="xl" className="rounded-full shadow-md font-bold px-6 text-white">
                 <a
                   href={waLink(`Hi GK Events, I would like to book event equipment in ${city.name}.`)}

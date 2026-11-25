@@ -37,13 +37,21 @@ export function WhatWeDo() {
       aria-label="Our Services"
     >
       <div className="mx-auto max-w-[1288px] lg:px-[60px]">
-        {/* Header */}
-        <div className="mx-auto max-w-xl px-5 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600 sm:text-xs">Our Services</p>
-          <h2 className="mt-2 font-display text-[2rem] font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-[2.4rem]">
-            What We Do
+        {/* Header: Clean Left Aligned with Gold Accent Bars */}
+        <div className="flex flex-col items-start text-left max-w-2xl px-4 sm:px-6 lg:px-0 mb-6 sm:mb-8">
+          <div className="flex items-center gap-3 mb-2.5">
+            <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
+            <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-slate-800">
+              OUR SERVICES
+            </span>
+            <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
+          </div>
+
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.85rem] font-black text-slate-950 tracking-tight leading-tight">
+            What We <span className="text-amber-500">Do</span>
           </h2>
-          <p className="mx-auto mt-2 max-w-[22rem] text-sm leading-relaxed text-slate-500 sm:max-w-none">
+
+          <p className="mt-2 text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
             End-to-end event production, equipment rental &amp; technical setup for every scale.
           </p>
         </div>

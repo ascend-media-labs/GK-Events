@@ -47,9 +47,21 @@ export function Section({ eyebrow, title, children, className = "" }: { eyebrow?
     <section className={`py-8 sm:py-12 bg-white text-slate-900 ${className}`}>
       <div className="container-x">
         {(eyebrow || title) && (
-          <div className="mb-6 sm:mb-8 max-w-2xl text-left">
-            {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-            {title && <h2 className="mt-2 text-3xl font-extrabold text-slate-950 sm:text-4xl">{title}</h2>}
+          <div className="flex flex-col items-start text-left max-w-2xl mb-6 sm:mb-8">
+            {eyebrow && (
+              <div className="flex items-center gap-3 mb-2.5">
+                <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
+                <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.25em] text-slate-800">
+                  {eyebrow}
+                </span>
+                <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
+              </div>
+            )}
+            {title && (
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.85rem] font-black text-slate-950 tracking-tight leading-tight">
+                {title}
+              </h2>
+            )}
           </div>
         )}
         {children}
