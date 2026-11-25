@@ -329,24 +329,11 @@ export function Footer() {
         <div className="anim-dj-glow absolute bottom-10 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-purple-600/10 blur-[100px]" />
       </div>
 
-      {/* ── 3. LIVE AUDIO SOUND EQUALIZER STRIP ── */}
-      <div className="relative z-20 border-b border-white/10 bg-[#0e101c]/80 backdrop-blur-md px-4 py-2.5">
-        <div className="max-w-[1288px] mx-auto flex items-center justify-center gap-3">
-          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest hidden sm:inline">
-            SPECTRUM
-          </span>
-          <AudioEqualizerSpectrum />
-          <span className="text-[10px] font-mono text-emerald-400/90 font-bold hidden sm:inline">
-            +2.8 dB
-          </span>
-        </div>
-      </div>
-
-      {/* ── 4. MAIN FOOTER CONTENT GRID ── */}
-      <div className="relative z-20 max-w-[1288px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-8 sm:pb-12">
+      {/* ── 3. MAIN FOOTER CONTENT GRID ── */}
+      <div className="relative z-20 max-w-[1288px] mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
           
-          {/* Column 1: Brand Profile & Original Socials (lg:col-span-4) */}
+          {/* Column 1: Brand Profile, Socials & Live Equalizer (lg:col-span-4) */}
           <div className="lg:col-span-4 flex flex-col items-start text-left">
             
             {/* Dark Logo with Gold Emblem */}
@@ -361,7 +348,7 @@ export function Footer() {
             </p>
 
             {/* Original Social Media Icons Row */}
-            <div>
+            <div className="mb-5">
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2.5">
                 CONNECT &amp; EXPLORE
               </p>
@@ -423,6 +410,17 @@ export function Footer() {
                 </a>
 
               </div>
+            </div>
+
+            {/* Live Audio Spectrum Equalizer */}
+            <div className="flex items-center gap-3 pt-1">
+              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
+                SPECTRUM
+              </span>
+              <AudioEqualizerSpectrum />
+              <span className="text-[10px] font-mono text-emerald-400/90 font-bold">
+                +2.8 dB
+              </span>
             </div>
 
           </div>
