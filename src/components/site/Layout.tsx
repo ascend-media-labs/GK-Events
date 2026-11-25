@@ -334,22 +334,22 @@ export { Footer } from "./Footer";
 
 export function FloatingButtons() {
   return (
-    <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
-      <a
-        href={contact.phoneHref}
-        aria-label="Call GK Events"
-        className="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg transition hover:scale-110 active:scale-95"
-      >
-        <Phone className="h-6 w-6" />
-      </a>
+    <div className="fixed bottom-5 right-5 z-40">
       <a
         href={waLink()}
         target="_blank"
         rel="noreferrer"
-        aria-label="WhatsApp GK Events"
-        className="grid h-14 w-14 place-items-center rounded-full bg-emerald-500 text-white shadow-lg transition hover:scale-110 active:scale-95"
+        aria-label="Chat with GK Events on WhatsApp"
+        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_6px_20px_rgba(37,211,102,0.45)] transition-all duration-300 hover:scale-110 hover:shadow-[0_8px_25px_rgba(37,211,102,0.6)] active:scale-95"
       >
-        <MessageCircle className="h-6 w-6" />
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="h-8 w-8 text-white transition-transform duration-200 group-hover:scale-105"
+          aria-hidden="true"
+        >
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 20.16C10.57 20.16 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.05 20.16ZM16.57 14.45C16.32 14.33 15.1 13.73 14.88 13.65C14.65 13.57 14.49 13.53 14.32 13.78C14.15 14.03 13.67 14.59 13.52 14.76C13.38 14.93 13.23 14.95 12.98 14.83C12.73 14.71 11.94 14.45 11 13.61C10.27 12.96 9.77 12.15 9.63 11.9C9.48 11.65 9.61 11.52 9.74 11.39C9.85 11.28 9.99 11.1 10.11 10.95C10.24 10.8 10.28 10.69 10.36 10.53C10.44 10.36 10.4 10.22 10.34 10.1C10.28 9.97 9.79 8.77 9.59 8.27C9.39 7.78 9.19 7.85 9.04 7.84C8.9 7.83 8.73 7.83 8.57 7.83C8.4 7.83 8.13 7.89 7.9 8.14C7.67 8.39 7.03 8.99 7.03 10.21C7.03 11.43 7.92 12.61 8.04 12.77C8.17 12.94 9.78 15.42 12.25 16.48C12.84 16.74 13.3 16.89 13.66 17C14.25 17.19 14.78 17.16 15.21 17.1C15.68 17.03 16.66 16.51 16.86 15.93C17.07 15.36 17.07 14.87 17.01 14.76C16.94 14.66 16.82 14.58 16.57 14.45Z" />
+        </svg>
       </a>
     </div>
   );
