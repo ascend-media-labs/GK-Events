@@ -365,7 +365,7 @@ export function Footer() {
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2.5">
                 CONNECT &amp; EXPLORE
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3.5">
                 
                 {/* WhatsApp */}
                 <a
@@ -373,9 +373,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Chat on WhatsApp"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-emerald-500 hover:bg-emerald-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <WhatsAppIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <WhatsAppIcon className="h-7 w-7" />
                 </a>
 
                 {/* Instagram */}
@@ -384,9 +384,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Follow GK Events on Instagram"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-pink-500 hover:bg-pink-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <InstagramIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <InstagramIcon className="h-7 w-7" />
                 </a>
 
                 {/* YouTube */}
@@ -395,9 +395,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Watch Event Productions on YouTube"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <YouTubeIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <YouTubeIcon className="h-7 w-7" />
                 </a>
 
                 {/* Facebook */}
@@ -406,9 +406,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GK Events on Facebook"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <FacebookIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <FacebookIcon className="h-7 w-7" />
                 </a>
 
                 {/* LinkedIn */}
@@ -417,9 +417,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GK Events Corporate on LinkedIn"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-blue-400 hover:bg-blue-400/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <LinkedInIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <LinkedInIcon className="h-7 w-7" />
                 </a>
 
               </div>
