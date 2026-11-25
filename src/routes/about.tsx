@@ -18,7 +18,7 @@ function About() {
   return (
     <>
       <PageHero eyebrow="About GK Events" title="Started with a blessing," highlight="built on trust." intro="GK Events began with a simple belief — every celebration deserves to sound, look and feel extraordinary. Today we deliver AV, photography and live production for weddings, brands and festivals." image={images.wedding} />
-      <section className="py-20">
+      <section className="py-8 sm:py-12">
         <div className="container-x grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="eyebrow">Our Story</p>

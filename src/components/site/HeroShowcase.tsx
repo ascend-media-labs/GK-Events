@@ -5,7 +5,7 @@ import { waLink } from "@/data/site";
 
 export function HeroShowcase() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-8 pb-10 sm:pt-14 sm:pb-12" aria-label="Hero Showcase">
+    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-4 pb-6 sm:pt-8 sm:pb-8" aria-label="Hero Showcase">
       {/* Pristine Full-Width Background Stage Image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         <img

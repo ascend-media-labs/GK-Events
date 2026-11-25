@@ -95,7 +95,7 @@ export function StatsHighlights() {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-8 sm:py-12"
+      className="bg-white py-4 sm:py-6"
       aria-label="Our track record"
     >
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">

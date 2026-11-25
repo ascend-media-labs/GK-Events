@@ -35,11 +35,11 @@ const SERVICES = [
 
 export function WhatWeDo() {
   return (
-    <section className="relative bg-white pt-16 sm:pt-24 pb-14 sm:pb-20" aria-label="Our Services">
+    <section className="relative bg-white pt-8 sm:pt-10 pb-8 sm:pb-10" aria-label="Our Services">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
-        <div className="text-left max-w-2xl mb-10 sm:mb-14">
+        <div className="text-left max-w-2xl mb-6 sm:mb-8">
           <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-600 mb-1.5">
             OUR SERVICES
           </p>

@@ -36,7 +36,7 @@ const CITIES: CityItem[] = [
 
 export function CitySelector() {
   return (
-    <section id="cities" className="relative bg-[#fafafc] py-12 sm:py-16 border-t border-b border-slate-100" aria-label="Cities we serve">
+    <section id="cities" className="relative bg-[#fafafc] py-8 sm:py-10 border-t border-b border-slate-100" aria-label="Cities we serve">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
         
         {/* Horizontal Layout matching mockup: Left title + Right 5-city cards */}

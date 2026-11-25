@@ -213,7 +213,7 @@ function Home() {
 
 function Split({ img, eyebrow, title, text, to, reverse }: { img: string; eyebrow: string; title: string; text: string; to: string; reverse?: boolean }) {
   return (
-    <section className="py-12 sm:py-16 bg-white text-slate-900">
+    <section className="py-6 sm:py-8 bg-white text-slate-900">
       <div className="container-x grid items-center gap-10 lg:grid-cols-2">
         <img src={img} alt={eyebrow} loading="lazy" className={`aspect-[4/3] w-full rounded-[2rem] object-cover border border-slate-200/80 shadow-md ${reverse ? "lg:order-2" : ""}`} />
         <div>

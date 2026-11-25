@@ -71,7 +71,7 @@ function EquipmentPage() {
       : equipmentData.filter((item) => item.category === selectedCat);
 
   return (
-    <div className="bg-white min-h-screen pt-4 sm:pt-6 pb-16 sm:pb-20 text-slate-900">
+    <div className="bg-white min-h-screen pt-4 sm:pt-6 pb-8 sm:pb-12 text-slate-900">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
         {/* Header Title */}
         <div className="text-left mb-6 sm:mb-8">
@@ -81,7 +81,7 @@ function EquipmentPage() {
         </div>
 
         {/* Filter Pills Navigation Row */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-none mb-10">
+        <div className="flex items-center gap-2 overflow-x-auto pb-3 scrollbar-none mb-6 sm:mb-8">
           {FILTER_TABS.map((tab) => {
             const isActive = selectedCat === tab.id;
             return (

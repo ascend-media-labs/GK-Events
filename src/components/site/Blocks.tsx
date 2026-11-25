@@ -44,12 +44,12 @@ export function CtaButtons({ className = "" }: { className?: string }) {
 
 export function Section({ eyebrow, title, children, className = "" }: { eyebrow?: string; title?: ReactNode; children: ReactNode; className?: string }) {
   return (
-    <section className={`py-20 sm:py-28 bg-white text-slate-900 ${className}`}>
+    <section className={`py-8 sm:py-12 bg-white text-slate-900 ${className}`}>
       <div className="container-x">
         {(eyebrow || title) && (
-          <div className="mb-12 max-w-2xl text-left">
+          <div className="mb-6 sm:mb-8 max-w-2xl text-left">
             {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-            {title && <h2 className="mt-3 text-3xl font-extrabold text-slate-950 sm:text-5xl">{title}</h2>}
+            {title && <h2 className="mt-2 text-3xl font-extrabold text-slate-950 sm:text-4xl">{title}</h2>}
           </div>
         )}
         {children}
@@ -103,13 +103,13 @@ export function Faq({ faqs }: { faqs: { q: string; a: string }[] }) {
 
 export function FinalCta({ title = "Ready to make your event unforgettable?" }: { title?: string }) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-8 sm:py-12 bg-white">
       <div className="container-x">
-        <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-10 text-center sm:p-16 shadow-md">
+        <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-8 sm:p-12 text-center shadow-md">
           <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-amber-500/15 blur-3xl" />
-          <h2 className="relative text-3xl font-extrabold text-slate-950 sm:text-5xl">{title}</h2>
-          <p className="relative mx-auto mt-4 max-w-xl text-slate-600 font-medium">Tell us your date, venue and guest count — get a tailored quote within hours.</p>
-          <CtaButtons className="relative mt-8 justify-center" />
+          <h2 className="relative text-2xl sm:text-4xl font-extrabold text-slate-950">{title}</h2>
+          <p className="relative mx-auto mt-3 max-w-xl text-slate-600 font-medium text-sm sm:text-base">Tell us your date, venue and guest count — get a tailored quote within hours.</p>
+          <CtaButtons className="relative mt-6 justify-center" />
         </div>
       </div>
     </section>
@@ -121,7 +121,7 @@ export function ServicePage({ d }: { d: ServiceData }) {
     <div className="bg-white text-slate-900">
       <PageHero {...d} />
       <Section eyebrow={d.eyebrow} title={d.itemsTitle}><CardGrid items={d.items} /></Section>
-      <section className="py-10 bg-white">
+      <section className="py-6 sm:py-8 bg-white">
         <div className="container-x grid items-center gap-10 lg:grid-cols-2">
           <img src={d.image} alt={d.eyebrow} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover border border-slate-200/80 shadow-md" />
           <div>

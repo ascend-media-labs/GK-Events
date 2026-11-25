@@ -63,7 +63,7 @@ export function BrowseByCategory() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-14 sm:py-20 border-t border-slate-100" aria-label="Browse by Category">
+    <section className="relative overflow-hidden bg-white py-8 sm:py-12 border-t border-slate-100" aria-label="Browse by Category">
       {/* Decorative Warm Amber / Orange Wave Ribbon in Background Corners */}
       <div className="pointer-events-none absolute -top-10 -left-10 h-72 w-72 rounded-full bg-gradient-to-br from-orange-400/10 via-amber-300/10 to-transparent blur-3xl" />
       <div className="pointer-events-none absolute -bottom-10 -right-10 h-80 w-80 rounded-full bg-gradient-to-tl from-orange-500/10 via-amber-400/10 to-transparent blur-3xl" />
@@ -71,7 +71,7 @@ export function BrowseByCategory() {
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
-        <div className="relative flex flex-col items-start justify-start text-left mb-10 sm:mb-12">
+        <div className="relative flex flex-col items-start justify-start text-left mb-6 sm:mb-8">
 
           {/* Eyebrow: —— EXPLORE OUR EQUIPMENT —— with gold horizontal bars */}
           <div className="flex items-center gap-3 mb-2">

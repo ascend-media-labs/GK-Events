@@ -329,7 +329,7 @@ function NavLink({ to, label }: { to: string; label: string }) {
 export function Footer() {
   return (
     <footer className="border-t border-slate-200/90 bg-slate-50 text-slate-800">
-      <div className="container-x grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-x grid gap-8 py-10 sm:py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo className="h-20" />
           <p className="mt-4 text-sm text-slate-600 leading-relaxed">

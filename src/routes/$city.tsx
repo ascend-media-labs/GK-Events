@@ -183,7 +183,7 @@ function CityPage() {
   return (
     <div className="bg-white text-slate-900">
       {/* City Hero Section: Clean White Background matching reference */}
-      <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white py-12 sm:py-20">
+      <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-slate-50 via-white to-white py-8 sm:py-12">
         <div className="container-x">
           {/* Breadcrumb Navigation */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-slate-500 mb-6">
@@ -279,7 +279,7 @@ function CityPage() {
       </section>
 
       {/* Equipment Available in {City} Grid */}
-      <section className="py-16 sm:py-24 border-b border-slate-200/80 bg-white">
+      <section className="py-8 sm:py-12 border-b border-slate-200/80 bg-white">
         <div className="container-x">
           {/* Section Header: Clean Left Aligned */}
           <div className="max-w-2xl mb-12 text-left">
@@ -335,7 +335,7 @@ function CityPage() {
       </section>
 
       {/* Popular Venues & Delivery Areas in City */}
-      <section className="py-16 bg-slate-50/70 border-b border-slate-200/80">
+      <section className="py-8 sm:py-12 bg-slate-50/70 border-b border-slate-200/80">
         <div className="container-x">
           <div className="grid gap-10 lg:grid-cols-2 items-center">
             <div>
@@ -385,7 +385,7 @@ function CityPage() {
       </section>
 
       {/* Switch to Other Cities Section */}
-      <section className="py-14 border-b border-slate-200/80 bg-white">
+      <section className="py-6 sm:py-8 border-b border-slate-200/80 bg-white">
         <div className="container-x">
           <p className="text-xs uppercase tracking-widest font-extrabold text-slate-500 mb-4">
             Available in other major metros:
@@ -415,7 +415,7 @@ function CityPage() {
       </section>
 
       {/* Final Booking Call to Action */}
-      <section className="py-16 text-center bg-white">
+      <section className="py-8 sm:py-12 text-center bg-white">
         <div className="container-x">
           <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-8 sm:p-14 shadow-md">
             <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-slate-950">
