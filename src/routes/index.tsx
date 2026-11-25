@@ -205,8 +205,6 @@ function Home() {
           { q: "Do you offer packages?", a: "Yes, we bundle sound, LED, lighting, photography and streaming into custom packages." },
         ]} />
       </Section>
-
-      <FinalCta />
     </div>
   );
 }

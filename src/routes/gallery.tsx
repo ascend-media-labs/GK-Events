@@ -58,7 +58,6 @@ function Gallery() {
           <img src={view} alt="Gallery preview" className="max-h-[85vh] rounded-2xl" />
         </div>
       )}
-      <FinalCta />
     </>
   );
 }
