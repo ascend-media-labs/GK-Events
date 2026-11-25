@@ -146,7 +146,7 @@ function OffersPage() {
       </Section>
 
       {/* Free Perks Banner */}
-      <section className="py-6 sm:py-8 bg-slate-50/80 border-y border-slate-200/80">
+      <section className="py-6 sm:py-8 bg-white border-y border-slate-200/80">
         <div className="container-x">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex items-center gap-3 p-4 rounded-2xl bg-white border border-slate-200/70 shadow-xs">

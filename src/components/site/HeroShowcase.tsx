@@ -96,7 +96,7 @@ export function HeroShowcase() {
         <nav
           aria-label="Core capabilities"
           style={{ "--d": "1000ms" } as React.CSSProperties}
-          className="anim-fade-up mx-auto grid max-w-[460px] grid-cols-4 rounded-[26px] border border-white/25 bg-[#1b1b22]/70 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.45)] backdrop-blur-md sm:max-w-[560px] lg:max-w-[820px] lg:rounded-[28px] lg:bg-gradient-to-b lg:from-[#2b2a30]/95 lg:to-[#141418]/95 lg:py-[18px]"
+          className="anim-fade-up mx-auto grid max-w-[460px] grid-cols-4 rounded-[26px] border border-amber-200/90 bg-white/95 py-4 shadow-[0_16px_40px_rgba(217,119,6,0.14)] backdrop-blur-md sm:max-w-[560px] lg:max-w-[820px] lg:rounded-[28px] lg:bg-white lg:py-[18px]"
         >
           {CAPABILITIES.map((c, i) => (
             <Link
@@ -104,11 +104,11 @@ export function HeroShowcase() {
               to={c.to}
               style={{ "--d": `${1150 + i * 120}ms` } as React.CSSProperties}
               className={`anim-fade-up group flex flex-col items-center gap-1.5 px-1 text-center ${
-                i > 0 ? "border-l border-white/20" : ""
+                i > 0 ? "border-l border-slate-200/80" : ""
               }`}
             >
-              <c.icon className="h-7 w-7 stroke-[1.5] text-white transition-colors group-hover:text-orange-400 lg:h-8 lg:w-8" />
-              <span className="text-[11.5px] font-semibold leading-tight text-white transition-colors group-hover:text-orange-400 sm:text-xs lg:text-[13px]">
+              <c.icon className="h-7 w-7 stroke-[1.5] text-amber-600 transition-transform group-hover:scale-105 group-hover:text-amber-700 lg:h-8 lg:w-8" />
+              <span className="text-[11.5px] font-bold leading-tight text-slate-800 transition-colors group-hover:text-amber-600 sm:text-xs lg:text-[13px]">
                 {c.line1}
                 <br />
                 {c.line2}

@@ -335,7 +335,7 @@ function CityPage() {
       </section>
 
       {/* Popular Venues & Delivery Areas in City */}
-      <section className="py-8 sm:py-12 bg-slate-50/70 border-b border-slate-200/80">
+      <section className="py-8 sm:py-12 bg-white border-b border-slate-200/80">
         <div className="container-x">
           <div className="grid gap-10 lg:grid-cols-2 items-center">
             <div>

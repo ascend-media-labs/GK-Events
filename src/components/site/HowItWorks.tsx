@@ -27,16 +27,9 @@ export function HowItWorks() {
 
   return (
     <section
-      className="relative bg-gradient-to-b from-[#FFFDF9] via-[#FAF6F0] to-[#FFF9F2] py-8 sm:py-12 border-t border-slate-100 overflow-hidden select-none"
+      className="relative bg-white py-8 sm:py-12 border-t border-slate-100 overflow-hidden select-none"
       aria-label="How it works"
     >
-      {/* Decorative Gold Ambient Blurs & Lights matching mockup */}
-      <div className="pointer-events-none absolute -top-12 -left-12 h-80 w-80 rounded-full bg-gradient-to-br from-amber-400/15 via-orange-500/10 to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-12 -right-12 h-80 w-80 rounded-full bg-gradient-to-tl from-amber-400/15 via-orange-500/10 to-transparent blur-3xl" />
-      
-      {/* Top-Right Stage Lighting Ambient Glow */}
-      <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-amber-400/20 via-orange-400/10 to-transparent blur-3xl" />
-
       <div className="relative z-10 max-w-[1288px] mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
@@ -71,8 +64,8 @@ export function HowItWorks() {
               <div
                 className={`group relative flex flex-col justify-between h-full rounded-[28px] sm:rounded-[32px] p-7 sm:p-8 transition-all duration-300 hover:-translate-y-2 cursor-pointer ${
                   step.isFeatured
-                    ? "bg-gradient-to-b from-[#FFFDF2] via-white to-[#FFF9EC] border-2 border-amber-300/90 shadow-[0_20px_50px_rgba(245,158,11,0.16)] hover:shadow-[0_25px_60px_rgba(245,158,11,0.24)]"
-                    : "bg-white border border-slate-200/90 shadow-[0_12px_32px_rgba(15,23,42,0.05)] hover:border-amber-300 hover:shadow-[0_20px_45px_rgba(245,158,11,0.12)]"
+                    ? "bg-white border-2 border-amber-400/90 shadow-[0_16px_45px_rgba(245,158,11,0.14)] hover:shadow-[0_22px_55px_rgba(245,158,11,0.2)]"
+                    : "bg-white border border-slate-200/90 shadow-[0_10px_30px_rgba(15,23,42,0.04)] hover:border-amber-300 hover:shadow-[0_18px_40px_rgba(245,158,11,0.1)]"
                 }`}
               >
                 {/* Top Badge: 01 / 02 / 03 */}

@@ -33,13 +33,13 @@ export function WhatWeDo() {
 
   return (
     <section
-      className="relative bg-gradient-to-b from-[#f8f6fb] via-[#fdfbfa] to-[#fbf8f6] pt-9 pb-6 sm:pt-12 lg:pt-[80px] lg:pb-8"
+      className="relative bg-white pt-8 pb-6 sm:pt-10 lg:pt-12 lg:pb-8 border-t border-slate-100"
       aria-label="Our Services"
     >
       <div className="mx-auto max-w-[1288px] lg:px-[60px]">
         {/* Header */}
         <div className="mx-auto max-w-xl px-5 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-orange-600 sm:text-xs">Our Services</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-amber-600 sm:text-xs">Our Services</p>
           <h2 className="mt-2 font-display text-[2rem] font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-[2.4rem]">
             What We Do
           </h2>

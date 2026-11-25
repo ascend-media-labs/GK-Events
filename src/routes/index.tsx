@@ -180,7 +180,7 @@ function Home() {
       <Section eyebrow="Why GK Events" title="Trusted by families and brands">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {why.map((w) => (
-            <div key={w.name} className="rounded-3xl border border-slate-200/80 bg-slate-50/70 p-7 shadow-xs hover:bg-white hover:border-amber-400 hover:shadow-md transition-all"><w.icon className="h-8 w-8 text-amber-600" /><h3 className="mt-4 text-lg font-bold text-slate-900">{w.name}</h3><p className="mt-2 text-sm text-slate-600 leading-relaxed">{w.desc}</p></div>
+            <div key={w.name} className="rounded-3xl border border-slate-200/80 bg-white p-7 shadow-xs hover:border-amber-400 hover:shadow-md transition-all"><w.icon className="h-8 w-8 text-amber-600" /><h3 className="mt-4 text-lg font-bold text-slate-900">{w.name}</h3><p className="mt-2 text-sm text-slate-600 leading-relaxed">{w.desc}</p></div>
           ))}
         </div>
       </Section>

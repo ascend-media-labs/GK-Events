@@ -1,10 +1,10 @@
 import type React from "react";
 import { Link } from "@tanstack/react-router";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Star } from "lucide-react";
 import { contact, waLink } from "@/data/site";
 import { Logo } from "./Layout";
 
-/* ── Original Brand SVG Icons ── */
+/* ── Original Brand SVG Icons (No border rings, clean brand styling) ── */
 function InstagramIcon({ className = "h-5 w-5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-label="Instagram">
@@ -55,7 +55,7 @@ function FacebookIcon({ className = "h-5 w-5" }: { className?: string }) {
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-label="Facebook">
       <circle cx="12" cy="12" r="11" fill="#1877F2" />
       <path
-        d="M14.5 12.3h-2v6.7h-2.8v-6.7H8.2V9.9h1.5V8.2c0-2.1 1.2-3.2 3.1-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.4.6-1.4 1.3v1.5h2.3l-.4 2.4z"
+        d="M14 12.5h2l.5-2.5h-2.5V8.5c0-.7.3-1.2 1.3-1.2h1.2V5.1c-.6-.1-1.3-.1-2-.1-2.1 0-3.5 1.3-3.5 3.6V10H8.5v2.5H11V19h3v-6.5z"
         fill="#ffffff"
       />
     </svg>
@@ -65,134 +65,12 @@ function FacebookIcon({ className = "h-5 w-5" }: { className?: string }) {
 function LinkedInIcon({ className = "h-5 w-5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-label="LinkedIn">
-      <rect width="24" height="24" rx="6" fill="#0A66C2" />
+      <rect width="24" height="24" rx="5" fill="#0A66C2" />
       <path
-        d="M7.8 9.3H5.3v7.4h2.5V9.3zM6.6 5.8c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4zM18.7 12.8c0-2.4-1.3-3.5-3-3.5-1.4 0-2 .8-2.3 1.4V9.3h-2.5v7.4h2.5v-4.1c0-1.1.2-2.1 1.6-2.1s1.4 1.3 1.4 2.2v4h2.5v-3.9z"
+        d="M7.5 9.5h-2V17h2V9.5zm-1-3a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3zM18.5 13.2c0-2.2-1.2-3.7-3.2-3.7-1.4 0-2.1.8-2.4 1.4V9.5h-2V17h2v-4.1c0-1.1.4-1.9 1.5-1.9 1 0 1.4.8 1.4 1.9V17h2v-3.8z"
         fill="#ffffff"
       />
     </svg>
-  );
-}
-
-/* ── Original AV Service Icons ── */
-function SoundArrayIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <rect x="4" y="2" width="12" height="16" rx="2" stroke="currentColor" strokeWidth="1.4" />
-      <circle cx="10" cy="6.5" r="2.2" stroke="currentColor" strokeWidth="1.2" />
-      <circle cx="10" cy="13" r="3" stroke="currentColor" strokeWidth="1.4" />
-      <circle cx="10" cy="13" r="1.2" fill="currentColor" />
-    </svg>
-  );
-}
-
-function LedWallIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <rect x="2" y="3" width="16" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M7.3 3v11M12.6 3v11M2 8.5h16" stroke="currentColor" strokeWidth="1.1" strokeDasharray="1 1" />
-      <path d="M6 17h8M10 14v3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function MovingHeadIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <path d="M5 3h10M10 3v2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <rect x="6.5" y="5" width="7" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M6.5 11l-3 6h13l-3-6" stroke="currentColor" strokeWidth="1.2" />
-      <circle cx="10" cy="8" r="1.5" fill="currentColor" />
-    </svg>
-  );
-}
-
-function LedTvIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <rect x="2" y="4" width="16" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M6 16l2-2h4l2 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function ProjectorIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <rect x="2" y="7" width="14" height="6.5" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
-      <circle cx="12" cy="10.2" r="2" stroke="currentColor" strokeWidth="1.2" />
-      <path d="M16 8.5l2.5-1.5v6.5L16 12" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function CameraIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <path d="M7 4h6l1.5 2.5H17a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H3A1.5 1.5 0 0 1 1.5 16V8A1.5 1.5 0 0 1 3 6.5h2.5L7 4z" stroke="currentColor" strokeWidth="1.3" />
-      <circle cx="10" cy="11.5" r="3" stroke="currentColor" strokeWidth="1.4" />
-    </svg>
-  );
-}
-
-function CineVideoIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <rect x="2" y="6" width="12" height="8.5" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M14 9l4-2.5v7L14 11M5 3.5h6M7 3.5v2.5M9 3.5v2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function BroadcastIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" className={className}>
-      <circle cx="10" cy="10" r="2" fill="currentColor" />
-      <path d="M6.5 6.5a5 5 0 0 0 0 7M13.5 6.5a5 5 0 0 1 0 7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M4 4a8.5 8.5 0 0 0 0 12M16 4a8.5 8.5 0 0 1 0 12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-/* ── 28-Bar Audio Spectrum Equalizer Component ── */
-function AudioEqualizerSpectrum() {
-  const bars = [
-    { anim: "anim-eq-1", delay: "0ms", height: "45%" },
-    { anim: "anim-eq-2", delay: "120ms", height: "70%" },
-    { anim: "anim-eq-3", delay: "40ms", height: "85%" },
-    { anim: "anim-eq-4", delay: "200ms", height: "60%" },
-    { anim: "anim-eq-1", delay: "160ms", height: "92%" },
-    { anim: "anim-eq-3", delay: "80ms", height: "75%" },
-    { anim: "anim-eq-2", delay: "240ms", height: "98%" },
-    { anim: "anim-eq-4", delay: "60ms", height: "55%" },
-    { anim: "anim-eq-1", delay: "180ms", height: "80%" },
-    { anim: "anim-eq-3", delay: "300ms", height: "90%" },
-    { anim: "anim-eq-2", delay: "100ms", height: "65%" },
-    { anim: "anim-eq-4", delay: "220ms", height: "100%" },
-    { anim: "anim-eq-1", delay: "50ms", height: "85%" },
-    { anim: "anim-eq-3", delay: "140ms", height: "95%" },
-    { anim: "anim-eq-2", delay: "280ms", height: "70%" },
-    { anim: "anim-eq-4", delay: "90ms", height: "88%" },
-    { anim: "anim-eq-1", delay: "210ms", height: "62%" },
-    { anim: "anim-eq-3", delay: "130ms", height: "94%" },
-    { anim: "anim-eq-2", delay: "270ms", height: "80%" },
-    { anim: "anim-eq-4", delay: "70ms", height: "58%" },
-    { anim: "anim-eq-1", delay: "190ms", height: "88%" },
-    { anim: "anim-eq-3", delay: "310ms", height: "76%" },
-    { anim: "anim-eq-2", delay: "110ms", height: "95%" },
-    { anim: "anim-eq-4", delay: "230ms", height: "68%" },
-  ];
-
-  return (
-    <div className="flex items-end gap-1 sm:gap-1.5 h-7 sm:h-9 px-3 py-1 bg-black/40 rounded-xl border border-white/10 backdrop-blur-sm">
-      {bars.map((bar, i) => (
-        <span
-          key={i}
-          style={{ animationDelay: bar.delay }}
-          className={`w-[2.5px] sm:w-[3.5px] rounded-full bg-gradient-to-t from-emerald-400 via-amber-400 to-rose-500 ${bar.anim}`}
-        />
-      ))}
-    </div>
   );
 }
 
@@ -200,263 +78,257 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const servicesList = [
-    { to: "/sound-system-rental", label: "Sound Systems & Line Arrays", icon: SoundArrayIcon },
-    { to: "/led-wall-rental", label: "P2.5 Curved 4K LED Walls", icon: LedWallIcon },
-    { to: "/event-solutions", label: "Intelligent DJ & Stage Lights", icon: MovingHeadIcon },
-    { to: "/led-tv-rental", label: "LED TV Screens (65\"–85\")", icon: LedTvIcon },
-    { to: "/projector-rental", label: "High-Lumen Laser Projectors", icon: ProjectorIcon },
-    { to: "/photography", label: "Candid Photography", icon: CameraIcon },
-    { to: "/videography", label: "4K Cinema Films & Teasers", icon: CineVideoIcon },
-    { to: "/live-streaming", label: "Multi-Cam Live Streaming", icon: BroadcastIcon },
+    { to: "/sound-system-rental", label: "Sound Systems & Line Arrays" },
+    { to: "/led-wall-rental", label: "P2.5 Curved 4K LED Walls" },
+    { to: "/event-solutions", label: "Intelligent DJ & Stage Lights" },
+    { to: "/led-tv-rental", label: "LED TV Screens (65\"–85\")" },
+    { to: "/projector-rental", label: "High-Lumen Laser Projectors" },
+    { to: "/photography", label: "Candid Photography" },
+    { to: "/videography", label: "4K Cinema Films & Teasers" },
+    { to: "/live-streaming", label: "Multi-Cam Live Streaming" },
+  ];
+
+  const companyLinks = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/equipment", label: "Equipment" },
+    { to: "/offers", label: "Offers" },
+    { to: "/events", label: "Events" },
+    { to: "/corporate-events", label: "Corporate" },
+    { to: "/wedding-events", label: "Weddings" },
+    { to: "/gallery", label: "Gallery" },
+    { to: "/contact", label: "Contact" },
   ];
 
   const cityHubs = [
-    { id: "hyderabad", name: "Hyderabad" },
-    { id: "bangalore", name: "Bangalore" },
-    { id: "mumbai", name: "Mumbai" },
-    { id: "chennai", name: "Chennai" },
-    { id: "pune", name: "Pune" },
+    { id: "hyderabad", name: "Hyderabad", state: "TS" },
+    { id: "bangalore", name: "Bangalore", state: "KA" },
+    { id: "mumbai", name: "Mumbai", state: "MH" },
+    { id: "chennai", name: "Chennai", state: "TN" },
+    { id: "pune", name: "Pune", state: "MH" },
   ];
 
   return (
     <footer
-      className="relative overflow-hidden bg-[#070811] text-slate-200 border-t border-amber-500/20 select-none"
+      className="relative bg-white text-slate-800 border-t border-slate-200/90 select-none"
       aria-label="GK Events Official Footer"
     >
-      {/* ── LIVE AUDIO SOUND EQUALIZER STRIP ── */}
-      <div className="relative z-20 border-b border-white/10 bg-[#0e101c]/80 backdrop-blur-md px-4 py-2.5">
-        <div className="max-w-[1288px] mx-auto flex items-center justify-center gap-3">
-          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest hidden sm:inline">
-            SPECTRUM
-          </span>
-          <AudioEqualizerSpectrum />
-          <span className="text-[10px] font-mono text-emerald-400/90 font-bold hidden sm:inline">
-            +2.8 dB
-          </span>
-        </div>
-      </div>
+      {/* Delicate Gold Accent Strip along the top edge */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
 
-      {/* ── 4. MAIN FOOTER CONTENT GRID ── */}
-      <div className="relative z-20 max-w-[1288px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-8 sm:pb-12">
+      {/* Main Footer Content Grid */}
+      <div className="max-w-[1288px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 pb-10 sm:pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
           
-          {/* Column 1: Brand Profile & Original Socials (lg:col-span-4) */}
+          {/* Column 1: Brand Profile & Clean Social Icons (lg:col-span-4) */}
           <div className="lg:col-span-4 flex flex-col items-start text-left">
-            
-            {/* Dark Logo with Gold Emblem */}
             <Link to="/" className="group inline-block mb-3.5">
-              <Logo className="h-12 sm:h-14" isDark={true} />
+              <Logo className="h-12 sm:h-14" isDark={false} />
             </Link>
 
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm mb-6">
-              India&apos;s premier event technology &amp; AV production company. Powering royal weddings,
-              corporate summits, music festivals, and live broadcasts with concert-grade sound, 4K LED walls,
-              and intelligent stage lighting.
+            <p className="text-slate-600 text-sm leading-relaxed max-w-sm">
+              India's premier event technology &amp; AV production company. Powering royal weddings,
+              corporate summits, music festivals, and live broadcasts with concert-grade sound,
+              curved 4K LED walls, and intelligent lighting.
             </p>
 
-            {/* Original Social Media Icons Row */}
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2.5">
-                CONNECT &amp; EXPLORE
+            {/* Rating & Trust Pill */}
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-50/80 border border-amber-200/80 px-3.5 py-1.5 text-xs font-bold text-amber-900 shadow-xs">
+              <div className="flex gap-0.5 text-amber-500">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                ))}
+              </div>
+              <span>4.9/5 Rating (1,500+ Shows)</span>
+            </div>
+
+            {/* Clean Original Social Icons (No border rings, as requested) */}
+            <div className="mt-6">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-amber-700 mb-2.5">
+                Connect &amp; Explore
               </p>
-              <div className="flex items-center gap-3.5">
-                
-                {/* WhatsApp */}
+              <div className="flex items-center gap-3">
                 <a
                   href={waLink()}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Chat on WhatsApp"
-                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
+                  aria-label="WhatsApp"
+                  className="transition-transform hover:scale-110 active:scale-95"
                 >
                   <WhatsAppIcon className="h-7 w-7" />
                 </a>
-
-                {/* Instagram */}
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Follow GK Events on Instagram"
-                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
+                  aria-label="Instagram"
+                  className="transition-transform hover:scale-110 active:scale-95"
                 >
                   <InstagramIcon className="h-7 w-7" />
                 </a>
-
-                {/* YouTube */}
                 <a
                   href="https://youtube.com"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Watch Event Productions on YouTube"
-                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
+                  aria-label="YouTube"
+                  className="transition-transform hover:scale-110 active:scale-95"
                 >
                   <YouTubeIcon className="h-7 w-7" />
                 </a>
-
-                {/* Facebook */}
                 <a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="GK Events on Facebook"
-                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
+                  aria-label="Facebook"
+                  className="transition-transform hover:scale-110 active:scale-95"
                 >
                   <FacebookIcon className="h-7 w-7" />
                 </a>
-
-                {/* LinkedIn */}
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="GK Events Corporate on LinkedIn"
-                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
+                  aria-label="LinkedIn"
+                  className="transition-transform hover:scale-110 active:scale-95"
                 >
                   <LinkedInIcon className="h-7 w-7" />
                 </a>
-
               </div>
             </div>
-
           </div>
 
-          {/* Column 2: Event Equipment & AV Services (lg:col-span-3) */}
-          <div className="lg:col-span-3 text-left">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
-              <h3 className="font-display text-xs font-black uppercase tracking-[0.2em] text-amber-400">
-                EQUIPMENT &amp; SERVICES
-              </h3>
-            </div>
-
-            <ul className="space-y-2">
-              {servicesList.map((svc) => (
-                <li key={svc.to}>
+          {/* Column 2: Company Navigation (lg:col-span-2) */}
+          <div className="lg:col-span-2 text-left">
+            <h4 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-amber-600 mb-4">
+              Company
+            </h4>
+            <ul className="space-y-2.5">
+              {companyLinks.map((link) => (
+                <li key={link.label}>
                   <Link
-                    to={svc.to}
-                    className="group flex items-center text-xs sm:text-[13px] text-slate-300 hover:text-amber-300 py-1 transition-colors"
+                    to={link.to}
+                    className="text-sm font-medium text-slate-600 hover:text-amber-600 hover:translate-x-0.5 transition-all inline-block"
                   >
-                    <span className="flex items-center gap-2.5">
-                      <svc.icon className="h-4 w-4 text-amber-500/80 group-hover:text-amber-400 transition-colors shrink-0" />
-                      <span>{svc.label}</span>
-                    </span>
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Event Solutions & Metro Hubs (lg:col-span-2) */}
-          <div className="lg:col-span-2 text-left">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
-              <h3 className="font-display text-xs font-black uppercase tracking-[0.2em] text-cyan-400">
-                METRO HUBS
-              </h3>
-            </div>
-
-            <div className="space-y-2.5 mb-6">
-              {cityHubs.map((city) => (
-                <Link
-                  key={city.id}
-                  to="/$city"
-                  params={{ city: city.id }}
-                  className="group flex items-center text-xs sm:text-[13px] text-slate-300 hover:text-cyan-300 py-0.5 transition-colors"
-                >
-                  <span className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform" />
-                    <span className="font-semibold">{city.name}</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
-
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2">
-              EVENT SOLUTIONS
-            </p>
-            <ul className="space-y-1.5 text-xs text-slate-400">
-              <li>
-                <Link to="/wedding-events" className="hover:text-amber-300 transition-colors">
-                  Weddings &amp; Sangeet
-                </Link>
-              </li>
-              <li>
-                <Link to="/corporate-events" className="hover:text-amber-300 transition-colors">
-                  Corporate Summits
-                </Link>
-              </li>
-              <li>
-                <Link to="/offers" className="hover:text-amber-300 transition-colors">
-                  Seasonal Packages
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-amber-300 transition-colors">
-                  About GK Legacy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: 24/7 Hotline & Direct Booking (lg:col-span-3) */}
+          {/* Column 3: Equipment & Services (lg:col-span-3) */}
           <div className="lg:col-span-3 text-left">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <h3 className="font-display text-xs font-black uppercase tracking-[0.2em] text-emerald-400">
-                24/7 BOOKING DESK
-              </h3>
+            <h4 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-amber-600 mb-4">
+              Equipment &amp; Services
+            </h4>
+            <ul className="space-y-2.5">
+              {servicesList.map((service) => (
+                <li key={service.label}>
+                  <Link
+                    to={service.to}
+                    className="text-sm font-medium text-slate-600 hover:text-amber-600 hover:translate-x-0.5 transition-all inline-block"
+                  >
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Metro Hubs Sub-List */}
+            <div className="mt-6 pt-5 border-t border-slate-100">
+              <h5 className="font-display text-[11px] font-bold uppercase tracking-[0.2em] text-amber-600 mb-2.5">
+                Metro Hubs
+              </h5>
+              <div className="flex flex-wrap gap-2">
+                {cityHubs.map((city) => (
+                  <Link
+                    key={city.id}
+                    to="/$city"
+                    params={{ city: city.id }}
+                    className="inline-flex items-center gap-1 rounded-full bg-slate-50 border border-slate-200 px-2.5 py-0.5 text-xs font-medium text-slate-700 hover:border-amber-400 hover:text-amber-700 transition-colors"
+                  >
+                    <span>{city.name}</span>
+                    <span className="text-[10px] text-amber-600 font-bold">({city.state})</span>
+                  </Link>
+                ))}
+              </div>
             </div>
+          </div>
 
-            {/* Phone Hotline Card */}
-            <a
-              href={contact.phoneHref}
-              className="group mb-3 block rounded-2xl border border-white/10 bg-white/5 p-3.5 transition-all duration-300 hover:border-amber-400/50 hover:bg-white/10 hover:shadow-[0_8px_25px_rgba(245,158,11,0.15)]"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-md group-hover:scale-105 transition-transform">
-                  <Phone className="h-5 w-5" />
+          {/* Column 4: Contact & 24/7 Booking Desk (lg:col-span-3) */}
+          <div className="lg:col-span-3 text-left flex flex-col justify-between">
+            <div>
+              <h4 className="font-display text-xs font-bold uppercase tracking-[0.2em] text-amber-600 mb-4">
+                24/7 Booking Desk
+              </h4>
+
+              <div className="space-y-3.5">
+                <a
+                  href={contact.phoneHref}
+                  className="flex items-start gap-3 text-slate-700 hover:text-amber-600 transition-colors group"
+                >
+                  <div className="h-8 w-8 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors">
+                    <Phone className="h-4 w-4 text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Central Reservations</p>
+                    <p className="text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
+                      {contact.phone}
+                    </p>
+                  </div>
+                </a>
+
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="flex items-start gap-3 text-slate-700 hover:text-amber-600 transition-colors group"
+                >
+                  <div className="h-8 w-8 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors">
+                    <Mail className="h-4 w-4 text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Email Inquiries</p>
+                    <p className="text-sm font-medium text-slate-800 group-hover:text-amber-600 transition-colors">
+                      {contact.email}
+                    </p>
+                  </div>
+                </a>
+
+                <div className="flex items-start gap-3 text-slate-700">
+                  <div className="h-8 w-8 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0">
+                    <MapPin className="h-4 w-4 text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Location</p>
+                    <p className="text-sm font-medium text-slate-800">
+                      {contact.address}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <span className="block text-[10px] font-mono font-bold uppercase tracking-wider text-amber-400">
-                    CENTRAL RESERVATIONS
-                  </span>
-                  <span className="text-sm font-black text-white group-hover:text-amber-300 transition-colors">
-                    {contact.phone}
-                  </span>
+
+                <div className="flex items-start gap-3 text-slate-700">
+                  <div className="h-8 w-8 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0">
+                    <Clock className="h-4 w-4 text-amber-600" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Working Hours</p>
+                    <p className="text-sm font-medium text-slate-800">
+                      Open 7 days · 8 AM – 10 PM
+                    </p>
+                  </div>
                 </div>
               </div>
-            </a>
 
-            {/* Email Card */}
-            <a
-              href={`mailto:${contact.email}`}
-              className="group mb-3 block rounded-2xl border border-white/10 bg-white/5 p-3.5 transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/10"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-800 text-cyan-400 border border-cyan-400/30 group-hover:scale-105 transition-transform">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div>
-                  <span className="block text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400">
-                    EMAIL INQUIRIES
-                  </span>
-                  <span className="text-xs sm:text-[13px] font-bold text-white group-hover:text-cyan-300 transition-colors">
-                    {contact.email}
-                  </span>
-                </div>
-              </div>
-            </a>
-
-            {/* Dispatch Hours & Hub Location */}
-            <div className="space-y-1.5 text-xs text-slate-400 pt-2">
-              <div className="flex items-center gap-2">
-                <Clock className="h-3.5 w-3.5 text-amber-400 shrink-0" />
-                <span>{contact.hours} (Live Dispatch)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
-                <span>Warehouses in HYD, BLR, BOM, MAA &amp; PNQ</span>
+              {/* Chat on WhatsApp Button */}
+              <div className="mt-5">
+                <a
+                  href={waLink("Hi GK Events, I would like to book event equipment.")}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold py-3 px-5 text-sm shadow-[0_6px_20px_rgba(245,158,11,0.28)] transition-all hover:scale-[1.02] active:scale-98"
+                >
+                  <MessageCircle className="h-4.5 w-4.5" />
+                  <span>Chat with Equipment Specialist</span>
+                </a>
               </div>
             </div>
           </div>
@@ -464,35 +336,19 @@ export function Footer() {
         </div>
       </div>
 
-      {/* ── 5. BOTTOM COPYRIGHT & LEGAL BAR ── */}
-      <div className="relative z-20 border-t border-white/10 bg-black/60 px-4 sm:px-6 py-5">
-        <div className="max-w-[1288px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          
-          <div className="flex flex-col sm:flex-row items-center gap-2 text-xs text-slate-400">
-            <span>&copy; {currentYear} GK Events &amp; Productions. All rights reserved.</span>
-            <span className="hidden sm:inline text-slate-600">&bull;</span>
-            <span className="text-[11px] text-slate-400">
-              Concert Audio &bull; 4K LED Walls &bull; Stage Lighting &bull; Live Broadcast
-            </span>
+      {/* Bottom Copyright Strip */}
+      <div className="border-t border-slate-100 bg-white px-4 sm:px-6 py-5">
+        <div className="max-w-[1288px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+          <p>© {currentYear} GK Events. All rights reserved.</p>
+          <div className="flex items-center gap-4 text-slate-400">
+            <Link to="/about" className="hover:text-amber-600 transition-colors">About Us</Link>
+            <span>•</span>
+            <Link to="/equipment" className="hover:text-amber-600 transition-colors">Equipment Catalogue</Link>
+            <span>•</span>
+            <Link to="/contact" className="hover:text-amber-600 transition-colors">Contact</Link>
           </div>
-
-          <div className="flex items-center gap-4 text-xs text-slate-400 font-medium">
-            <Link to="/contact" className="hover:text-amber-400 transition-colors">
-              Support
-            </Link>
-            <span className="text-slate-700">&bull;</span>
-            <Link to="/equipment" className="hover:text-amber-400 transition-colors">
-              Equipment Catalogue
-            </Link>
-            <span className="text-slate-700">&bull;</span>
-            <Link to="/offers" className="hover:text-amber-400 transition-colors">
-              Deals &amp; Packages
-            </Link>
-          </div>
-
         </div>
       </div>
-
     </footer>
   );
 }

@@ -30,8 +30,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { contact, mainNav, serviceNav, waLink } from "@/data/site";
 import { AnnouncementBar } from "./AnnouncementBar";
-import { DjStageTruss } from "./DjStageTruss";
-export { AnnouncementBar, DjStageTruss };
+export { AnnouncementBar };
 
 const RICH_SERVICES = [
   {
@@ -127,9 +126,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-300">
-      {/* Overhead Metallic DJ Stage Lighting Truss with Moving-Head Spotlights */}
-      <DjStageTruss />
-
       <div className="w-full px-3 sm:px-6 pt-2 sm:pt-3 pb-2 bg-transparent transition-all duration-300 lg:p-0 lg:bg-white lg:border-b lg:border-slate-200/80 lg:shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
         <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-full bg-white/95 backdrop-blur-md border border-white/60 px-4 sm:px-8 py-2.5 sm:py-3 shadow-[0_10px_35px_rgba(15,23,42,0.18)] lg:rounded-none lg:bg-white lg:backdrop-blur-none lg:border-0 lg:shadow-none lg:px-[60px] lg:py-3">
         {/* Brand Logo */}
@@ -342,7 +338,7 @@ export function FloatingButtons() {
       <a
         href={contact.phoneHref}
         aria-label="Call GK Events"
-        className="grid h-14 w-14 place-items-center rounded-full bg-blue-600 text-white shadow-lg transition hover:scale-110"
+        className="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg transition hover:scale-110 active:scale-95"
       >
         <Phone className="h-6 w-6" />
       </a>
@@ -351,7 +347,7 @@ export function FloatingButtons() {
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp GK Events"
-        className="grid h-14 w-14 place-items-center rounded-full bg-emerald-500 text-white shadow-lg transition hover:scale-110"
+        className="grid h-14 w-14 place-items-center rounded-full bg-emerald-500 text-white shadow-lg transition hover:scale-110 active:scale-95"
       >
         <MessageCircle className="h-6 w-6" />
       </a>

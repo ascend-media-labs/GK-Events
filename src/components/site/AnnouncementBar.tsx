@@ -92,7 +92,7 @@ export function AnnouncementBar() {
   return (
     <aside
       aria-label="Announcement"
-      className="relative z-40 w-full border-b border-amber-500/20 bg-amber-50/50 backdrop-blur-md transition-all duration-300"
+      className="relative z-40 w-full border-b border-amber-500/20 bg-white transition-all duration-300"
     >
       {/* Hanging Micro Fairy Lights Garland */}
       <MicroFairyLights />

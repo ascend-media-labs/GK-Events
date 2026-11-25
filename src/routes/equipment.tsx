@@ -90,8 +90,8 @@ function EquipmentPage() {
                 onClick={() => handleTabChange(tab.id)}
                 className={`shrink-0 rounded-full px-5 py-2.5 text-sm sm:text-[15px] font-bold transition-all duration-200 ${
                   isActive
-                    ? "bg-blue-600 text-white shadow-md shadow-blue-500/25 scale-[1.02]"
-                    : "bg-white text-slate-700 hover:text-slate-950 border border-slate-200/80 hover:bg-slate-50"
+                    ? "bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-md shadow-amber-500/25 scale-[1.02]"
+                    : "bg-white text-slate-700 hover:text-slate-950 border border-slate-200/80 hover:bg-amber-50/50"
                 }`}
               >
                 {tab.label}
@@ -105,7 +105,7 @@ function EquipmentPage() {
           {filteredList.map((item) => (
             <div
               key={item.name}
-              className="group relative flex flex-col justify-between rounded-[28px] sm:rounded-[32px] border border-slate-200/80 bg-white p-6 sm:p-7 shadow-[0_10px_30px_rgba(15,23,42,0.04)] hover:shadow-[0_20px_45px_rgba(15,23,42,0.08)] hover:-translate-y-1.5 transition-all duration-300"
+              className="group relative flex flex-col justify-between rounded-[28px] sm:rounded-[32px] border border-slate-200/80 bg-white p-6 sm:p-7 shadow-[0_10px_30px_rgba(15,23,42,0.04)] hover:shadow-[0_20px_45px_rgba(245,158,11,0.12)] hover:-translate-y-1.5 transition-all duration-300"
             >
               {/* Card Top Brand Emblem */}
               <div className="flex items-center justify-between mb-2">
@@ -129,10 +129,10 @@ function EquipmentPage() {
 
               {/* Card Product Info */}
               <div className="mt-4 space-y-1">
-                <h3 className="font-display text-xl sm:text-[22px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="font-display text-xl sm:text-[22px] font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
                   {item.name}
                 </h3>
-                <p className="text-base sm:text-lg font-bold text-blue-600">
+                <p className="text-base sm:text-lg font-bold text-amber-600">
                   {item.price}
                 </p>
                 <p className="text-sm text-slate-500 font-medium">
@@ -144,7 +144,7 @@ function EquipmentPage() {
               <div className="mt-6 pt-1">
                 <Button
                   asChild
-                  className="w-full rounded-2xl bg-[#eff6ff] hover:bg-blue-600 text-blue-600 hover:text-white font-bold py-6 text-sm sm:text-base border border-blue-200/70 shadow-xs hover:shadow-md transition-all duration-200"
+                  className="w-full rounded-2xl bg-amber-50/80 hover:bg-gradient-to-r hover:from-orange-500 hover:to-amber-600 text-amber-700 hover:text-white font-bold py-6 text-sm sm:text-base border border-amber-200/80 shadow-xs hover:shadow-md transition-all duration-200"
                 >
                   <a
                     href={waLink(`Hi GK Events, I'd like to book "${item.name}" for my event.`)}

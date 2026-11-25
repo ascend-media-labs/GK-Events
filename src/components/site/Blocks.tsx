@@ -76,7 +76,7 @@ export function Process({ steps }: { steps: string[] }) {
   return (
     <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       {steps.map((s, i) => (
-        <li key={s} className="rounded-3xl border border-slate-200/80 bg-slate-50 p-6 shadow-xs">
+        <li key={s} className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-xs">
           <span className="text-gold font-display text-4xl font-extrabold">{i + 1}</span>
           <p className="mt-3 font-semibold text-slate-900">{s}</p>
         </li>
@@ -105,8 +105,8 @@ export function FinalCta({ title = "Ready to make your event unforgettable?" }: 
   return (
     <section className="py-8 sm:py-12 bg-white">
       <div className="container-x">
-        <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-8 sm:p-12 text-center shadow-md">
-          <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-amber-500/15 blur-3xl" />
+        <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/50 via-white to-amber-50/30 p-8 sm:p-12 text-center shadow-md">
+          <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-amber-500/10 blur-3xl" />
           <h2 className="relative text-2xl sm:text-4xl font-extrabold text-slate-950">{title}</h2>
           <p className="relative mx-auto mt-3 max-w-xl text-slate-600 font-medium text-sm sm:text-base">Tell us your date, venue and guest count — get a tailored quote within hours.</p>
           <CtaButtons className="relative mt-6 justify-center" />

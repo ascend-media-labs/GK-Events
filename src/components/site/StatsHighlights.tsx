@@ -105,7 +105,7 @@ export function StatsHighlights() {
               key={item.label}
               className="flex flex-col items-center justify-center rounded-[24px] sm:rounded-[28px] border border-slate-200/80 bg-white p-6 sm:p-8 text-center shadow-[0_8px_24px_rgba(15,23,42,0.04)] hover:shadow-[0_16px_36px_rgba(15,23,42,0.08)] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold text-blue-600 leading-none">
+              <div className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold text-amber-600 leading-none">
                 <AnimatedStat
                   value={item.value}
                   suffix={item.suffix}
