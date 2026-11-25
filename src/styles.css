@@ -178,3 +178,67 @@ main { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .anim-fade-up, .anim-fade-down, .anim-slide-left, .anim-slide-right, .anim-grow-x, .anim-zoom-out { animation: none; }
 }
+
+/* ── DJ Lights & Sound Equalizer Animations for Footer ── */
+@keyframes dj-beam-1 {
+  0%, 100% { transform: rotate(-22deg) scaleY(1); opacity: 0.55; }
+  50% { transform: rotate(14deg) scaleY(1.08); opacity: 0.9; }
+}
+@keyframes dj-beam-2 {
+  0%, 100% { transform: rotate(18deg) scaleY(1.05); opacity: 0.8; }
+  50% { transform: rotate(-16deg) scaleY(0.95); opacity: 0.5; }
+}
+@keyframes dj-beam-3 {
+  0%, 100% { transform: rotate(-10deg) scaleY(0.92); opacity: 0.6; }
+  50% { transform: rotate(12deg) scaleY(1.12); opacity: 0.95; }
+}
+@keyframes dj-beam-4 {
+  0%, 100% { transform: rotate(24deg) scaleY(0.95); opacity: 0.55; }
+  50% { transform: rotate(-14deg) scaleY(1.06); opacity: 0.85; }
+}
+@keyframes dj-beam-5 {
+  0%, 100% { transform: rotate(-16deg) scaleY(1.06); opacity: 0.8; }
+  50% { transform: rotate(20deg) scaleY(0.96); opacity: 0.55; }
+}
+
+@keyframes eq-bounce-1 {
+  0%, 100% { height: 14%; }
+  50% { height: 96%; }
+}
+@keyframes eq-bounce-2 {
+  0%, 100% { height: 86%; }
+  50% { height: 22%; }
+}
+@keyframes eq-bounce-3 {
+  0%, 100% { height: 36%; }
+  50% { height: 100%; }
+}
+@keyframes eq-bounce-4 {
+  0%, 100% { height: 92%; }
+  50% { height: 30%; }
+}
+
+@keyframes dj-ambient-glow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.12); }
+}
+
+.anim-dj-beam-1 { animation: dj-beam-1 5.4s ease-in-out infinite; transform-origin: top center; }
+.anim-dj-beam-2 { animation: dj-beam-2 6.2s ease-in-out infinite; transform-origin: top center; }
+.anim-dj-beam-3 { animation: dj-beam-3 4.8s ease-in-out infinite; transform-origin: top center; }
+.anim-dj-beam-4 { animation: dj-beam-4 5.9s ease-in-out infinite; transform-origin: top center; }
+.anim-dj-beam-5 { animation: dj-beam-5 6.5s ease-in-out infinite; transform-origin: top center; }
+
+.anim-eq-1 { animation: eq-bounce-1 0.72s ease-in-out infinite alternate; }
+.anim-eq-2 { animation: eq-bounce-2 0.58s ease-in-out infinite alternate; }
+.anim-eq-3 { animation: eq-bounce-3 0.88s ease-in-out infinite alternate; }
+.anim-eq-4 { animation: eq-bounce-4 0.64s ease-in-out infinite alternate; }
+
+.anim-dj-glow { animation: dj-ambient-glow 5s ease-in-out infinite alternate; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-dj-beam-1, .anim-dj-beam-2, .anim-dj-beam-3, .anim-dj-beam-4, .anim-dj-beam-5,
+  .anim-eq-1, .anim-eq-2, .anim-eq-3, .anim-eq-4, .anim-dj-glow {
+    animation: none;
+  }
+}

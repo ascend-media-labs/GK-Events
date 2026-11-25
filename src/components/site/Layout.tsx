@@ -94,9 +94,11 @@ const METRO_CITIES = [
 export function Logo({
   className = "h-11 sm:h-13",
   showText = true,
+  isDark = false,
 }: {
   className?: string;
   showText?: boolean;
+  isDark?: boolean;
 }) {
   return (
     <div className="flex items-center gap-2.5 sm:gap-3.5 select-none">
@@ -107,10 +109,10 @@ export function Logo({
       />
       {showText && (
         <div className="flex flex-col justify-center">
-          <span className="font-display text-xl sm:text-2xl font-black tracking-tight text-slate-950 leading-none">
+          <span className={`font-display text-xl sm:text-2xl font-black tracking-tight leading-none ${isDark ? "text-white" : "text-slate-950"}`}>
             GK <span className="text-gold">EVENTS</span>
           </span>
-          <span className="text-[9.5px] sm:text-[10.5px] font-extrabold uppercase tracking-[0.2em] text-amber-700 mt-1 leading-none">
+          <span className={`text-[9.5px] sm:text-[10.5px] font-extrabold uppercase tracking-[0.2em] mt-1 leading-none ${isDark ? "text-amber-400" : "text-amber-700"}`}>
             EVENT PRODUCTIONS &amp; TECH
           </span>
         </div>
@@ -326,64 +328,7 @@ function NavLink({ to, label }: { to: string; label: string }) {
   );
 }
 
-export function Footer() {
-  return (
-    <footer className="border-t border-slate-200/90 bg-slate-50 text-slate-800">
-      <div className="container-x grid gap-8 py-10 sm:py-12 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <Logo className="h-20" />
-          <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-            Premium event equipment rental, photography, films and live event production — with blessings, for every celebration.
-          </p>
-        </div>
-        <FooterCol title="Company" items={mainNav} />
-        <FooterCol title="Services" items={serviceNav} />
-        <div>
-          <h4 className="eyebrow mb-4">Contact</h4>
-          <ul className="space-y-3 text-sm text-slate-600">
-            <li>
-              <a href={contact.phoneHref} className="flex gap-2 hover:text-amber-700 transition-colors">
-                <Phone className="h-4 w-4 shrink-0 text-amber-600" />
-                {contact.phone}
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${contact.email}`} className="flex gap-2 hover:text-amber-700 transition-colors">
-                <Mail className="h-4 w-4 shrink-0 text-amber-600" />
-                {contact.email}
-              </a>
-            </li>
-            <li className="flex gap-2">
-              <MapPin className="h-4 w-4 shrink-0 text-amber-600" />
-              {contact.city}
-            </li>
-            <li className="text-slate-500 text-xs">{contact.hours}</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-slate-200 py-6 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} GK Events. All rights reserved.
-      </div>
-    </footer>
-  );
-}
-
-function FooterCol({ title, items }: { title: string; items: { to: string; label: string }[] }) {
-  return (
-    <div>
-      <h4 className="eyebrow mb-4">{title}</h4>
-      <ul className="space-y-2 text-sm">
-        {items.map((i) => (
-          <li key={i.to}>
-            <Link to={i.to} className="text-slate-600 hover:text-amber-700 transition-colors">
-              {i.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+export { Footer } from "./Footer";
 
 export function FloatingButtons() {
   return (
