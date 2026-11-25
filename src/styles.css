@@ -4,6 +4,7 @@
  *   npm package before @importing its CSS. Never @import a remote URL (web fonts, CDN CSS): the
  *   build resolves @import from the filesystem. Load those with a <link> in the head() of
  *   src/routes/__root.tsx and name the family in a --font-* token in @theme inline below.
+ *   The whole site uses a single family (Inter) for every token.
  */
 @import "tailwindcss" source(none);
 @source "../src";
@@ -60,8 +61,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-gold-glow: var(--gold-glow);
   --color-whatsapp: var(--whatsapp);
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 :root {
@@ -146,3 +149,32 @@
 @utility animate-rise { animation: rise 0.9s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 @utility animate-bob { animation: bob 1.8s ease-in-out infinite; }
+
+
+/* ── Motion: hero entrance animations (scroll reveals live in components/site/ScrollReveal.tsx) ── */
+main { overflow-x: clip; }
+
+
+@keyframes gk-fade-up { from { opacity: 0; transform: translate3d(0, 24px, 0); } to { opacity: 1; transform: none; } }
+@keyframes gk-fade-down { from { opacity: 0; transform: translate3d(0, -16px, 0); } to { opacity: 1; transform: none; } }
+@keyframes gk-slide-left { from { opacity: 0; transform: translate3d(-48px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes gk-slide-right { from { opacity: 0; transform: translate3d(48px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes gk-grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes gk-zoom-out { from { transform: scale(1.08); } to { transform: scale(1); } }
+
+.anim-fade-up, .anim-fade-down, .anim-slide-left, .anim-slide-right, .anim-grow-x, .anim-zoom-out {
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+  animation-fill-mode: both;
+  animation-delay: var(--d, 0ms);
+}
+.anim-fade-up { animation-name: gk-fade-up; }
+.anim-fade-down { animation-name: gk-fade-down; }
+.anim-slide-left { animation-name: gk-slide-left; }
+.anim-slide-right { animation-name: gk-slide-right; }
+.anim-grow-x { animation-name: gk-grow-x; }
+.anim-zoom-out { animation-name: gk-zoom-out; animation-duration: 2.4s; animation-timing-function: ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up, .anim-fade-down, .anim-slide-left, .anim-slide-right, .anim-grow-x, .anim-zoom-out { animation: none; }
+}

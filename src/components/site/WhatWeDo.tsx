@@ -1,86 +1,98 @@
+import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Users, Mic, Briefcase, PlayCircle, ArrowRight } from "lucide-react";
+import { Users, Mic, Briefcase, PlayCircle } from "lucide-react";
 import { images } from "@/data/site";
 
 const SERVICES = [
-  {
-    title: "Weddings & Social Events",
-    to: "/wedding-events",
-    image: images.wedding,
-    icon: Users,
-    desc: "Grand stages, LED backdrops, sangeet audio & royal decor.",
-  },
-  {
-    title: "Concerts & Live Shows",
-    to: "/events",
-    image: images.hero,
-    icon: Mic,
-    desc: "Line arrays, stage trusses, moving heads & lasers.",
-  },
-  {
-    title: "Corporate Events",
-    to: "/corporate-events",
-    image: images.corporate,
-    icon: Briefcase,
-    desc: "Curved LED displays, seamless switching, podium audio & mics.",
-  },
-  {
-    title: "Video Production & Live Broadcasting",
-    to: "/videography",
-    image: images.camera,
-    icon: PlayCircle,
-    desc: "4K cinema cameras, motorized gimbals & multi-cam streaming.",
-  },
+  { lines: ["Weddings &", "Social Events"], to: "/wedding-events", image: images.wedding, icon: Users },
+  { lines: ["Concerts &", "Live Shows"], to: "/events", image: images.hero, icon: Mic },
+  { lines: ["Corporate", "Events"], to: "/corporate-events", image: images.corporate, icon: Briefcase },
+  { lines: ["Video Production", "& Live Broadcasting"], to: "/videography", image: images.camera, icon: PlayCircle },
 ];
 
 export function WhatWeDo() {
-  return (
-    <section className="relative bg-white pt-8 sm:pt-10 pb-8 sm:pb-10" aria-label="Our Services">
-      <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
 
-        {/* Section Header */}
-        <div className="text-left max-w-2xl mb-6 sm:mb-8">
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-600 mb-1.5">
-            OUR SERVICES
-          </p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-slate-950 tracking-tight">
+  const onScroll = () => {
+    const el = trackRef.current;
+    if (!el) return;
+    const card = el.firstElementChild as HTMLElement | null;
+    if (!card) return;
+    const step = card.offsetWidth + 16;
+    const max = el.scrollWidth - el.clientWidth;
+    const idx = el.scrollLeft >= max - 4 ? SERVICES.length - 1 : Math.round(el.scrollLeft / step);
+    setActive(Math.min(SERVICES.length - 1, Math.max(0, idx)));
+  };
+
+  const goTo = (i: number) => {
+    const el = trackRef.current;
+    const card = el?.children[i] as HTMLElement | undefined;
+    if (el && card) el.scrollTo({ left: card.offsetLeft - el.offsetLeft - 16, behavior: "smooth" });
+  };
+
+  return (
+    <section
+      className="relative bg-gradient-to-b from-[#f8f6fb] via-[#fdfbfa] to-[#fbf8f6] pt-9 pb-6 sm:pt-12 lg:pt-[80px] lg:pb-8"
+      aria-label="Our Services"
+    >
+      <div className="mx-auto max-w-[1288px] lg:px-[60px]">
+        {/* Header */}
+        <div className="mx-auto max-w-xl px-5 text-center">
+          <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-orange-600 sm:text-xs">Our Services</p>
+          <h2 className="mt-2 font-display text-[2rem] font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-[2.4rem]">
             What We Do
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-500 font-normal">
+          <p className="mx-auto mt-2 max-w-[22rem] text-sm leading-relaxed text-slate-500 sm:max-w-none">
             End-to-end event production, equipment rental &amp; technical setup for every scale.
           </p>
         </div>
 
-        {/* 4 Cards Grid matching mockup */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {SERVICES.map((item) => (
+        {/* Cards: horizontal swipe on mobile, 4-col grid on desktop */}
+        <div
+          ref={trackRef}
+          data-reveal-group
+          onScroll={onScroll}
+          className="mt-7 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:mt-6 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:px-0"
+        >
+          {SERVICES.map((s) => (
             <Link
-              key={item.title}
-              to={item.to}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_8px_24px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1.5 hover:border-amber-400 hover:shadow-[0_16px_36px_rgba(15,23,42,0.12)]"
+              key={s.to}
+              to={s.to}
+              className="group relative w-[62%] shrink-0 snap-start sm:w-[40%] lg:w-auto"
             >
-              {/* Photo Header */}
-              <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-100">
+              <div className="h-40 overflow-hidden rounded-[22px] bg-slate-200 sm:h-44 lg:h-[150px] xl:h-[160px]">
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={s.image}
+                  alt={s.lines.join(" ")}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
-
-              {/* Bottom White Label Bar with Icon */}
-              <div className="flex items-center justify-center gap-2.5 bg-white py-4 px-4 text-center border-t border-slate-100 transition-colors group-hover:bg-amber-50/50">
-                <item.icon className="h-4.5 w-4.5 text-slate-700 shrink-0 group-hover:text-amber-600 transition-colors" />
-                <span className="font-display text-xs sm:text-[13px] font-bold text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-1">
-                  {item.title}
+              <div className="relative -mt-9 flex items-center gap-3 rounded-[20px] bg-white px-4 py-3.5 shadow-[0_10px_28px_rgba(15,23,42,0.10)] transition-shadow group-hover:shadow-[0_14px_34px_rgba(234,88,12,0.18)] lg:justify-center lg:gap-4 lg:px-5">
+                <s.icon className="h-6 w-6 shrink-0 stroke-[1.6] text-slate-800 transition-colors group-hover:text-orange-600 lg:h-7 lg:w-7" />
+                <span className="font-display text-[13px] font-bold leading-tight text-slate-900 transition-colors group-hover:text-orange-600 lg:text-sm">
+                  {s.lines[0]}
+                  <br />
+                  {s.lines[1]}
                 </span>
               </div>
             </Link>
           ))}
         </div>
 
+        {/* Dots (mobile/tablet only) */}
+        <div className="mt-2 flex justify-center gap-2 lg:hidden">
+          {SERVICES.map((s, i) => (
+            <button
+              key={s.to}
+              type="button"
+              aria-label={`Show ${s.lines.join(" ")}`}
+              onClick={() => goTo(i)}
+              className={`h-2 rounded-full transition-all ${i === active ? "w-6 bg-orange-500" : "w-2 bg-slate-300"}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
