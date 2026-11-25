@@ -1,6 +1,6 @@
 import type React from "react";
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Phone, Mail, MapPin, Clock, ArrowRight, ShieldCheck, Sparkles, Volume2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { contact, waLink } from "@/data/site";
 import { Logo } from "./Layout";
 
@@ -200,22 +200,22 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const servicesList = [
-    { to: "/sound-system-rental", label: "Sound Systems & Line Arrays", icon: SoundArrayIcon, tag: "Concert" },
-    { to: "/led-wall-rental", label: "P2.5 Curved 4K LED Walls", icon: LedWallIcon, tag: "Ultra HD" },
-    { to: "/event-solutions", label: "Intelligent DJ & Stage Lights", icon: MovingHeadIcon, tag: "DMX" },
-    { to: "/led-tv-rental", label: "LED TV Screens (65\"–85\")", icon: LedTvIcon, tag: "4K UHD" },
-    { to: "/projector-rental", label: "High-Lumen Laser Projectors", icon: ProjectorIcon, tag: "Laser" },
-    { to: "/photography", label: "Candid Photography", icon: CameraIcon, tag: "Pro" },
-    { to: "/videography", label: "4K Cinema Films & Teasers", icon: CineVideoIcon, tag: "Cinema" },
-    { to: "/live-streaming", label: "Multi-Cam Live Streaming", icon: BroadcastIcon, tag: "Global" },
+    { to: "/sound-system-rental", label: "Sound Systems & Line Arrays", icon: SoundArrayIcon },
+    { to: "/led-wall-rental", label: "P2.5 Curved 4K LED Walls", icon: LedWallIcon },
+    { to: "/event-solutions", label: "Intelligent DJ & Stage Lights", icon: MovingHeadIcon },
+    { to: "/led-tv-rental", label: "LED TV Screens (65\"–85\")", icon: LedTvIcon },
+    { to: "/projector-rental", label: "High-Lumen Laser Projectors", icon: ProjectorIcon },
+    { to: "/photography", label: "Candid Photography", icon: CameraIcon },
+    { to: "/videography", label: "4K Cinema Films & Teasers", icon: CineVideoIcon },
+    { to: "/live-streaming", label: "Multi-Cam Live Streaming", icon: BroadcastIcon },
   ];
 
   const cityHubs = [
-    { id: "hyderabad", name: "Hyderabad", status: "Central Depot", state: "TS" },
-    { id: "bangalore", name: "Bangalore", status: "Tech Park Hub", state: "KA" },
-    { id: "mumbai", name: "Mumbai", status: "Metro Hub", state: "MH" },
-    { id: "chennai", name: "Chennai", status: "Coastal Depot", state: "TN" },
-    { id: "pune", name: "Pune", status: "West Depot", state: "MH" },
+    { id: "hyderabad", name: "Hyderabad" },
+    { id: "bangalore", name: "Bangalore" },
+    { id: "mumbai", name: "Mumbai" },
+    { id: "chennai", name: "Chennai" },
+    { id: "pune", name: "Pune" },
   ];
 
   return (
@@ -238,7 +238,6 @@ export function Footer() {
             <div className="h-4 w-7 rounded-full bg-gradient-to-b from-slate-800 to-slate-950 border border-amber-400/80 shadow-[0_0_15px_rgba(245,158,11,0.8)] flex items-center justify-center">
               <span className="h-2 w-2 rounded-full bg-amber-400 animate-ping" />
             </div>
-            <span className="text-[8px] font-mono uppercase tracking-widest text-amber-400/80 mt-0.5 hidden sm:inline">SPOT 1</span>
           </div>
 
           {/* Light 2: Electric Cyan */}
@@ -247,7 +246,6 @@ export function Footer() {
             <div className="h-4 w-7 rounded-full bg-gradient-to-b from-slate-800 to-slate-950 border border-cyan-400/80 shadow-[0_0_15px_rgba(6,182,212,0.8)] flex items-center justify-center">
               <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
             </div>
-            <span className="text-[8px] font-mono uppercase tracking-widest text-cyan-400/80 mt-0.5 hidden sm:inline">BEAM 2</span>
           </div>
 
           {/* Light 3: Center Royal Purple / Magenta */}
@@ -256,7 +254,6 @@ export function Footer() {
             <div className="h-5 w-8 rounded-full bg-gradient-to-b from-slate-800 to-slate-950 border border-pink-400/90 shadow-[0_0_20px_rgba(236,72,153,0.9)] flex items-center justify-center">
               <span className="h-2.5 w-2.5 rounded-full bg-pink-400 animate-ping" />
             </div>
-            <span className="text-[8px] font-mono uppercase tracking-widest text-pink-400/90 mt-0.5 hidden sm:inline">CENTER LASER</span>
           </div>
 
           {/* Light 4: Royal Violet */}
@@ -265,7 +262,6 @@ export function Footer() {
             <div className="h-4 w-7 rounded-full bg-gradient-to-b from-slate-800 to-slate-950 border border-purple-400/80 shadow-[0_0_15px_rgba(168,85,247,0.8)] flex items-center justify-center">
               <span className="h-2 w-2 rounded-full bg-purple-400 animate-ping" />
             </div>
-            <span className="text-[8px] font-mono uppercase tracking-widest text-purple-400/80 mt-0.5 hidden sm:inline">BEAM 4</span>
           </div>
 
           {/* Light 5: Sunset Gold / Orange */}
@@ -274,7 +270,6 @@ export function Footer() {
             <div className="h-4 w-7 rounded-full bg-gradient-to-b from-slate-800 to-slate-950 border border-orange-400/80 shadow-[0_0_15px_rgba(249,115,22,0.8)] flex items-center justify-center">
               <span className="h-2 w-2 rounded-full bg-orange-400 animate-ping" />
             </div>
-            <span className="text-[8px] font-mono uppercase tracking-widest text-orange-400/80 mt-0.5 hidden sm:inline">SPOT 5</span>
           </div>
 
         </div>
@@ -334,55 +329,16 @@ export function Footer() {
         <div className="anim-dj-glow absolute bottom-10 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-purple-600/10 blur-[100px]" />
       </div>
 
-      {/* ── 3. LIVE AUDIO CONSOLE STRIP (INTERACTIVE SOUND EQUALIZER & LIVE STATUS) ── */}
-      <div className="relative z-20 border-b border-white/10 bg-[#0e101c]/80 backdrop-blur-md px-4 py-3 sm:py-3.5">
-        <div className="max-w-[1288px] mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-          
-          {/* Audio Console Identifier */}
-          <div className="flex items-center gap-2.5 sm:gap-3 text-left">
-            <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-amber-500/30 text-amber-400 shadow-[0_0_12px_rgba(245,158,11,0.25)]">
-              <Volume2 className="h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-300">
-                  GK LIVE AUDIO ENGINE
-                </span>
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-[9.5px] font-mono font-bold text-emerald-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  LIVE · 96kHz / 24-BIT
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-400 hidden sm:block">
-                Concert Line Arrays · Digital Audio Mixers · Zero-Delay Radio In-Ears
-              </p>
-            </div>
-          </div>
-
-          {/* Center Sound Equalizer Wave */}
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest hidden lg:inline">
-              SPECTRUM
-            </span>
-            <AudioEqualizerSpectrum />
-            <span className="text-[10px] font-mono text-emerald-400/90 font-bold hidden lg:inline">
-              +2.8 dB
-            </span>
-          </div>
-
-          {/* Quick Action Pill */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <a
-              href={waLink("Hi GK Events, I want to book Sound & DJ Lighting setup for my event.")}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 text-white font-bold text-xs shadow-[0_4px_15px_rgba(245,158,11,0.35)] hover:shadow-[0_6px_20px_rgba(245,158,11,0.5)] transition-all hover:scale-105 active:scale-95"
-            >
-              <WhatsAppIcon className="h-3.5 w-3.5" />
-              <span>Get Instant Sound Quote</span>
-            </a>
-          </div>
-
+      {/* ── 3. LIVE AUDIO SOUND EQUALIZER STRIP ── */}
+      <div className="relative z-20 border-b border-white/10 bg-[#0e101c]/80 backdrop-blur-md px-4 py-2.5">
+        <div className="max-w-[1288px] mx-auto flex items-center justify-center gap-3">
+          <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest hidden sm:inline">
+            SPECTRUM
+          </span>
+          <AudioEqualizerSpectrum />
+          <span className="text-[10px] font-mono text-emerald-400/90 font-bold hidden sm:inline">
+            +2.8 dB
+          </span>
         </div>
       </div>
 
@@ -398,30 +354,18 @@ export function Footer() {
               <Logo className="h-12 sm:h-14" isDark={true} />
             </Link>
 
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm mb-4">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm mb-6">
               India&apos;s premier event technology &amp; AV production company. Powering royal weddings,
               corporate summits, music festivals, and live broadcasts with concert-grade sound, 4K LED walls,
               and intelligent stage lighting.
             </p>
-
-            {/* Quality & Trust Badges */}
-            <div className="flex flex-wrap gap-2 mb-5">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/25 text-amber-300 text-[11px] font-bold">
-                <Sparkles className="h-3 w-3 text-amber-400" />
-                4.9/5 Rating (1,500+ Shows)
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300 text-[11px] font-semibold">
-                <ShieldCheck className="h-3 w-3 text-emerald-400" />
-                Tested Backups Included
-              </span>
-            </div>
 
             {/* Original Social Media Icons Row */}
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2.5">
                 CONNECT &amp; EXPLORE
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3.5">
                 
                 {/* WhatsApp */}
                 <a
@@ -429,9 +373,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Chat on WhatsApp"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-emerald-500 hover:bg-emerald-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <WhatsAppIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <WhatsAppIcon className="h-7 w-7" />
                 </a>
 
                 {/* Instagram */}
@@ -440,9 +384,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Follow GK Events on Instagram"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-pink-500 hover:bg-pink-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <InstagramIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <InstagramIcon className="h-7 w-7" />
                 </a>
 
                 {/* YouTube */}
@@ -451,9 +395,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Watch Event Productions on YouTube"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <YouTubeIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <YouTubeIcon className="h-7 w-7" />
                 </a>
 
                 {/* Facebook */}
@@ -462,9 +406,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GK Events on Facebook"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-500/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <FacebookIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <FacebookIcon className="h-7 w-7" />
                 </a>
 
                 {/* LinkedIn */}
@@ -473,9 +417,9 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GK Events Corporate on LinkedIn"
-                  className="group relative flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 border border-white/10 transition-all duration-300 hover:scale-110 hover:border-blue-400 hover:bg-blue-400/10 shadow-sm"
+                  className="transition-transform duration-200 hover:scale-115 inline-flex items-center justify-center"
                 >
-                  <LinkedInIcon className="h-5 w-5 transition-transform group-hover:scale-105" />
+                  <LinkedInIcon className="h-7 w-7" />
                 </a>
 
               </div>
@@ -497,14 +441,11 @@ export function Footer() {
                 <li key={svc.to}>
                   <Link
                     to={svc.to}
-                    className="group flex items-center justify-between text-xs sm:text-[13px] text-slate-300 hover:text-amber-300 py-1 transition-colors"
+                    className="group flex items-center text-xs sm:text-[13px] text-slate-300 hover:text-amber-300 py-1 transition-colors"
                   >
                     <span className="flex items-center gap-2.5">
                       <svc.icon className="h-4 w-4 text-amber-500/80 group-hover:text-amber-400 transition-colors shrink-0" />
                       <span>{svc.label}</span>
-                    </span>
-                    <span className="text-[9px] font-mono text-slate-500 group-hover:text-amber-400 transition-colors uppercase px-1.5 py-0.5 rounded bg-white/5">
-                      {svc.tag}
                     </span>
                   </Link>
                 </li>
@@ -527,14 +468,11 @@ export function Footer() {
                   key={city.id}
                   to="/$city"
                   params={{ city: city.id }}
-                  className="group flex items-center justify-between text-xs sm:text-[13px] text-slate-300 hover:text-cyan-300 py-0.5 transition-colors"
+                  className="group flex items-center text-xs sm:text-[13px] text-slate-300 hover:text-cyan-300 py-0.5 transition-colors"
                 >
                   <span className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform" />
                     <span className="font-semibold">{city.name}</span>
-                  </span>
-                  <span className="text-[10px] font-mono text-slate-400 group-hover:text-cyan-400">
-                    {city.state}
                   </span>
                 </Link>
               ))}
@@ -617,7 +555,7 @@ export function Footer() {
             </a>
 
             {/* Dispatch Hours & Hub Location */}
-            <div className="space-y-1.5 text-xs text-slate-400 pt-1">
+            <div className="space-y-1.5 text-xs text-slate-400 pt-2">
               <div className="flex items-center gap-2">
                 <Clock className="h-3.5 w-3.5 text-amber-400 shrink-0" />
                 <span>{contact.hours} (Live Dispatch)</span>
@@ -627,21 +565,6 @@ export function Footer() {
                 <span>Warehouses in HYD, BLR, BOM, MAA &amp; PNQ</span>
               </div>
             </div>
-
-            {/* WhatsApp Direct Action Button */}
-            <div className="mt-4 pt-1">
-              <a
-                href={waLink("Hi GK Events, I need equipment rental availability for my event.")}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-2.5 font-bold text-xs shadow-[0_4px_15px_rgba(37,211,102,0.3)] transition-transform hover:scale-[1.02] active:scale-95"
-              >
-                <WhatsAppIcon className="h-4 w-4" />
-                <span>Chat with Equipment Specialist</span>
-                <ArrowRight className="h-3.5 w-3.5 ml-1" />
-              </a>
-            </div>
-
           </div>
 
         </div>
