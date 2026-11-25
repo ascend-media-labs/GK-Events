@@ -26,7 +26,7 @@ function Contact() {
   return (
     <>
       <PageHero eyebrow="Contact & Booking" title="Let's plan your" highlight="next event." intro="Share your date, venue and requirements — we'll send a tailored quote within hours." image={images.corporate} />
-      <section className="py-20">
+      <section className="py-10 sm:py-14">
         <div className="container-x grid gap-10 lg:grid-cols-[1fr_1.4fr]">
           <div className="grid content-start gap-4">
             {cards.map((c) => {

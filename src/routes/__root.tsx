@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer, FloatingButtons, AnnouncementBar } from "@/components/site/Layout";
+import { ScrollReveal } from "@/components/site/ScrollReveal";
 
 function NotFoundComponent() {
   return (
@@ -98,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -130,6 +131,7 @@ function RootComponent() {
       <AnnouncementBar />
       <Header />
       <main><Outlet /></main>
+      <ScrollReveal />
       <Footer />
       <FloatingButtons />
     </QueryClientProvider>

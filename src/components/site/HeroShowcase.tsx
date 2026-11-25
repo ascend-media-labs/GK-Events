@@ -1,185 +1,121 @@
+import type React from "react";
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, ArrowRight, Speaker, Tv, Lightbulb, Camera } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MessageCircle, ArrowRight, Volume2, Monitor, Lightbulb, Camera } from "lucide-react";
 import { waLink } from "@/data/site";
 
+const CAPABILITIES = [
+  { to: "/sound-system-rental", icon: Volume2, line1: "Sound", line2: "Systems" },
+  { to: "/led-wall-rental", icon: Monitor, line1: "LED", line2: "Walls" },
+  { to: "/event-solutions", icon: Lightbulb, line1: "Stage", line2: "Lighting" },
+  { to: "/videography", icon: Camera, line1: "Video", line2: "Production" },
+] as const;
+
+/**
+ * Home hero.
+ * - Mobile/tablet (< lg): portrait stage image, centered copy over the dark sky,
+ *   the floating header pill sits on top of the image (hero is pulled up under it),
+ *   capability bar rests on the bottom of the stage.
+ * - Desktop (lg+): wide stage image, left-aligned copy, capability bar straddles
+ *   the bottom edge of the hero.
+ */
 export function HeroShowcase() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#07090e] text-white pt-8 pb-10 sm:pt-14 sm:pb-12" aria-label="Hero Showcase">
-      {/* Pristine Full-Width Background Stage Image */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
-        <img
-          src="/images/hero-stage-grand.jpg"
-          alt="GK Events Royal Wedding Stage & Live Concert Lighting"
-          className="h-full w-full object-cover object-[80%_center] md:object-center transition-transform duration-1000"
-          loading="eager"
-        />
-        {/* Subtle dark vignette on left side so typography is crystal sharp */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07090e]/95 via-[#07090e]/60 to-transparent max-w-3xl hidden md:block" />
-        <div className="absolute inset-0 bg-[#07090e]/65 md:hidden" />
-        {/* Subtle top fade */}
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#07090e]/50 to-transparent" />
-      </div>
+    <section className="relative" aria-label="Hero">
+      <div className="relative overflow-hidden bg-[#0a0a20] text-white -mt-[82px] sm:-mt-[98px] lg:mt-0">
+        {/* Background image (art-directed per breakpoint) */}
+        <picture className="pointer-events-none absolute inset-0 select-none">
+          <source media="(min-width: 1024px)" srcSet="/images/hero-home-desktop.jpg" />
+          <img
+            src="/images/hero-home-mobile.jpg"
+            alt="GK Events grand wedding stage with LED walls and concert lighting"
+            className="anim-zoom-out absolute inset-x-0 bottom-0 h-auto w-full origin-bottom lg:inset-0 lg:h-full lg:object-cover lg:object-[center_55%]"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
 
-      {/* Hero Content Container */}
-      <div className="relative z-10 max-w-[1288px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[440px] sm:min-h-[480px] items-center">
-          
-          {/* Left Column: Eyebrow, Signature Headline, Description & CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left gap-4 max-w-2xl py-6 sm:py-10">
-            
-            {/* Eyebrow: —— PREMIUM EVENT PRODUCTIONS —— with gold horizontal bars */}
-            <div className="flex items-center gap-3">
-              <div className="h-[1.5px] w-8 sm:w-10 bg-amber-500" />
-              <span className="text-[10px] sm:text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-slate-200">
-                PREMIUM EVENT PRODUCTIONS
+        {/* Legibility overlays */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-[#0a0a20] via-[#0a0a20]/60 to-transparent lg:hidden" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-[60%] bg-gradient-to-r from-[#0b0a24]/85 via-[#0b0a24]/45 to-transparent lg:block" />
+
+        <div className="relative mx-auto max-w-[1288px] px-5 sm:px-8 lg:px-[60px]">
+          <div className="flex min-h-[calc(415px+71vw)] flex-col items-center pt-[104px] pb-[150px] text-center sm:min-h-[calc(460px+71vw)] sm:pt-[130px] lg:min-h-[470px] lg:items-start lg:justify-center lg:pt-10 lg:pb-24 lg:text-left xl:min-h-[500px]">
+            {/* Eyebrow */}
+            <div className="anim-fade-down flex items-center gap-3 sm:gap-4" style={{ "--d": "100ms" } as React.CSSProperties}>
+              <span className="anim-grow-x h-[1.5px] w-6 shrink-0 origin-right bg-orange-500 sm:w-11" style={{ "--d": "350ms" } as React.CSSProperties} />
+              <span className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.24em] sm:tracking-[0.32em] text-white/90 sm:text-xs">
+                Premium Event Productions
               </span>
-              <div className="h-[1.5px] w-8 sm:w-10 bg-amber-500" />
+              <span className="anim-grow-x h-[1.5px] w-6 shrink-0 origin-left bg-orange-500 sm:w-11" style={{ "--d": "350ms" } as React.CSSProperties} />
             </div>
 
-            {/* Signature Headline matching reference mockup */}
-            <h1 className="font-serif text-[2.6rem] sm:text-[3.3rem] md:text-[3.8rem] lg:text-[4.2rem] font-bold text-white leading-[1.08] tracking-tight">
-              Professional<br />
-              Event Equipment<br />
-              for{" "}
-              <span className="text-amber-500 font-serif">
-                Rent &amp; Setup
+            {/* Headline */}
+            <h1 className="mt-4 font-serif text-[clamp(2.1rem,9.6vw,3.6rem)] font-bold leading-[1.06] tracking-[-0.01em] text-white lg:mt-5 lg:text-[3.6rem] xl:text-[4rem]">
+              <span className="anim-slide-left block" style={{ "--d": "250ms" } as React.CSSProperties}>
+                Professional
+              </span>
+              <span className="anim-slide-right block" style={{ "--d": "400ms" } as React.CSSProperties}>
+                Event Equipment
+              </span>
+              <span className="anim-slide-left block" style={{ "--d": "550ms" } as React.CSSProperties}>
+                for <span className="text-orange-500">Rent &amp; Setup</span>
               </span>
             </h1>
 
-            {/* Subtitle Description */}
-            <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-lg">
-              Concert sound line arrays, curved 4K LED walls, stage lighting, grand weddings, corporate productions, video shooting and live broadcasting.
+            {/* Description */}
+            <p style={{ "--d": "750ms" } as React.CSSProperties} className="anim-fade-up mt-4 max-w-[22rem] text-[13.5px] leading-relaxed text-white/90 sm:max-w-md sm:text-base lg:max-w-[27rem] lg:text-[15px]">
+              Concert sound line arrays, curved 4K LED walls, stage lighting, grand weddings, corporate
+              productions, video shooting and live broadcasting.
             </p>
 
-            {/* Action CTA Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-3.5">
-              <Button
-                asChild
-                className="rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold px-7 py-5 text-sm sm:text-base shadow-lg shadow-orange-500/20 border-0 transition-all hover:scale-105 active:scale-95"
+            {/* CTAs */}
+            <div style={{ "--d": "900ms" } as React.CSSProperties} className="anim-fade-up mt-6 flex w-full max-w-[24rem] items-center justify-center gap-2.5 sm:max-w-none sm:gap-3 lg:mt-7 lg:w-auto lg:justify-start lg:gap-4">
+              <a
+                href={waLink("Hi GK Events, I'd like to book event equipment.")}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-[#e8590c] to-[#f97316] px-8 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(234,88,12,0.35)] transition-transform hover:scale-[1.03] active:scale-95 sm:inline-flex sm:px-7 sm:text-[15px]"
               >
-                <a
-                  href={waLink("Hi GK Events, I'd like to book event equipment.")}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-4.5 w-4.5 fill-white text-white" />
-                  Book on WhatsApp
-                </a>
-              </Button>
-
-              <Button
-                asChild
-                variant="outline"
-                className="rounded-full bg-white/5 hover:bg-white/15 text-white border border-white/35 font-bold px-7 py-5 text-sm sm:text-base backdrop-blur-xs shadow-xs transition-all hover:scale-105 active:scale-95"
+                <MessageCircle className="h-[18px] w-[18px]" />
+                Book on WhatsApp
+              </a>
+              <Link
+                to="/equipment"
+                className="hidden items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-white/90 bg-white/5 px-4 py-[10px] text-[13px] font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/15 sm:inline-flex sm:px-7 sm:text-[15px]"
               >
-                <Link to="/equipment">
-                  View Equipment
-                  <ArrowRight className="ml-1.5 h-4 w-4" />
-                </Link>
-              </Button>
+                View Equipment
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
-          </div>
-        </div>
-
-        {/* Floating Dark Glassmorphic Capability Bar Nestled on the Curve */}
-        <div className="relative z-30 mt-6 sm:mt-10 -mb-6 sm:-mb-7 flex justify-center">
-          <div className="inline-flex items-center justify-center gap-6 sm:gap-12 md:gap-16 rounded-full bg-slate-950/85 backdrop-blur-md border border-white/20 py-3 sm:py-3.5 px-6 sm:px-12 shadow-[0_15px_35px_rgba(0,0,0,0.6)]">
-            
-            {/* Sound Systems */}
-            <Link
-              to="/sound-system-rental"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Speaker className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                Sound<br />Systems
-              </span>
-            </Link>
-
-            <div className="h-8 w-px bg-white/15" />
-
-            {/* LED Walls */}
-            <Link
-              to="/led-wall-rental"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Tv className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                LED<br />Walls
-              </span>
-            </Link>
-
-            <div className="h-8 w-px bg-white/15" />
-
-            {/* Stage Lighting */}
-            <Link
-              to="/event-solutions"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Lightbulb className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                Stage<br />Lighting
-              </span>
-            </Link>
-
-            <div className="h-8 w-px bg-white/15" />
-
-            {/* Video Production */}
-            <Link
-              to="/videography"
-              className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-105 select-none"
-            >
-              <div className="flex h-8 w-8 items-center justify-center text-slate-200 group-hover:text-amber-400 transition-colors">
-                <Camera className="h-6 w-6 stroke-[1.8]" />
-              </div>
-              <span className="text-[10px] sm:text-xs font-bold text-slate-200 group-hover:text-amber-400 transition-colors text-center leading-tight">
-                Video<br />Production
-              </span>
-            </Link>
-
           </div>
         </div>
       </div>
 
-      {/* Elegant Curved Wave Divider at the bottom */}
-      <div className="absolute inset-x-0 -bottom-px pointer-events-none select-none overflow-hidden leading-none z-20">
-        <svg
-          viewBox="0 0 1440 96"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-10 sm:h-14 md:h-18 lg:h-20 block"
-          preserveAspectRatio="none"
+      {/* Capability bar: rests on the stage on mobile, straddles the hero edge on desktop */}
+      <div className="absolute inset-x-0 bottom-5 z-20 px-4 sm:bottom-8 lg:bottom-0 lg:translate-y-1/2">
+        <nav
+          aria-label="Core capabilities"
+          style={{ "--d": "1000ms" } as React.CSSProperties}
+          className="anim-fade-up mx-auto grid max-w-[460px] grid-cols-4 rounded-[26px] border border-white/25 bg-[#1b1b22]/70 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.45)] backdrop-blur-md sm:max-w-[560px] lg:max-w-[820px] lg:rounded-[28px] lg:bg-gradient-to-b lg:from-[#2b2a30]/95 lg:to-[#141418]/95 lg:py-[18px]"
         >
-          {/* Subtle golden shimmer accent line along the curve */}
-          <path
-            d="M0,0 C380,85 1060,85 1440,0"
-            stroke="url(#goldCurveGlow)"
-            strokeWidth="2.5"
-            fill="none"
-            opacity="0.6"
-          />
-          {/* Solid crisp white fill transitioning seamlessly into the section below */}
-          <path
-            d="M0,0 C380,85 1060,85 1440,0 L1440,96 L0,96 Z"
-            fill="#ffffff"
-          />
-          <defs>
-            <linearGradient id="goldCurveGlow" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stopColor="#f59e0b" stopOpacity="0" />
-              <stop offset="25%" stopColor="#f59e0b" stopOpacity="0.8" />
-              <stop offset="50%" stopColor="#fbbf24" stopOpacity="1" />
-              <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
+          {CAPABILITIES.map((c, i) => (
+            <Link
+              key={c.to}
+              to={c.to}
+              style={{ "--d": `${1150 + i * 120}ms` } as React.CSSProperties}
+              className={`anim-fade-up group flex flex-col items-center gap-1.5 px-1 text-center ${
+                i > 0 ? "border-l border-white/20" : ""
+              }`}
+            >
+              <c.icon className="h-7 w-7 stroke-[1.5] text-white transition-colors group-hover:text-orange-400 lg:h-8 lg:w-8" />
+              <span className="text-[11.5px] font-semibold leading-tight text-white transition-colors group-hover:text-orange-400 sm:text-xs lg:text-[13px]">
+                {c.line1}
+                <br />
+                {c.line2}
+              </span>
+            </Link>
+          ))}
+        </nav>
       </div>
     </section>
   );

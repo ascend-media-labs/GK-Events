@@ -25,7 +25,7 @@ function WeddingEventsPage() {
       <Section eyebrow={d.eyebrow} title={d.itemsTitle}>
         <CardGrid items={d.items} />
       </Section>
-      <section className="py-10 bg-white">
+      <section className="py-6 sm:py-10 bg-white">
         <div className="container-x grid items-center gap-10 lg:grid-cols-2">
           <img
             src={d.image}

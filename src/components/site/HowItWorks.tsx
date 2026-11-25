@@ -27,7 +27,7 @@ export function HowItWorks() {
 
   return (
     <section
-      className="relative bg-gradient-to-b from-[#FFFDF9] via-[#FAF6F0] to-[#FFF9F2] py-16 sm:py-24 border-t border-slate-100 overflow-hidden select-none"
+      className="relative bg-gradient-to-b from-[#FFFDF9] via-[#FAF6F0] to-[#FFF9F2] py-10 sm:py-14 border-t border-slate-100 overflow-hidden select-none"
       aria-label="How it works"
     >
       {/* Decorative Gold Ambient Blurs & Lights matching mockup */}
@@ -40,7 +40,7 @@ export function HowItWorks() {
       <div className="relative z-10 max-w-[1288px] mx-auto px-4 sm:px-6">
         
         {/* Section Header */}
-        <div className="flex flex-col items-start text-left max-w-2xl mb-12 sm:mb-16">
+        <div className="flex flex-col items-start text-left max-w-2xl mb-7 sm:mb-10">
           {/* Eyebrow: —— OUR PROCESS —— with gold horizontal bars */}
           <div className="flex items-center gap-3 mb-2.5">
             <div className="h-[1.5px] w-8 sm:w-12 bg-amber-500/80" />
@@ -131,7 +131,7 @@ export function HowItWorks() {
         </div>
 
         {/* Bottom Guarantee & Trust Bar matching mockup */}
-        <div className="mt-14 sm:mt-18 flex justify-center">
+        <div className="mt-8 sm:mt-10 flex justify-center">
           <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-10 rounded-full bg-white/95 backdrop-blur-md border border-amber-200/80 py-3.5 sm:py-4 px-6 sm:px-12 shadow-[0_12px_36px_rgba(245,158,11,0.08)]">
             
             {/* Quick Response */}

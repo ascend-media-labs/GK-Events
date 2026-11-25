@@ -51,10 +51,10 @@ const GALLERY_ITEMS: MosaicItem[] = [
 
 export function HomeMosaicGallery() {
   return (
-    <section className="py-16 sm:py-24 bg-white border-t border-slate-100" aria-label="Featured Gallery">
+    <section className="py-10 sm:py-14 bg-white border-t border-slate-100" aria-label="Featured Gallery">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-left max-w-2xl mb-10 sm:mb-12">
+        <div className="text-left max-w-2xl mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs sm:text-[13px] font-bold tracking-wide border border-amber-200/80 shadow-xs mb-3">
             <Sparkles className="h-3.5 w-3.5 text-amber-600" />
             <span>GK Events Portfolio</span>
@@ -105,7 +105,7 @@ export function HomeMosaicGallery() {
         </div>
 
         {/* Centered CTA */}
-        <div className="mt-10 sm:mt-12 text-center">
+        <div className="mt-7 sm:mt-8 text-center">
           <Button
             asChild
             variant="outline"

@@ -5,7 +5,7 @@ import { contact, waLink } from "@/data/site";
 
 export function WeddingArchesHero() {
   return (
-    <section className="relative w-full pt-4 sm:pt-6 pb-12 sm:pb-16 bg-white" aria-label="Wedding Event Solutions">
+    <section className="relative w-full pt-1 sm:pt-3 pb-8 sm:pb-10 bg-white" aria-label="Wedding Event Solutions">
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
         {/* Outer Framed Hero Card with delicate gold/champagne border matching reference */}
         <div className="relative overflow-hidden rounded-[2.5rem] border border-amber-200/90 bg-gradient-to-b from-[#fcfbf9] via-white to-[#faf8f5] p-6 sm:p-10 lg:p-14 shadow-[0_16px_48px_rgba(15,23,42,0.04)] text-center">

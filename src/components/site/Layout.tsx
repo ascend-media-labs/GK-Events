@@ -123,8 +123,8 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-transparent transition-all duration-300">
-      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-[28px] sm:rounded-full bg-white border border-slate-200/90 px-4 sm:px-8 py-2.5 sm:py-3 shadow-[0_10px_35px_rgba(15,23,42,0.06)]">
+    <header className="sticky top-0 z-50 w-full px-3 sm:px-6 pt-3 sm:pt-4 pb-2 bg-transparent transition-all duration-300 lg:p-0 lg:bg-white lg:border-b lg:border-slate-200/80 lg:shadow-[0_4px_20px_rgba(15,23,42,0.05)]">
+      <div className="max-w-[1288px] mx-auto flex items-center justify-between rounded-full bg-white/95 backdrop-blur-md border border-white/60 px-4 sm:px-8 py-2.5 sm:py-3 shadow-[0_10px_35px_rgba(15,23,42,0.18)] lg:rounded-none lg:bg-white lg:backdrop-blur-none lg:border-0 lg:shadow-none lg:px-[60px] lg:py-3">
         {/* Brand Logo */}
         <Link to="/" className="group relative flex items-center shrink-0 mr-2" onClick={() => setOpen(false)}>
           <Logo className="relative h-10 sm:h-12 w-auto" />

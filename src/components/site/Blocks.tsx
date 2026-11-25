@@ -1,29 +1,29 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { useState, type CSSProperties, type ReactNode } from "react";
 import { ArrowRight, CheckCircle2, MessageCircle, Phone, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { contact, waLink, type ServiceData } from "@/data/site";
 
 export function PageHero({ eyebrow, title, highlight, intro, image }: { eyebrow: string; title: string; highlight: string; intro: string; image: string }) {
   return (
-    <section className="relative w-full pt-4 pb-8 bg-white" aria-label={title}>
+    <section className="relative w-full pt-1 pb-6 sm:pt-3 bg-white" aria-label={title}>
       <div className="max-w-[1288px] mx-auto px-4 sm:px-6">
         <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-amber-50/40 p-8 sm:p-12 lg:p-14 shadow-[0_20px_50px_rgba(15,23,42,0.04)] grid lg:grid-cols-2 gap-8 items-center">
           <div className="relative z-10 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs sm:text-[13px] font-bold tracking-wide border border-amber-200/70 shadow-xs">
+            <span className="anim-fade-down inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs sm:text-[13px] font-bold tracking-wide border border-amber-200/70 shadow-xs">
               {eyebrow}
             </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 leading-[1.1] tracking-tight">
+            <h1 style={{ "--d": "150ms" } as CSSProperties} className="anim-slide-left font-display text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 leading-[1.1] tracking-tight">
               {title} <span className="text-gold">{highlight}</span>
             </h1>
-            <p className="max-w-xl text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+            <p style={{ "--d": "300ms" } as CSSProperties} className="anim-fade-up max-w-xl text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
               {intro}
             </p>
-            <div className="pt-2">
+            <div style={{ "--d": "450ms" } as CSSProperties} className="anim-fade-up pt-2">
               <CtaButtons />
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-md aspect-[16/10] bg-slate-100">
+          <div style={{ "--d": "250ms" } as CSSProperties} className="anim-slide-right relative overflow-hidden rounded-3xl border border-slate-200/90 shadow-md aspect-[16/10] bg-slate-100">
             <img src={image} alt={title} className="h-full w-full object-cover" />
           </div>
         </div>
@@ -44,10 +44,10 @@ export function CtaButtons({ className = "" }: { className?: string }) {
 
 export function Section({ eyebrow, title, children, className = "" }: { eyebrow?: string; title?: ReactNode; children: ReactNode; className?: string }) {
   return (
-    <section className={`py-20 sm:py-28 bg-white text-slate-900 ${className}`}>
+    <section className={`py-10 sm:py-14 bg-white text-slate-900 ${className}`}>
       <div className="container-x">
         {(eyebrow || title) && (
-          <div className="mb-12 max-w-2xl text-left">
+          <div className="mb-7 sm:mb-9 max-w-2xl text-left">
             {eyebrow && <p className="eyebrow">{eyebrow}</p>}
             {title && <h2 className="mt-3 text-3xl font-extrabold text-slate-950 sm:text-5xl">{title}</h2>}
           </div>
@@ -103,7 +103,7 @@ export function Faq({ faqs }: { faqs: { q: string; a: string }[] }) {
 
 export function FinalCta({ title = "Ready to make your event unforgettable?" }: { title?: string }) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 sm:py-14 bg-white">
       <div className="container-x">
         <div className="relative overflow-hidden rounded-[2rem] border border-amber-500/30 bg-gradient-to-br from-amber-50/70 via-slate-50 to-amber-50/50 p-10 text-center sm:p-16 shadow-md">
           <div className="absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-amber-500/15 blur-3xl" />
@@ -121,7 +121,7 @@ export function ServicePage({ d }: { d: ServiceData }) {
     <div className="bg-white text-slate-900">
       <PageHero {...d} />
       <Section eyebrow={d.eyebrow} title={d.itemsTitle}><CardGrid items={d.items} /></Section>
-      <section className="py-10 bg-white">
+      <section className="py-6 sm:py-10 bg-white">
         <div className="container-x grid items-center gap-10 lg:grid-cols-2">
           <img src={d.image} alt={d.eyebrow} loading="lazy" className="aspect-[4/3] w-full rounded-[2rem] object-cover border border-slate-200/80 shadow-md" />
           <div>
