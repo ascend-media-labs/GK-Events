@@ -330,7 +330,7 @@ export function Footer() {
       </div>
 
       {/* ── 3. MAIN FOOTER CONTENT GRID ── */}
-      <div className="relative z-20 max-w-[1288px] mx-auto px-4 sm:px-6 pt-8 sm:pt-12 pb-8 sm:pb-12">
+      <div className="relative z-20 max-w-[1288px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-6 sm:pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
           
           {/* Column 1: Brand Profile, Socials & Live Equalizer (lg:col-span-4) */}
@@ -568,9 +568,9 @@ export function Footer() {
         </div>
       </div>
 
-      {/* ── 5. BOTTOM COPYRIGHT & LEGAL BAR ── */}
-      <div className="relative z-20 border-t border-white/10 bg-black/60 px-4 sm:px-6 py-5">
-        <div className="max-w-[1288px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      {/* ── 4. BOTTOM COPYRIGHT & LEGAL BAR ── */}
+      <div className="relative z-20 border-t border-white/10 bg-black/60 px-4 sm:px-6 py-2.5 sm:py-3">
+        <div className="max-w-[1288px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           
           <div className="flex flex-col sm:flex-row items-center gap-2 text-xs text-slate-400">
             <span>&copy; {currentYear} GK Events &amp; Productions. All rights reserved.</span>
